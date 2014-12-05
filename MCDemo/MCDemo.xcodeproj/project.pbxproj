@@ -7,10 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		891E380A1A32255000FFA931 /* PerfilViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 891E38091A32255000FFA931 /* PerfilViewController.m */; };
+		891E380D1A3241F100FFA931 /* MatchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 891E380C1A3241F100FFA931 /* MatchViewController.m */; };
 		89B457FD1A2F99740070157F /* kate2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 89B457FC1A2F99740070157F /* kate2.jpg */; };
 		89B458001A2FA6340070157F /* Avatar-blank.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 89B457FE1A2FA6340070157F /* Avatar-blank.jpg */; };
 		89B458011A2FA6340070157F /* editing-edit-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 89B457FF1A2FA6340070157F /* editing-edit-icon.png */; };
 		89B458041A2FA6830070157F /* ViewControllerConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 89B458031A2FA6830070157F /* ViewControllerConfig.m */; };
+		89DBCC431A3250FC00803BD7 /* psiu.wav in Resources */ = {isa = PBXBuildFile; fileRef = 89DBCC421A3250FC00803BD7 /* psiu.wav */; };
 		89F23CF81A2DE03C00DC0350 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89F23CF71A2DE03C00DC0350 /* AVFoundation.framework */; };
 		89F23CFA1A2DE04600DC0350 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89F23CF91A2DE04600DC0350 /* AudioToolbox.framework */; };
 		89F23CFC1A2DE05600DC0350 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89F23CFB1A2DE05600DC0350 /* GLKit.framework */; };
@@ -52,11 +55,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		891E38081A32255000FFA931 /* PerfilViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PerfilViewController.h; sourceTree = "<group>"; };
+		891E38091A32255000FFA931 /* PerfilViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PerfilViewController.m; sourceTree = "<group>"; };
+		891E380B1A3241F100FFA931 /* MatchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MatchViewController.h; sourceTree = "<group>"; };
+		891E380C1A3241F100FFA931 /* MatchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MatchViewController.m; sourceTree = "<group>"; };
 		89B457FC1A2F99740070157F /* kate2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = kate2.jpg; sourceTree = "<group>"; };
 		89B457FE1A2FA6340070157F /* Avatar-blank.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Avatar-blank.jpg"; sourceTree = "<group>"; };
 		89B457FF1A2FA6340070157F /* editing-edit-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "editing-edit-icon.png"; sourceTree = "<group>"; };
 		89B458021A2FA6830070157F /* ViewControllerConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewControllerConfig.h; sourceTree = "<group>"; };
 		89B458031A2FA6830070157F /* ViewControllerConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewControllerConfig.m; sourceTree = "<group>"; };
+		89DBCC421A3250FC00803BD7 /* psiu.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = psiu.wav; sourceTree = "<group>"; };
 		89F23CF71A2DE03C00DC0350 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		89F23CF91A2DE04600DC0350 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		89F23CFB1A2DE05600DC0350 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
@@ -162,6 +170,7 @@
 		D9EA8C14187B1954008031B5 /* MCDemo */ = {
 			isa = PBXGroup;
 			children = (
+				89DBCC421A3250FC00803BD7 /* psiu.wav */,
 				89B457FC1A2F99740070157F /* kate2.jpg */,
 				89F412CE1A2E4A0D00C16CC0 /* Usuario.h */,
 				89F412CF1A2E4A0D00C16CC0 /* Usuario.m */,
@@ -173,6 +182,10 @@
 				D9EA8C1D187B1954008031B5 /* AppDelegate.h */,
 				D9EA8C1E187B1954008031B5 /* AppDelegate.m */,
 				D9EA8C20187B1954008031B5 /* Main.storyboard */,
+				891E380B1A3241F100FFA931 /* MatchViewController.h */,
+				891E380C1A3241F100FFA931 /* MatchViewController.m */,
+				891E38081A32255000FFA931 /* PerfilViewController.h */,
+				891E38091A32255000FFA931 /* PerfilViewController.m */,
 				89B458021A2FA6830070157F /* ViewControllerConfig.h */,
 				89B458031A2FA6830070157F /* ViewControllerConfig.m */,
 				89F412C51A2E3D0000C16CC0 /* UsersViewController.h */,
@@ -311,6 +324,7 @@
 				D91F126B187F1D1900F45BC3 /* sample_file1.txt in Resources */,
 				D9EA8C2A187B1954008031B5 /* Images.xcassets in Resources */,
 				89F412D21A2E4E7700C16CC0 /* kate.jpg in Resources */,
+				89DBCC431A3250FC00803BD7 /* psiu.wav in Resources */,
 				D9EA8C19187B1954008031B5 /* InfoPlist.strings in Resources */,
 				D9EA8C22187B1954008031B5 /* Main.storyboard in Resources */,
 				89B457FD1A2F99740070157F /* kate2.jpg in Resources */,
@@ -338,7 +352,9 @@
 				89F412C71A2E3D0000C16CC0 /* UsersViewController.m in Sources */,
 				D9629273187BD6E600228E81 /* MCManager.m in Sources */,
 				D9EA8C28187B1954008031B5 /* SecondViewController.m in Sources */,
+				891E380A1A32255000FFA931 /* PerfilViewController.m in Sources */,
 				89F412C41A2E30C300C16CC0 /* TesteViewController.m in Sources */,
+				891E380D1A3241F100FFA931 /* MatchViewController.m in Sources */,
 				D9EA8C1F187B1954008031B5 /* AppDelegate.m in Sources */,
 				D9EA8C25187B1954008031B5 /* FirstViewController.m in Sources */,
 				D9EA8C1B187B1954008031B5 /* main.m in Sources */,

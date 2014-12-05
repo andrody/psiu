@@ -9,9 +9,13 @@
         <scene sceneID="2eO-Lu-jgb">
             <objects>
                 <navigationController id="QVq-nA-GRk" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="yiy-9p-gfb">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="yiy-9p-gfb">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.53947639800000002" green="0.55065383639999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="J1W-Fs-LPv" kind="relationship" relationship="rootViewController" id="nim-tL-POf"/>
@@ -21,35 +25,35 @@
             </objects>
             <point key="canvasLocation" x="-318" y="180"/>
         </scene>
-        <!--Item-->
+        <!--Pessoas locais-->
         <scene sceneID="Ml1-qO-8VR">
             <objects>
                 <collectionViewController storyboardIdentifier="UsersViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="J1W-Fs-LPv" customClass="UsersViewController" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="iIT-gf-Fe5">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="o9e-v8-KEo">
-                            <size key="itemSize" width="152" height="152"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="o9e-v8-KEo">
+                            <size key="itemSize" width="160" height="160"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="celula" id="Ls8-OK-Aks" customClass="Cell">
-                                <rect key="frame" x="0.0" y="64" width="152" height="159"/>
+                                <rect key="frame" x="0.0" y="0.0" width="152" height="159"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="152" height="159"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="160" height="160"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="d7I-Ke-95Y">
-                                            <rect key="frame" x="0.0" y="0.0" width="152" height="159"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="d7I-Ke-95Y">
+                                            <rect key="frame" x="0.0" y="0.0" width="160" height="160"/>
                                         </imageView>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
-                                <size key="customSize" width="152" height="159"/>
+                                <size key="customSize" width="160" height="160"/>
                                 <connections>
                                     <outlet property="foto" destination="d7I-Ke-95Y" id="NrM-TT-CrO"/>
                                 </connections>
@@ -61,8 +65,9 @@
                         </connections>
                     </collectionView>
                     <tabBarItem key="tabBarItem" title="Item" id="jBs-NH-fyH"/>
-                    <navigationItem key="navigationItem" id="rZo-hE-cYQ">
+                    <navigationItem key="navigationItem" title="Pessoas locais" id="rZo-hE-cYQ">
                         <barButtonItem key="rightBarButtonItem" systemItem="compose" id="sqa-R7-rQ8">
+                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <segue destination="YDB-pH-7so" kind="push" id="Bpe-xR-Ril"/>
                             </connections>
@@ -71,13 +76,15 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="collection_dispositivos" destination="iIT-gf-Fe5" id="QTB-Wl-uKs"/>
+                        <segue destination="acc-4E-K4v" kind="push" id="vdi-Nf-zBB"/>
+                        <segue destination="jqK-X7-GBr" kind="push" id="mAK-KB-Kz8"/>
                     </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jtg-yr-rtm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="113" y="180"/>
         </scene>
-        <!--Perfil-->
+        <!--Seu Perfil-->
         <scene sceneID="B7U-X7-LgN">
             <objects>
                 <viewController id="YDB-pH-7so" customClass="ViewControllerConfig" sceneMemberID="viewController">
@@ -86,26 +93,26 @@
                         <viewControllerLayoutGuide type="bottom" id="mmw-xR-JAY"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="ALo-qe-4DN">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nome" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Pwy-XP-i0d">
-                                <rect key="frame" x="63" y="81" width="207" height="30"/>
+                                <rect key="frame" x="63" y="20" width="207" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Idade (ex: 22)" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZWX-4H-msx">
-                                <rect key="frame" x="63" y="128" width="207" height="30"/>
+                                <rect key="frame" x="63" y="62" width="207" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Avatar-blank.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="sgq-kT-PZB">
-                                <rect key="frame" x="63" y="171" width="207" height="197"/>
+                            <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Avatar-blank.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="sgq-kT-PZB">
+                                <rect key="frame" x="63" y="146" width="207" height="197"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Perfil" id="dIm-Iu-4dx"/>
+                    <navigationItem key="navigationItem" title="Seu Perfil" id="dIm-Iu-4dx"/>
                     <connections>
                         <outlet property="fotoUser" destination="sgq-kT-PZB" id="8FX-Ll-jfU"/>
                         <outlet property="textoNome" destination="Pwy-XP-i0d" id="ALx-EP-bNl"/>
@@ -115,6 +122,120 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IrT-eC-E7e" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="589" y="180"/>
+        </scene>
+        <!--Match-->
+        <scene sceneID="bma-YB-993">
+            <objects>
+                <viewController id="jqK-X7-GBr" customClass="MatchViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="LdQ-uJ-hTo"/>
+                        <viewControllerLayoutGuide type="bottom" id="Uom-ki-VZU"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="q2c-tp-2S8">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ffg-Th-EZ1">
+                                <rect key="frame" x="70" y="43" width="181" height="169"/>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Com ela(e) você está disposto a" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xnD-Fb-mde">
+                                <rect key="frame" x="33" y="268" width="254" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="fill" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jl0-2u-2Ut">
+                                <rect key="frame" x="100" y="321" width="78" height="30"/>
+                                <state key="normal" title="Bater Papo">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="COT-bG-Pkl">
+                                <rect key="frame" x="100" y="353" width="167" height="30"/>
+                                <state key="normal" title="Abraco e Beijo no Rosto">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OkB-uV-PGJ">
+                                <rect key="frame" x="100" y="386" width="51" height="30"/>
+                                <state key="normal" title="Selinho">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g2p-Sr-PxI">
+                                <rect key="frame" x="100" y="416" width="107" height="30"/>
+                                <state key="normal" title="Beijo de Lingua">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iby-Q8-nAy">
+                                <rect key="frame" x="100" y="448" width="34" height="30"/>
+                                <state key="normal" title="Ficar">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" progress="1" translatesAutoresizingMaskIntoConstraints="NO" id="qwg-pS-oRq">
+                                <rect key="frame" x="20" y="259" width="280" height="2"/>
+                                <color key="progressTintColor" red="0.53947639800000002" green="0.55065383639999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="trackTintColor" red="0.53947639800000002" green="0.55065383639999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </progressView>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" progress="1" translatesAutoresizingMaskIntoConstraints="NO" id="Sw2-V1-uas">
+                                <rect key="frame" x="20" y="293" width="280" height="2"/>
+                                <color key="progressTintColor" red="0.53947639800000002" green="0.55065383639999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="trackTintColor" red="0.53947639800000002" green="0.55065383639999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </progressView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ivt-fa-S6e">
+                                <rect key="frame" x="139" y="220" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qMV-yG-uMN">
+                                <rect key="frame" x="138" y="13" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Match" id="jbA-b2-SO8"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SNF-xs-E0k" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="107" y="866"/>
+        </scene>
+        <!--Perfil-->
+        <scene sceneID="ZfI-P9-Y5B">
+            <objects>
+                <viewController storyboardIdentifier="perfilCtrl" useStoryboardIdentifierAsRestorationIdentifier="YES" id="acc-4E-K4v" customClass="PerfilViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="iPJ-KK-5z2"/>
+                        <viewControllerLayoutGuide type="bottom" id="dZU-C7-ilm"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="esd-9O-6SG">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="30g-uQ-RLb">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Perfil" id="SEp-3B-w61">
+                        <barButtonItem key="rightBarButtonItem" title="Psiu" id="pda-2U-r2c">
+                            <connections>
+                                <action selector="mandarPsiu:" destination="acc-4E-K4v" id="xvE-CQ-N9m"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="imagem" destination="30g-uQ-RLb" id="OnA-MB-2xI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oJ6-fX-9dx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="589" y="854"/>
         </scene>
     </scenes>
     <resources>

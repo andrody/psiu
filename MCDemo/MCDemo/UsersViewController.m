@@ -10,6 +10,7 @@
 #import "AppDelegate.h"
 #import "Usuario.h"
 #import "Cell.h"
+#import "PerfilViewController.h"
 
 
 @interface UsersViewController ()
@@ -58,6 +59,11 @@
                                              selector:@selector(didFinishReceivingResourceWithNotification:)
                                                  name:@"didFinishReceivingResourceNotification"
                                                object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(didReceiveDataWithNotification:)
+                                                 name:@"MCDidReceiveDataNotification"
+                                               object:nil];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -89,7 +95,15 @@
     
 }
 
--(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{}
+-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+
+    [_appDelegate mcManager].usuario_selecionado = [_usuarios objectAtIndex:indexPath.row];
+    
+    PerfilViewController *perfilView = [self.storyboard instantiateViewControllerWithIdentifier:@"perfilCtrl"];
+    
+    [self.navigationController pushViewController: perfilView animated:YES];
+    
+}
 
 -(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
     return 1;
@@ -120,18 +134,21 @@
     
     NSData *data = [NSData dataWithContentsOfURL:localURL];
     UIImage *img = [[UIImage alloc] initWithData:data];
+    NSString *nome = [dict objectForKey:@"resourceName"];
     
     //NSString *resourceName = [dict objectForKey:@"resourceName"];
     bool existe_user = false;
     for(Usuario *u in _usuarios){
         if ([u.peer isEqual:user.peer]){
             u.imagem = img;
+            u.nome = nome;
             existe_user = true;
         }
     }
     
     if(existe_user == false) {
         user.imagem = img;
+        user.nome = nome;
         [_usuarios addObject:user];
     }
     
@@ -172,6 +189,22 @@
         
         
     }
+}
+
+-(void)didReceiveDataWithNotification:(NSNotification *)notification{
+    
+    NSData *receivedData = [[notification userInfo] objectForKey:@"data"];
+    MCPeerID *peerID = [[notification userInfo] objectForKey:@"peerID"];
+    NSDictionary *dict = [NSKeyedUnarchiver unarchiveObjectWithData:receivedData];
+
+    for(Usuario *u in _usuarios){
+        if ([u.peer isEqual:peerID]){
+            u.nome = [NSString stringWithFormat:@"%@,%@", dict[@"nome"], dict[@"idade"]];
+        }
+    }
+    
+    
+    
 }
 
 

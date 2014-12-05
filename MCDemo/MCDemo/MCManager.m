@@ -75,6 +75,9 @@
                                             //serviceType:@"chat-files"];
         //advertiser.delegate = self;
         //[advertiser startAdvertisingPeer];
+        
+        
+        
         _advertiser = [[MCNearbyServiceAdvertiser alloc] initWithPeer:_peerID discoveryInfo:nil serviceType:@"chat-files"];
         self.advertiser.delegate = self;
         [_advertiser startAdvertisingPeer];
@@ -101,8 +104,8 @@
     
     if(state == MCSessionStateConnected) {
         
+        //[self sendUserInfo:peerID];
         [self sendFoto:peerID];
-        
         
     }
     
@@ -112,7 +115,7 @@
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *documentsDirectory = [[NSString alloc] initWithString:[paths objectAtIndex:0]];
     NSString *filePath = [documentsDirectory stringByAppendingPathComponent:@"kate2.jpg"];
-    NSString *modifiedName = [NSString stringWithFormat:@"%@_%@", self.peerID.displayName, @"kate2.jpg"];
+    NSString *modifiedName = [NSString stringWithFormat:@"%@,%@", _myUser.nome, _myUser.idade];
     
     
     
@@ -147,6 +150,44 @@
     
 }
 
+-(void)sendUserInfo:(MCPeerID *)peerID{
+    NSDictionary *dict = @{@"nome": _myUser.nome,
+                           @"idade": _myUser.idade};
+    
+    NSArray *allPeers = @[peerID];
+    NSData *dataToSend = [NSKeyedArchiver archivedDataWithRootObject:dict];
+    NSError *error;
+    
+    [_session sendData:dataToSend
+                                     toPeers:allPeers
+                                    withMode:MCSessionSendDataReliable
+                                       error:&error];
+
+    
+    if (error) {
+        NSLog(@"%@", [error localizedDescription]);
+    }
+   
+}
+
+-(void)sendMessage:(MCPeerID *)peerID withDict:(NSDictionary *)dict {
+    
+    NSArray *allPeers = @[peerID];
+    NSData *dataToSend = [NSKeyedArchiver archivedDataWithRootObject:dict];
+    NSError *error;
+    
+    [_session sendData:dataToSend
+               toPeers:allPeers
+              withMode:MCSessionSendDataReliable
+                 error:&error];
+    
+    
+    if (error) {
+        NSLog(@"%@", [error localizedDescription]);
+    }
+    
+}
+
 -(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context{
     
     double h = [object fractionCompleted] * 100;
@@ -159,10 +200,49 @@
     NSDictionary *dict = @{@"data": data,
                            @"peerID": peerID
                            };
+    NSDictionary *dictionary = [NSKeyedUnarchiver unarchiveObjectWithData:data];
+    
+    if([dictionary[@"tipo"] integerValue] == Psiu) {
+        
+        bool match = false;
+        if(_usuarios_psiu == nil) _usuarios_psiu = [NSMutableArray new];
+        for(Usuario *u in _usuarios_psiu){
+            if ([u.peer isEqual:peerID]){
+                match = true;
+                break;
+            }
+        }
+        
+        if(match == false) {
+            
+            [self playPsiu];
+            
+        }
+        
+        
+    }
     
     [[NSNotificationCenter defaultCenter] postNotificationName:@"MCDidReceiveDataNotification"
                                                         object:nil
                                                       userInfo:dict];
+}
+
+-(void) playPsiu {
+    
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"psiu" ofType:@"wav"];
+    
+    NSURL *fileURL = [[NSURL alloc] initFileURLWithPath: path];
+    
+    self.theAudio=[[AVAudioPlayer alloc] initWithContentsOfURL:fileURL error:NULL];
+    
+    self.theAudio.volume = 1.0;
+    
+    self.theAudio.delegate = self;
+    
+    [self.theAudio prepareToPlay];
+    
+    [self.theAudio play];
+    
 }
 
 

@@ -110,6 +110,11 @@
     _user.idade = _textoidade.text;
     [self salvar];
     
+    for(Usuario *u in [_appDelegate mcManager].usuarios) {
+        [[_appDelegate mcManager] sendUserInfo:u.peer];
+    }
+
+    
     return YES;
 }
 
