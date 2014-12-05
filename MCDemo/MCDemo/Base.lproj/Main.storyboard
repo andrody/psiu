@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="QVq-nA-GRk">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="2eO-Lu-jgb">
+            <objects>
+                <navigationController id="QVq-nA-GRk" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="yiy-9p-gfb">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="J1W-Fs-LPv" kind="relationship" relationship="rootViewController" id="nim-tL-POf"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="s0H-fc-DfL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-318" y="180"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="Ml1-qO-8VR">
+            <objects>
+                <collectionViewController storyboardIdentifier="UsersViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="J1W-Fs-LPv" customClass="UsersViewController" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="iIT-gf-Fe5">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="o9e-v8-KEo">
+                            <size key="itemSize" width="152" height="152"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="celula" id="Ls8-OK-Aks" customClass="Cell">
+                                <rect key="frame" x="0.0" y="64" width="152" height="159"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="152" height="159"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="d7I-Ke-95Y">
+                                            <rect key="frame" x="0.0" y="0.0" width="152" height="159"/>
+                                        </imageView>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <size key="customSize" width="152" height="159"/>
+                                <connections>
+                                    <outlet property="foto" destination="d7I-Ke-95Y" id="NrM-TT-CrO"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="J1W-Fs-LPv" id="JyR-BB-LXh"/>
+                            <outlet property="delegate" destination="J1W-Fs-LPv" id="mOg-vA-9tt"/>
+                        </connections>
+                    </collectionView>
+                    <tabBarItem key="tabBarItem" title="Item" id="jBs-NH-fyH"/>
+                    <navigationItem key="navigationItem" id="rZo-hE-cYQ">
+                        <barButtonItem key="rightBarButtonItem" systemItem="compose" id="sqa-R7-rQ8">
+                            <connections>
+                                <segue destination="YDB-pH-7so" kind="push" id="Bpe-xR-Ril"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="collection_dispositivos" destination="iIT-gf-Fe5" id="QTB-Wl-uKs"/>
+                    </connections>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Jtg-yr-rtm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="113" y="180"/>
+        </scene>
+        <!--Perfil-->
+        <scene sceneID="B7U-X7-LgN">
+            <objects>
+                <viewController id="YDB-pH-7so" customClass="ViewControllerConfig" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Z2B-7i-hbd"/>
+                        <viewControllerLayoutGuide type="bottom" id="mmw-xR-JAY"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ALo-qe-4DN">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nome" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Pwy-XP-i0d">
+                                <rect key="frame" x="63" y="81" width="207" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Idade (ex: 22)" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZWX-4H-msx">
+                                <rect key="frame" x="63" y="128" width="207" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Avatar-blank.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="sgq-kT-PZB">
+                                <rect key="frame" x="63" y="171" width="207" height="197"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Perfil" id="dIm-Iu-4dx"/>
+                    <connections>
+                        <outlet property="fotoUser" destination="sgq-kT-PZB" id="8FX-Ll-jfU"/>
+                        <outlet property="textoNome" destination="Pwy-XP-i0d" id="ALx-EP-bNl"/>
+                        <outlet property="textoidade" destination="ZWX-4H-msx" id="HTm-dD-ifc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IrT-eC-E7e" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="589" y="180"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Avatar-blank.jpg" width="160" height="160"/>
+    </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>
