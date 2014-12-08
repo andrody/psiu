@@ -50,15 +50,42 @@
     // Dispose of any resources that can be recreated.
 }
 - (IBAction)mandarPsiu:(UIBarButtonItem *)sender {
+    Usuario *user = [_appDelegate mcManager].usuario_selecionado;
 
+    if(![[_appDelegate mcManager].usuarios_dei_psiu containsObject:user]) {
     NSDictionary *dict = @{@"tipo": [NSNumber numberWithInt:Psiu]
                            };
     
-    Usuario *user = [_appDelegate mcManager].usuario_selecionado;
+    
+    bool match = [[_appDelegate mcManager] checkMatch:user];
+    
+    if(match) {
+        
+        NSDictionary *user_dict = @{@"user_dict": user};
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"MCMatch"
+                                                            object:nil
+                                                          userInfo:user_dict];
+        
+    }
+    
+    else {
+        
+        if([_appDelegate mcManager].usuarios_dei_psiu == nil) [_appDelegate mcManager].usuarios_dei_psiu = [NSMutableArray new];
+        if([_appDelegate mcManager].usuarios_psiu == nil) [_appDelegate mcManager].usuarios_psiu = [NSMutableArray new];
+
+        [[_appDelegate mcManager].usuarios_dei_psiu addObject:user];
+        [[_appDelegate mcManager].usuarios_psiu addObject:user];
+
+    }                                   
+    
+   
     [[_appDelegate mcManager] sendMessage:user.peer withDict:dict];
+    }
 
 
 }
+
+
 
 
 

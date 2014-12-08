@@ -11,6 +11,8 @@
 #import "Usuario.h"
 #import "Cell.h"
 #import "PerfilViewController.h"
+#import "MatchViewController.h"
+#import <QuartzCore/QuartzCore.h>
 
 
 @interface UsersViewController ()
@@ -42,7 +44,11 @@
     
     if([_appDelegate mcManager].usuarios == nil)
         [_appDelegate mcManager].usuarios = [NSMutableArray new];
-    _usuarios = [_appDelegate mcManager].usuarios;   
+    _usuarios = [_appDelegate mcManager].usuarios;
+    
+    if([_appDelegate mcManager].usuario_match == nil) [_appDelegate mcManager].usuario_match = [Usuario new];
+    if([_appDelegate mcManager].usuarios_match == nil) [_appDelegate mcManager].usuarios_match = [NSMutableArray new];
+
     
     [[_appDelegate mcManager] setupPeerAndSessionWithDisplayName:[UIDevice currentDevice].name];
     [[_appDelegate mcManager] advertiseSelf:YES];
@@ -63,6 +69,11 @@
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(didReceiveDataWithNotification:)
                                                  name:@"MCDidReceiveDataNotification"
+                                               object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(didMatch:)
+                                                 name:@"MCMatch"
                                                object:nil];
 }
 
@@ -99,11 +110,24 @@
 
     [_appDelegate mcManager].usuario_selecionado = [_usuarios objectAtIndex:indexPath.row];
     
-    PerfilViewController *perfilView = [self.storyboard instantiateViewControllerWithIdentifier:@"perfilCtrl"];
+    if([[_appDelegate mcManager].usuarios_match containsObject:[_appDelegate mcManager].usuario_selecionado]){
+        
+        [_appDelegate mcManager].usuario_match = [_appDelegate mcManager].usuario_selecionado;
+        [self telaMatch];
+        
+    }
     
-    [self.navigationController pushViewController: perfilView animated:YES];
+    else {
+    
+        PerfilViewController *perfilView = [self.storyboard instantiateViewControllerWithIdentifier:@"perfilCtrl"];
+    
+        [self.navigationController pushViewController: perfilView animated:YES];
+        
+    }
     
 }
+
+
 
 -(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
     return 1;
@@ -119,6 +143,28 @@
     
     Usuario *user = [_usuarios objectAtIndex:indexPath.row];
     cell.foto.image = user.imagem;
+    /*cell.foto.layer.cornerRadius = 5.0;
+    cell.foto.layer.borderColor = (__bridge CGColorRef)([UIColor blueColor]);
+    [cell.foto.layer setBorderWidth: 10.0f];
+    cell.foto.layer.borderWidth = 10.0f;*/
+    
+    cell.foto.clipsToBounds = YES;
+    CALayer * l = [cell.foto layer];
+    [l setMasksToBounds:YES];
+    float f = cell.foto.frame.size.width / 2;
+    [l setCornerRadius:f];
+    
+    UIColor *color = [UIColor whiteColor];
+    float borderW = 4.0f;
+    
+    if([[_appDelegate mcManager].usuarios_match containsObject:user]){
+        color = [UIColor redColor];
+        borderW = 2.0f;
+    }
+    
+    // You can even add a border
+    [l setBorderWidth:borderW];
+    [l setBorderColor:[color CGColor]];
     
     return cell;
 }
@@ -204,6 +250,23 @@
     }
     
     
+    
+}
+
+-(void)didMatch:(NSNotification *)notification{
+    
+    [_appDelegate mcManager].usuario_match = [[notification userInfo] objectForKey:@"user_dict"];
+    [[_appDelegate mcManager].usuarios_match addObject:[_appDelegate mcManager].usuario_match];
+    [self performSelectorOnMainThread:@selector(telaMatch) withObject:nil waitUntilDone:NO];
+    
+}
+
+-(void) telaMatch {
+    
+    [_collection_dispositivos reloadData];
+    MatchViewController *matchView = [self.storyboard instantiateViewControllerWithIdentifier:@"matchCtrl"];
+    
+    [self.navigationController pushViewController: matchView animated:YES];
     
 }
 

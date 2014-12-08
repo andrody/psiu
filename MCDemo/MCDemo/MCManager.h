@@ -14,6 +14,11 @@
 typedef enum : NSUInteger {
     Psiu,
     Match,
+    Papo,
+    Abraco,
+    Selinhi,
+    Lingua,
+    Ficar
 } MessageType;
 
 @interface MCManager : NSObject <MCSessionDelegate, MCNearbyServiceAdvertiserDelegate, AVAudioPlayerDelegate>
@@ -25,10 +30,14 @@ typedef enum : NSUInteger {
 @property Usuario *myUser;
 @property (nonatomic, strong) NSMutableArray *usuarios;
 @property (nonatomic, strong) NSMutableArray *usuarios_psiu;
+@property (nonatomic, strong) NSMutableArray *usuarios_dei_psiu;
+@property (nonatomic, strong) NSMutableArray *usuarios_match;
 @property (nonatomic, strong) AVAudioPlayer *theAudio;
 
 
 @property Usuario *usuario_selecionado;
+@property Usuario *usuario_match;
+
 
 
 
@@ -40,5 +49,7 @@ typedef enum : NSUInteger {
 -(void)sendUserInfo:(MCPeerID *)peerID;
 -(void)sendMessage:(MCPeerID *)peerID withDict:(NSDictionary *)dict;
 -(void) playPsiu;
+-(bool)checkMatch:(Usuario *)user;
+
 
 @end

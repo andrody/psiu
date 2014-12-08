@@ -170,6 +170,18 @@
    
 }
 
+-(bool)checkMatch:(Usuario *)user {
+    
+    for(Usuario *u in _usuarios_psiu){
+        if ([u isEqual:user]){
+            return true;
+            break;
+        }
+    }
+    return false;
+    
+}
+
 -(void)sendMessage:(MCPeerID *)peerID withDict:(NSDictionary *)dict {
     
     NSArray *allPeers = @[peerID];
@@ -206,6 +218,8 @@
         
         bool match = false;
         if(_usuarios_psiu == nil) _usuarios_psiu = [NSMutableArray new];
+        
+        Usuario *user;
         for(Usuario *u in _usuarios_psiu){
             if ([u.peer isEqual:peerID]){
                 match = true;
@@ -213,18 +227,36 @@
             }
         }
         
+        for(Usuario *u in _usuarios){
+            if ([u.peer isEqual:peerID]){
+                user = u;
+                break;
+            }
+        }
+        
         if(match == false) {
             
+            [_usuarios_psiu addObject:user];
             [self playPsiu];
+            
+        }
+        else {
+            
+            NSDictionary *user_dict = @{@"user_dict": user};
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"MCMatch"
+                                                                object:nil
+                                                              userInfo:user_dict];
             
         }
         
         
     }
-    
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"MCDidReceiveDataNotification"
+    else {
+        
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"MCDidReceiveDataNotification"
                                                         object:nil
                                                       userInfo:dict];
+    }
 }
 
 -(void) playPsiu {
