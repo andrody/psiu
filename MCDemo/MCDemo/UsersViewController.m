@@ -31,8 +31,18 @@
     [_collection_dispositivos setDelegate:self];
     [_collection_dispositivos setDataSource:self];
     
+    UIColor *color =[UIColor colorWithRed:136.0/255.0 green:221.0/255.0 blue:187.0/255.0 alpha:1];
+    
+    [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName: color}];
+    
+    [self.navigationController.navigationBar.layer setBorderWidth:2.0];// Just to make sure its working
+    [self.navigationController.navigationBar.layer setBorderColor:[color CGColor]];
+
+    
     _appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     
+    
+    //-----Persistência de dados-----
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     
     Usuario *myuser = [_appDelegate mcManager].myUser;
@@ -40,7 +50,8 @@
     myuser.idade = [defaults objectForKey:@"user_idade"];
     myuser.image_url = [defaults URLForKey:@"user_image_url"];
     myuser.imagem = [[UIImage alloc] initWithData:[NSData dataWithContentsOfURL:myuser.image_url]];
-
+    //-----Persistência de dados-----
+    
     
     if([_appDelegate mcManager].usuarios == nil)
         [_appDelegate mcManager].usuarios = [NSMutableArray new];
@@ -55,11 +66,12 @@
     
     
     
-    _browser = [[MCNearbyServiceBrowser alloc]initWithPeer:[_appDelegate mcManager].peerID  serviceType:@"chat-files"];
+    _browser = [[MCNearbyServiceBrowser alloc]initWithPeer:[_appDelegate mcManager].peerID  serviceType:@"psiu"];
     [_browser setDelegate:self];
     [_browser startBrowsingForPeers];
     
     [self copySampleFilesToDocDirIfNeeded];
+    
     
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(didFinishReceivingResourceWithNotification:)
@@ -121,8 +133,9 @@
     
         PerfilViewController *perfilView = [self.storyboard instantiateViewControllerWithIdentifier:@"perfilCtrl"];
     
-        [self.navigationController pushViewController: perfilView animated:YES];
-        
+        //[self.navigationController pushViewController: perfilView animated:YES];
+        [self presentViewController:perfilView animated:YES completion:nil];
+
     }
     
 }
@@ -269,6 +282,8 @@
     [self.navigationController pushViewController: matchView animated:YES];
     
 }
+
+
 
 
 

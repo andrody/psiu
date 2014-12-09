@@ -55,7 +55,7 @@
 
 
 -(void)setupMCBrowser{
-    _browser = [[MCBrowserViewController alloc] initWithServiceType:@"chat-files" session:_session];
+    _browser = [[MCBrowserViewController alloc] initWithServiceType:@"psiu" session:_session];
 }
 
 
@@ -72,13 +72,13 @@
         //MCNearbyServiceAdvertiser *advertiser =
         //[[MCNearbyServiceAdvertiser alloc] initWithPeer:_peerID
                                           //discoveryInfo:dict
-                                            //serviceType:@"chat-files"];
+                                            //serviceType:@"psiu"];
         //advertiser.delegate = self;
         //[advertiser startAdvertisingPeer];
         
         
         
-        _advertiser = [[MCNearbyServiceAdvertiser alloc] initWithPeer:_peerID discoveryInfo:nil serviceType:@"chat-files"];
+        _advertiser = [[MCNearbyServiceAdvertiser alloc] initWithPeer:_peerID discoveryInfo:nil serviceType:@"psiu"];
         self.advertiser.delegate = self;
         [_advertiser startAdvertisingPeer];
     }

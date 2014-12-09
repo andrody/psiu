@@ -13,7 +13,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="yiy-9p-gfb">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.53947639800000002" green="0.55065383639999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         </textAttributes>
@@ -31,7 +31,7 @@
             <objects>
                 <collectionViewController storyboardIdentifier="UsersViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="J1W-Fs-LPv" customClass="UsersViewController" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="iIT-gf-Fe5">
-                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="o9e-v8-KEo">
@@ -77,7 +77,6 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
                         <outlet property="collection_dispositivos" destination="iIT-gf-Fe5" id="QTB-Wl-uKs"/>
-                        <segue destination="acc-4E-K4v" kind="push" id="vdi-Nf-zBB"/>
                         <segue destination="jqK-X7-GBr" kind="push" id="mAK-KB-Kz8"/>
                     </connections>
                 </collectionViewController>
@@ -94,7 +93,7 @@
                         <viewControllerLayoutGuide type="bottom" id="mmw-xR-JAY"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="ALo-qe-4DN">
-                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nome" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Pwy-XP-i0d">
@@ -134,7 +133,7 @@
                         <viewControllerLayoutGuide type="bottom" id="Uom-ki-VZU"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="q2c-tp-2S8">
-                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FED-4n-c4D">
@@ -216,7 +215,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="u6k-e3-kKX">
-                                <rect key="frame" x="93" y="42" width="134" height="121"/>
+                                <rect key="frame" x="103" y="42" width="115" height="108"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -237,18 +236,49 @@
         <!--Perfil-->
         <scene sceneID="ZfI-P9-Y5B">
             <objects>
-                <viewController storyboardIdentifier="perfilCtrl" useStoryboardIdentifierAsRestorationIdentifier="YES" id="acc-4E-K4v" customClass="PerfilViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="perfilCtrl" modalPresentationStyle="overFullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="acc-4E-K4v" customClass="PerfilViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="iPJ-KK-5z2"/>
                         <viewControllerLayoutGuide type="bottom" id="dZU-C7-ilm"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="esd-9O-6SG">
-                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                    <view key="view" autoresizesSubviews="NO" contentMode="scaleToFill" id="esd-9O-6SG">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="30g-uQ-RLb">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
+                            <imageView autoresizesSubviews="NO" opaque="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="kate.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="30g-uQ-RLb">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="485"/>
+                                <color key="backgroundColor" red="0.97219243954211865" green="0.94548700243487882" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FQt-92-MPT">
+                                <rect key="frame" x="104" y="303" width="103" height="99"/>
+                                <state key="normal" title="Button" image="psiu-img.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="mandarPsiu:" destination="acc-4E-K4v" eventType="touchUpInside" id="aZS-4j-5sA"/>
+                                </connections>
+                            </button>
+                            <view alpha="0.80000000000000004" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Q1o-VF-zND">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="66"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gwj-Jo-Qel">
+                                        <rect key="frame" x="8" y="20" width="31" height="37"/>
+                                        <state key="normal" title="Button" image="back_btn2.png">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="voltar:" destination="acc-4E-K4v" eventType="touchUpInside" id="5VC-5C-IHg"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Priscila, 23" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bZb-Yq-2sp">
+                                        <rect key="frame" x="112" y="17" width="283" height="43"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -261,7 +291,10 @@
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
+                        <outlet property="gradient" destination="Q1o-VF-zND" id="Sdg-if-QUy"/>
                         <outlet property="imagem" destination="30g-uQ-RLb" id="OnA-MB-2xI"/>
+                        <outlet property="nome_idade" destination="bZb-Yq-2sp" id="WHV-fw-Dr5"/>
+                        <outlet property="psiu_btn" destination="FQt-92-MPT" id="4FX-lh-689"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oJ6-fX-9dx" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -295,6 +328,9 @@
     </scenes>
     <resources>
         <image name="Avatar-blank.jpg" width="160" height="160"/>
+        <image name="back_btn2.png" width="128" height="128"/>
+        <image name="kate.jpg" width="1600" height="1200"/>
+        <image name="psiu-img.png" width="800" height="800"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
