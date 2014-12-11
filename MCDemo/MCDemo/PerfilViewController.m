@@ -9,8 +9,8 @@
 #import "PerfilViewController.h"
 #import "AppDelegate.h"
 #import "MCManager.h"
-
-
+#import "PerfilTableCell.h"
+#import "Option.h"
 
 @interface PerfilViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *imagem;
@@ -18,10 +18,18 @@
 @property (weak, nonatomic) IBOutlet UIButton *psiu_btn;
 @property (weak, nonatomic) IBOutlet UIView *gradient;
 @property (weak, nonatomic) IBOutlet UILabel *nome_idade;
+@property (weak, nonatomic) IBOutlet UITableView *tableViewOptions;
+@property NSArray *options;
+@property Usuario *user;
+@property (weak, nonatomic) IBOutlet UIScrollView *tableScrollV;
+
+
 
 @end
 
 @implementation PerfilViewController
+
+
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -35,6 +43,21 @@
 -(void) viewDidAppear:(BOOL)animated {
     
     [super viewDidAppear:YES];
+    
+    if (_user.match == YES) {
+        [_psiu_btn setHidden:YES];
+        [_tableScrollV setHidden:NO];
+        [self animateOptions];
+    }
+    
+    else {
+        [_psiu_btn setHidden:NO];
+        [_tableScrollV setHidden:YES];
+        [self animatePsiuButton];
+    }
+}
+
+-(void) animatePsiuButton {
     
     UIColor *cor = [UIColor colorWithRed:255/255 green:255/255 blue:255/255 alpha:0.4];
     
@@ -64,41 +87,77 @@
     
     [borderLayer addAnimation:borderAnimation forKey:@"animateBorder"];
     
+}
+
+-(void) animateOptions {
+    
+    CGRect screenBound = [[UIScreen mainScreen] bounds];
+    
+    CGRect optionsFrame = self.tableViewOptions.frame;
+    optionsFrame.origin.y = 0;
+    
+    [UIView beginAnimations:nil context:nil];
+    [UIView setAnimationDuration:0.6];
+    [UIView setAnimationDelay:0.2];
+    [UIView setAnimationCurve:UIViewAnimationCurveEaseOut];
+    
+    self.tableViewOptions.frame = optionsFrame;
+    
+    [UIView commitAnimations];
     
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    _tableViewOptions.delegate = self;
+    _tableViewOptions.dataSource = self;
     
     _appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     
-    Usuario *user = [_appDelegate mcManager].usuario_selecionado;
+    _user = [_appDelegate mcManager].usuario_selecionado;
     
     CAGradientLayer *gradient = [CAGradientLayer layer];
     gradient.frame = _gradient.bounds;
     gradient.colors = [NSArray arrayWithObjects:(id)[[UIColor blackColor] CGColor], (id)[[UIColor clearColor] CGColor], nil];
     [_gradient.layer insertSublayer:gradient atIndex:0];
     
-    _nome_idade.text = user.nome;
-    _imagem.image = user.imagem;
+    _nome_idade.text = _user.nome;
+    _imagem.image = _user.imagem;
     
-    
-
-
-
-
+    _options = @[[[Option new] setName:@"Bater Papo" cor:[UIColor redColor]],
+                 [[Option new] setName:@"Abraço e Beijo no Rosto" cor:[UIColor blueColor]],
+                 [[Option new] setName:@"Selinho" cor:[UIColor greenColor]],
+                 [[Option new] setName:@"Beijo de Lingua" cor:[UIColor blackColor]]
+                 ];
     
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return [_options count];
 }
+
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 1;
+}
+
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    PerfilTableCell *cell = [_tableViewOptions dequeueReusableCellWithIdentifier:@"optionCelula" forIndexPath:indexPath];
+
+    cell.option.text = [[_options objectAtIndex:indexPath.row] nome];
+    cell.conteudoView.backgroundColor = [[_options objectAtIndex:indexPath.row] cor];
+    return cell;
+    
+}
+
+
 - (IBAction)mandarPsiu:(UIButton *)sender {
     
-    [[[[_psiu_btn layer] sublayers] objectAtIndex:1] removeAnimationForKey:@"animateBorder"];
+    //[[[[_psiu_btn layer] sublayers] objectAtIndex:1] removeAnimationForKey:@"animateBorder"];
     
     [_psiu_btn setImage:[UIImage imageNamed:@"psiubotao_off.png"] forState:UIControlStateDisabled];
     _psiu_btn.imageView.image = [UIImage imageNamed:@"psiubotao_off.png"];
@@ -106,35 +165,24 @@
     
     Usuario *user = [_appDelegate mcManager].usuario_selecionado;
 
-    if(![[_appDelegate mcManager].usuarios_dei_psiu containsObject:user]) {
-    NSDictionary *dict = @{@"tipo": [NSNumber numberWithInt:Psiu]
-                           };
+    if (user.psiu == -1) {
+        NSDictionary *dict = @{@"tipo": [NSNumber numberWithInt:Psiu]};
+        [[_appDelegate mcManager] sendMessage:user.peer withDict:dict];
+    }
     
-    
-    bool match = [[_appDelegate mcManager] checkMatch:user];
-    
-    if(match) {
+    else {
+        
+        NSDictionary *dict = @{@"tipo": [NSNumber numberWithInt:Match]};
+        [[_appDelegate mcManager] sendMessage:user.peer withDict:dict];
         
         NSDictionary *user_dict = @{@"user_dict": user};
-        [[NSNotificationCenter defaultCenter] postNotificationName:@"MCMatch"
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"Match"
                                                             object:nil
                                                           userInfo:user_dict];
         
     }
     
-    else {
-        
-        if([_appDelegate mcManager].usuarios_dei_psiu == nil) [_appDelegate mcManager].usuarios_dei_psiu = [NSMutableArray new];
-        if([_appDelegate mcManager].usuarios_psiu == nil) [_appDelegate mcManager].usuarios_psiu = [NSMutableArray new];
-
-        [[_appDelegate mcManager].usuarios_dei_psiu addObject:user];
-        [[_appDelegate mcManager].usuarios_psiu addObject:user];
-
-    }                                   
     
-   
-    [[_appDelegate mcManager] sendMessage:user.peer withDict:dict];
-    }
 
 
 }
@@ -148,15 +196,5 @@
 
 
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

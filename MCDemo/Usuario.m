@@ -10,4 +10,11 @@
 
 @implementation Usuario
 
+-(id)init {
+    if (self = [super init])  {
+        self.psiu = -1;
+    }
+    return self;
+}
+
 @end

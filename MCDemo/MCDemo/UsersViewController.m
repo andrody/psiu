@@ -89,7 +89,7 @@
     
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(didMatch:)
-                                                 name:@"MCMatch"
+                                                 name:@"Match"
                                                object:nil];
 }
 
@@ -120,22 +120,16 @@
 
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
 
-    [_appDelegate mcManager].usuario_selecionado = [_usuarios objectAtIndex:indexPath.row];
+    if(indexPath.row < [_usuarios count]) {
     
-    if([[_appDelegate mcManager].usuarios_match containsObject:[_appDelegate mcManager].usuario_selecionado]){
+        [_appDelegate mcManager].usuario_selecionado = [_usuarios objectAtIndex:indexPath.row];
         
-        [_appDelegate mcManager].usuario_match = [_appDelegate mcManager].usuario_selecionado;
-        [self telaMatch];
-        
-    }
-    
-    else {
-    
         PerfilViewController *perfilView = [self.storyboard instantiateViewControllerWithIdentifier:@"perfilCtrl"];
     
         //[self.navigationController pushViewController: perfilView animated:YES];
         [self presentViewController:perfilView animated:YES completion:nil];
 
+        
     }
     
 }
@@ -147,13 +141,23 @@
 }
 
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-    return [_usuarios count];
+    
+    NSInteger valor = [_usuarios count];
+    if(valor < 6) return 6;
+    return valor;
 }
 
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
 
     Cell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"celula" forIndexPath:indexPath];
+    NSInteger valor = [_usuarios count];
     
+    if(indexPath.row >= valor) {
+        cell.foto.image = nil;
+        cell.foto.alpha = 0.2;
+        return cell;
+    }
+    cell.foto.alpha = 1.0;
     Usuario *user = [_usuarios objectAtIndex:indexPath.row];
     cell.foto.image = user.imagem;
     /*cell.foto.layer.cornerRadius = 5.0;
@@ -229,7 +233,7 @@
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     _documentsDirectory = [[NSString alloc] initWithString:[paths objectAtIndex:0]];
     
-    NSString *file1Path = [_documentsDirectory stringByAppendingPathComponent:@"kate2.jpg"];
+    NSString *file1Path = [_documentsDirectory stringByAppendingPathComponent:@"Avatar-blank.jpg"];
     
     
     NSFileManager *fileManager = [NSFileManager defaultManager];
@@ -237,7 +241,7 @@
     
     
     if (![fileManager fileExistsAtPath:file1Path]) {
-        [fileManager copyItemAtPath:[[NSBundle mainBundle] pathForResource:@"kate2" ofType:@"jpg"]
+        [fileManager copyItemAtPath:[[NSBundle mainBundle] pathForResource:@"Avatar-blank" ofType:@"jpg"]
                              toPath:file1Path
                               error:&error];
         
@@ -268,7 +272,9 @@
 
 -(void)didMatch:(NSNotification *)notification{
     
-    [_appDelegate mcManager].usuario_match = [[notification userInfo] objectForKey:@"user_dict"];
+    Usuario *user_match = [[notification userInfo] objectForKey:@"user_dict"];
+    user_match.match = YES;
+    [_appDelegate mcManager].usuario_match = user_match;
     [[_appDelegate mcManager].usuarios_match addObject:[_appDelegate mcManager].usuario_match];
     [self performSelectorOnMainThread:@selector(telaMatch) withObject:nil waitUntilDone:NO];
     
@@ -276,10 +282,15 @@
 
 -(void) telaMatch {
     
-    [_collection_dispositivos reloadData];
-    MatchViewController *matchView = [self.storyboard instantiateViewControllerWithIdentifier:@"matchCtrl"];
+    //[_collection_dispositivos reloadData];
+    //MatchViewController *matchView = [self.storyboard instantiateViewControllerWithIdentifier:@"matchCtrl"];
     
-    [self.navigationController pushViewController: matchView animated:YES];
+    //[self.navigationController pushViewController: matchView animated:YES];
+    
+    PerfilViewController *perfilView = [self.storyboard instantiateViewControllerWithIdentifier:@"perfilCtrl"];
+    
+    //[self.navigationController pushViewController: perfilView animated:YES];
+    [self presentViewController:perfilView animated:YES completion:nil];
     
 }
 

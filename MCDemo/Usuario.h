@@ -17,6 +17,8 @@
 @property MCPeerID *peer;
 @property NSString *nome;
 @property NSString *idade;
-
+@property NSInteger psiu;
+@property NSInteger sacanagem;
+@property BOOL match;
 
 @end

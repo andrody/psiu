@@ -35,11 +35,11 @@
                         <viewControllerLayoutGuide type="bottom" id="Qsl-lS-1Uq"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="UX9-Pj-gLk">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="xlv-KI-zUK">
-                                <rect key="frame" x="16" y="19" width="288" height="29"/>
+                                <rect key="frame" x="16" y="16" width="288" height="29"/>
                                 <segments>
                                     <segment title="Todos"/>
                                     <segment title="Match"/>
@@ -47,29 +47,31 @@
                                 <color key="tintColor" red="0.91747553660000003" green="0.26333286769999997" blue="0.33151669550000001" alpha="1" colorSpace="calibratedRGB"/>
                             </segmentedControl>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="tJR-eN-h8o">
-                                <rect key="frame" x="0.0" y="58" width="320" height="324"/>
+                                <rect key="frame" x="10" y="61" width="300" height="446"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="NrW-tl-glB">
-                                    <size key="itemSize" width="160" height="160"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="0.0" id="NrW-tl-glB">
+                                    <size key="itemSize" width="145" height="145"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="celula" id="Ls8-OK-Aks" customClass="Cell">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" reuseIdentifier="celula" id="Ls8-OK-Aks" customClass="Cell">
                                         <rect key="frame" x="0.0" y="0.0" width="152" height="159"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="160" height="160"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="145" height="145"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView autoresizesSubviews="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="kate.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="d7I-Ke-95Y">
-                                                    <rect key="frame" x="15" y="10" width="140" height="140"/>
+                                                <imageView autoresizesSubviews="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="d7I-Ke-95Y">
+                                                    <rect key="frame" x="0.0" y="0.0" width="145" height="145"/>
+                                                    <color key="backgroundColor" red="0.91747553660000003" green="0.26333286769999997" blue="0.33151669550000001" alpha="1" colorSpace="calibratedRGB"/>
                                                 </imageView>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
-                                        <size key="customSize" width="160" height="160"/>
+                                        <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="0.0"/>
+                                        <size key="customSize" width="145" height="145"/>
                                         <connections>
                                             <outlet property="foto" destination="d7I-Ke-95Y" id="NrM-TT-CrO"/>
                                         </connections>
@@ -87,6 +89,7 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="collection_dispositivos" destination="tJR-eN-h8o" id="koH-AP-bi7"/>
                     </connections>
@@ -290,6 +293,98 @@
                                     <action selector="mandarPsiu:" destination="acc-4E-K4v" eventType="touchUpInside" id="aZS-4j-5sA"/>
                                 </connections>
                             </button>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vLX-83-Z3u">
+                                <rect key="frame" x="0.0" y="329" width="320" height="240"/>
+                                <subviews>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="gJI-1M-T4i">
+                                        <rect key="frame" x="0.0" y="240" width="320" height="240"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <prototypes>
+                                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="optionCelula" id="s9W-Xd-AnN" customClass="PerfilTableCell">
+                                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="s9W-Xd-AnN" id="gRf-t6-6BQ">
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Bater Papo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H7l-x8-5Jj">
+                                                            <rect key="frame" x="8" y="19" width="304" height="21"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" red="1" green="0.2918668431" blue="0.36225188850000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                </tableViewCellContentView>
+                                                <connections>
+                                                    <outlet property="conteudoView" destination="gRf-t6-6BQ" id="HLF-ND-3DV"/>
+                                                    <outlet property="option" destination="H7l-x8-5Jj" id="ER2-8U-cbE"/>
+                                                </connections>
+                                            </tableViewCell>
+                                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="cXy-TJ-cI1" customClass="PerfilTableCell">
+                                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cXy-TJ-cI1" id="6Bn-jq-NK5">
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Bater Papo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4u1-3e-zxA">
+                                                            <rect key="frame" x="8" y="19" width="304" height="21"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" red="1" green="0.2918668431" blue="0.36225188850000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                </tableViewCellContentView>
+                                                <connections>
+                                                    <outlet property="conteudoView" destination="6Bn-jq-NK5" id="DyR-yE-j1I"/>
+                                                    <outlet property="option" destination="4u1-3e-zxA" id="YYw-EI-HFw"/>
+                                                </connections>
+                                            </tableViewCell>
+                                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="cdA-Ee-PQ2" customClass="PerfilTableCell">
+                                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cdA-Ee-PQ2" id="y20-ZO-N0K">
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Bater Papo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4cE-Rc-e1i">
+                                                            <rect key="frame" x="8" y="19" width="304" height="21"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" red="1" green="0.2918668431" blue="0.36225188850000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                </tableViewCellContentView>
+                                                <connections>
+                                                    <outlet property="conteudoView" destination="y20-ZO-N0K" id="EdQ-sh-ClA"/>
+                                                    <outlet property="option" destination="4cE-Rc-e1i" id="Loi-D9-by5"/>
+                                                </connections>
+                                            </tableViewCell>
+                                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="MNd-AJ-5xN" customClass="PerfilTableCell">
+                                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="MNd-AJ-5xN" id="dH7-qr-R9w">
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Bater Papo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jey-ND-oqJ">
+                                                            <rect key="frame" x="8" y="19" width="304" height="21"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" red="1" green="0.2918668431" blue="0.36225188850000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                </tableViewCellContentView>
+                                                <connections>
+                                                    <outlet property="conteudoView" destination="dH7-qr-R9w" id="gxn-Jy-bHb"/>
+                                                    <outlet property="option" destination="jey-ND-oqJ" id="CL3-EL-Hyw"/>
+                                                </connections>
+                                            </tableViewCell>
+                                        </prototypes>
+                                        <sections/>
+                                    </tableView>
+                                </subviews>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -306,6 +401,8 @@
                         <outlet property="imagem" destination="30g-uQ-RLb" id="OnA-MB-2xI"/>
                         <outlet property="nome_idade" destination="bZb-Yq-2sp" id="WHV-fw-Dr5"/>
                         <outlet property="psiu_btn" destination="FQt-92-MPT" id="4FX-lh-689"/>
+                        <outlet property="tableScrollV" destination="vLX-83-Z3u" id="Wrd-1c-u4G"/>
+                        <outlet property="tableViewOptions" destination="gJI-1M-T4i" id="dtq-1n-saN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oJ6-fX-9dx" userLabel="First Responder" sceneMemberID="firstResponder"/>

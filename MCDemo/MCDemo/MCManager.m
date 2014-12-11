@@ -22,6 +22,7 @@
         _myUser = [Usuario new];
         _myUser.image_url = nil;
         
+        
     }
     
     
@@ -114,7 +115,7 @@
 -(void) sendFoto:(MCPeerID *)peerID {
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *documentsDirectory = [[NSString alloc] initWithString:[paths objectAtIndex:0]];
-    NSString *filePath = [documentsDirectory stringByAppendingPathComponent:@"kate2.jpg"];
+    NSString *filePath = [documentsDirectory stringByAppendingPathComponent:@"Avatar-blank.jpg"];
     NSString *modifiedName = [NSString stringWithFormat:@"%@,%@", _myUser.nome, _myUser.idade];
     
     
@@ -213,44 +214,32 @@
                            @"peerID": peerID
                            };
     NSDictionary *dictionary = [NSKeyedUnarchiver unarchiveObjectWithData:data];
+    NSInteger tipoMsg = [dictionary[@"tipo"] integerValue];
     
-    if([dictionary[@"tipo"] integerValue] == Psiu) {
-        
-        bool match = false;
-        if(_usuarios_psiu == nil) _usuarios_psiu = [NSMutableArray new];
-        
-        Usuario *user;
-        for(Usuario *u in _usuarios_psiu){
-            if ([u.peer isEqual:peerID]){
-                match = true;
-                break;
-            }
+    Usuario *user;
+    for(Usuario *u in _usuarios){
+        if ([u.peer isEqual:peerID]){
+            user = u;
+            break;
         }
-        
-        for(Usuario *u in _usuarios){
-            if ([u.peer isEqual:peerID]){
-                user = u;
-                break;
-            }
-        }
-        
-        if(match == false) {
-            
-            [_usuarios_psiu addObject:user];
-            [self playPsiu];
-            
-        }
-        else {
-            
-            NSDictionary *user_dict = @{@"user_dict": user};
-            [[NSNotificationCenter defaultCenter] postNotificationName:@"MCMatch"
-                                                                object:nil
-                                                              userInfo:user_dict];
-            
-        }
-        
+    }
+    
+    if(tipoMsg == Psiu) {
+    
+        user.psiu = Psiu;
+        [self playPsiu];
         
     }
+    
+    else if (tipoMsg == Match) {
+        
+        NSDictionary *user_dict = @{@"user_dict": user};
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"Match"
+                                                            object:nil
+                                                          userInfo:user_dict];
+        
+    }
+    
     else {
         
         [[NSNotificationCenter defaultCenter] postNotificationName:@"MCDidReceiveDataNotification"
@@ -261,7 +250,7 @@
 
 -(void) playPsiu {
     
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"psiu" ofType:@"wav"];
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"psiuSE" ofType:@"wav"];
     
     NSURL *fileURL = [[NSURL alloc] initFileURLWithPath: path];
     

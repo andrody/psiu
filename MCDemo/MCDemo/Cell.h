@@ -13,4 +13,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *foto;
 
 
+
+
+
 @end
