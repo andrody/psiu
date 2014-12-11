@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="QVq-nA-GRk">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="QVq-nA-GRk">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
@@ -10,79 +10,90 @@
             <objects>
                 <navigationController id="QVq-nA-GRk" sceneMemberID="viewController">
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="yiy-9p-gfb">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" translucent="NO" id="yiy-9p-gfb">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="0.91747553661616166" green="0.26333286765591568" blue="0.3315166955037539" alpha="1" colorSpace="calibratedRGB"/>
                         <textAttributes key="titleTextAttributes">
-                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="textColor" red="0.98251348810951777" green="1" blue="0.9706862232886162" alpha="1" colorSpace="calibratedRGB"/>
                         </textAttributes>
                     </navigationBar>
                     <connections>
-                        <segue destination="J1W-Fs-LPv" kind="relationship" relationship="rootViewController" id="nim-tL-POf"/>
+                        <segue destination="5GN-aV-agS" kind="relationship" relationship="rootViewController" id="Xwy-AQ-WfR"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s0H-fc-DfL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-318" y="180"/>
         </scene>
-        <!--Pessoas locais-->
-        <scene sceneID="Ml1-qO-8VR">
+        <!--Pessoas Locais-->
+        <scene sceneID="QQ3-FQ-WRp">
             <objects>
-                <collectionViewController storyboardIdentifier="UsersViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="J1W-Fs-LPv" customClass="UsersViewController" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="iIT-gf-Fe5">
+                <viewController id="5GN-aV-agS" customClass="UsersViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="d8T-Cp-hQi"/>
+                        <viewControllerLayoutGuide type="bottom" id="Qsl-lS-1Uq"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="UX9-Pj-gLk">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="o9e-v8-KEo">
-                            <size key="itemSize" width="160" height="160"/>
-                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                        </collectionViewFlowLayout>
-                        <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="celula" id="Ls8-OK-Aks" customClass="Cell">
-                                <rect key="frame" x="0.0" y="0.0" width="152" height="159"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="160" height="160"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="d7I-Ke-95Y">
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="xlv-KI-zUK">
+                                <rect key="frame" x="16" y="19" width="288" height="29"/>
+                                <segments>
+                                    <segment title="Todos"/>
+                                    <segment title="Match"/>
+                                </segments>
+                                <color key="tintColor" red="0.91747553660000003" green="0.26333286769999997" blue="0.33151669550000001" alpha="1" colorSpace="calibratedRGB"/>
+                            </segmentedControl>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="tJR-eN-h8o">
+                                <rect key="frame" x="0.0" y="58" width="320" height="324"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="NrW-tl-glB">
+                                    <size key="itemSize" width="160" height="160"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="celula" id="Ls8-OK-Aks" customClass="Cell">
+                                        <rect key="frame" x="0.0" y="0.0" width="152" height="159"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="160" height="160"/>
-                                        </imageView>
-                                    </subviews>
-                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                </view>
-                                <size key="customSize" width="160" height="160"/>
-                                <connections>
-                                    <outlet property="foto" destination="d7I-Ke-95Y" id="NrM-TT-CrO"/>
-                                </connections>
-                            </collectionViewCell>
-                        </cells>
-                        <connections>
-                            <outlet property="dataSource" destination="J1W-Fs-LPv" id="JyR-BB-LXh"/>
-                            <outlet property="delegate" destination="J1W-Fs-LPv" id="mOg-vA-9tt"/>
-                        </connections>
-                    </collectionView>
-                    <tabBarItem key="tabBarItem" title="Item" id="jBs-NH-fyH"/>
-                    <navigationItem key="navigationItem" title="Pessoas locais" id="rZo-hE-cYQ">
-                        <barButtonItem key="rightBarButtonItem" systemItem="compose" id="sqa-R7-rQ8">
-                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView autoresizesSubviews="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="kate.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="d7I-Ke-95Y">
+                                                    <rect key="frame" x="15" y="10" width="140" height="140"/>
+                                                </imageView>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <size key="customSize" width="160" height="160"/>
+                                        <connections>
+                                            <outlet property="foto" destination="d7I-Ke-95Y" id="NrM-TT-CrO"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Pessoas Locais" id="Ftb-fy-l5m">
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="compose" id="6Vs-it-fdT">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
-                                <segue destination="YDB-pH-7so" kind="push" id="Bpe-xR-Ril"/>
+                                <segue destination="YDB-pH-7so" kind="push" id="knm-mn-waG"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
-                        <outlet property="collection_dispositivos" destination="iIT-gf-Fe5" id="QTB-Wl-uKs"/>
-                        <segue destination="jqK-X7-GBr" kind="push" id="mAK-KB-Kz8"/>
+                        <outlet property="collection_dispositivos" destination="tJR-eN-h8o" id="koH-AP-bi7"/>
                     </connections>
-                </collectionViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Jtg-yr-rtm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hTa-8Z-QVu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="113" y="180"/>
+            <point key="canvasLocation" x="146" y="180"/>
         </scene>
         <!--Seu Perfil-->
         <scene sceneID="B7U-X7-LgN">
@@ -133,7 +144,7 @@
                         <viewControllerLayoutGuide type="bottom" id="Uom-ki-VZU"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="q2c-tp-2S8">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FED-4n-c4D">
@@ -242,22 +253,13 @@
                         <viewControllerLayoutGuide type="bottom" id="dZU-C7-ilm"/>
                     </layoutGuides>
                     <view key="view" autoresizesSubviews="NO" contentMode="scaleToFill" id="esd-9O-6SG">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView autoresizesSubviews="NO" opaque="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="kate.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="30g-uQ-RLb">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="485"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" red="0.97219243954211865" green="0.94548700243487882" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FQt-92-MPT">
-                                <rect key="frame" x="104" y="303" width="103" height="99"/>
-                                <state key="normal" title="Button" image="psiu-img.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="mandarPsiu:" destination="acc-4E-K4v" eventType="touchUpInside" id="aZS-4j-5sA"/>
-                                </connections>
-                            </button>
                             <view alpha="0.80000000000000004" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Q1o-VF-zND">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="66"/>
                                 <subviews>
@@ -270,8 +272,8 @@
                                             <action selector="voltar:" destination="acc-4E-K4v" eventType="touchUpInside" id="5VC-5C-IHg"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Priscila, 23" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bZb-Yq-2sp">
-                                        <rect key="frame" x="112" y="17" width="283" height="43"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Priscila, 23" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bZb-Yq-2sp">
+                                        <rect key="frame" x="8" y="15" width="304" height="43"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
@@ -279,6 +281,15 @@
                                 </subviews>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FQt-92-MPT">
+                                <rect key="frame" x="92" y="383" width="137" height="132"/>
+                                <state key="normal" title="Button" image="psiubotao.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="mandarPsiu:" destination="acc-4E-K4v" eventType="touchUpInside" id="aZS-4j-5sA"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -289,7 +300,7 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="gradient" destination="Q1o-VF-zND" id="Sdg-if-QUy"/>
                         <outlet property="imagem" destination="30g-uQ-RLb" id="OnA-MB-2xI"/>
@@ -330,7 +341,7 @@
         <image name="Avatar-blank.jpg" width="160" height="160"/>
         <image name="back_btn2.png" width="128" height="128"/>
         <image name="kate.jpg" width="1600" height="1200"/>
-        <image name="psiu-img.png" width="800" height="800"/>
+        <image name="psiubotao.png" width="286" height="286"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

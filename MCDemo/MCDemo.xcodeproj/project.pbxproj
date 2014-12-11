@@ -25,6 +25,8 @@
 		89F412CA1A2E405100C16CC0 /* Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = 89F412C91A2E405100C16CC0 /* Cell.m */; };
 		89F412D01A2E4A0D00C16CC0 /* Usuario.m in Sources */ = {isa = PBXBuildFile; fileRef = 89F412CF1A2E4A0D00C16CC0 /* Usuario.m */; };
 		89F412D21A2E4E7700C16CC0 /* kate.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 89F412D11A2E4E7700C16CC0 /* kate.jpg */; };
+		C5C2F13F1A3968EF004D9F35 /* psiubotao.png in Resources */ = {isa = PBXBuildFile; fileRef = C5C2F13E1A3968EF004D9F35 /* psiubotao.png */; };
+		C5C2F1411A396CD0004D9F35 /* psiubotao_off.png in Resources */ = {isa = PBXBuildFile; fileRef = C5C2F1401A396CD0004D9F35 /* psiubotao_off.png */; };
 		D91F126B187F1D1900F45BC3 /* sample_file1.txt in Resources */ = {isa = PBXBuildFile; fileRef = D91F1269187F1D1900F45BC3 /* sample_file1.txt */; };
 		D91F126C187F1D1900F45BC3 /* sample_file2.txt in Resources */ = {isa = PBXBuildFile; fileRef = D91F126A187F1D1900F45BC3 /* sample_file2.txt */; };
 		D9629273187BD6E600228E81 /* MCManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D9629272187BD6E600228E81 /* MCManager.m */; };
@@ -82,6 +84,8 @@
 		89F412CE1A2E4A0D00C16CC0 /* Usuario.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Usuario.h; path = ../Usuario.h; sourceTree = "<group>"; };
 		89F412CF1A2E4A0D00C16CC0 /* Usuario.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Usuario.m; path = ../Usuario.m; sourceTree = "<group>"; };
 		89F412D11A2E4E7700C16CC0 /* kate.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = kate.jpg; sourceTree = "<group>"; };
+		C5C2F13E1A3968EF004D9F35 /* psiubotao.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = psiubotao.png; path = ../../../../../Downloads/psiubotao.png; sourceTree = "<group>"; };
+		C5C2F1401A396CD0004D9F35 /* psiubotao_off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = psiubotao_off.png; path = ../../../../../Downloads/psiubotao_off.png; sourceTree = "<group>"; };
 		D91F1269187F1D1900F45BC3 /* sample_file1.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = sample_file1.txt; sourceTree = "<group>"; };
 		D91F126A187F1D1900F45BC3 /* sample_file2.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = sample_file2.txt; sourceTree = "<group>"; };
 		D9629271187BD6E600228E81 /* MCManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCManager.h; sourceTree = "<group>"; };
@@ -174,6 +178,8 @@
 		D9EA8C14187B1954008031B5 /* MCDemo */ = {
 			isa = PBXGroup;
 			children = (
+				C5C2F1401A396CD0004D9F35 /* psiubotao_off.png */,
+				C5C2F13E1A3968EF004D9F35 /* psiubotao.png */,
 				892EFF4C1A376E0C0096161D /* psiu-img.png */,
 				892EFF541A377F380096161D /* back_btn2.png */,
 				89DBCC421A3250FC00803BD7 /* psiu.wav */,
@@ -329,6 +335,7 @@
 				D91F126C187F1D1900F45BC3 /* sample_file2.txt in Resources */,
 				89B458011A2FA6340070157F /* editing-edit-icon.png in Resources */,
 				D91F126B187F1D1900F45BC3 /* sample_file1.txt in Resources */,
+				C5C2F13F1A3968EF004D9F35 /* psiubotao.png in Resources */,
 				D9EA8C2A187B1954008031B5 /* Images.xcassets in Resources */,
 				892EFF4D1A376E0C0096161D /* psiu-img.png in Resources */,
 				89F412D21A2E4E7700C16CC0 /* kate.jpg in Resources */,
@@ -336,6 +343,7 @@
 				D9EA8C19187B1954008031B5 /* InfoPlist.strings in Resources */,
 				D9EA8C22187B1954008031B5 /* Main.storyboard in Resources */,
 				89B457FD1A2F99740070157F /* kate2.jpg in Resources */,
+				C5C2F1411A396CD0004D9F35 /* psiubotao_off.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -31,12 +31,16 @@
     [_collection_dispositivos setDelegate:self];
     [_collection_dispositivos setDataSource:self];
     
-    UIColor *color =[UIColor colorWithRed:136.0/255.0 green:221.0/255.0 blue:187.0/255.0 alpha:1];
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault animated:YES];
     
-    [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName: color}];
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
     
-    [self.navigationController.navigationBar.layer setBorderWidth:2.0];// Just to make sure its working
-    [self.navigationController.navigationBar.layer setBorderColor:[color CGColor]];
+    //UIColor *color =[UIColor colorWithRed:136.0/255.0 green:221.0/255.0 blue:187.0/255.0 alpha:1];
+    
+    //[[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName: color}];
+    
+    //[self.navigationController.navigationBar.layer setBorderWidth:2.0];// Just to make sure its working
+    //[self.navigationController.navigationBar.layer setBorderColor:[color CGColor]];
 
     
     _appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
@@ -89,10 +93,6 @@
                                                object:nil];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
 -(void)browser:(MCNearbyServiceBrowser *)browser lostPeer:(MCPeerID *)peerID {
     for(Usuario *u in _usuarios){
@@ -161,7 +161,7 @@
     [cell.foto.layer setBorderWidth: 10.0f];
     cell.foto.layer.borderWidth = 10.0f;*/
     
-    cell.foto.clipsToBounds = YES;
+    /*cell.foto.clipsToBounds = YES;
     CALayer * l = [cell.foto layer];
     [l setMasksToBounds:YES];
     float f = cell.foto.frame.size.width / 2;
@@ -177,7 +177,7 @@
     
     // You can even add a border
     [l setBorderWidth:borderW];
-    [l setBorderColor:[color CGColor]];
+    [l setBorderColor:[color CGColor]];*/
     
     return cell;
 }

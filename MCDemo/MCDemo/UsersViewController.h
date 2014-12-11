@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <MultipeerConnectivity/MultipeerConnectivity.h>
 
-@interface UsersViewController : UICollectionViewController<UICollectionViewDataSource, UICollectionViewDelegate,MCNearbyServiceBrowserDelegate>
+@interface UsersViewController : UIViewController<UICollectionViewDataSource, UICollectionViewDelegate,MCNearbyServiceBrowserDelegate>
 
 @property (weak, nonatomic) IBOutlet UICollectionView *collection_dispositivos;
 @property (nonatomic, strong) MCNearbyServiceBrowser *browser;

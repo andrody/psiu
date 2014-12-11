@@ -56,13 +56,14 @@
     [[_psiu_btn layer] addSublayer:borderLayer];
     
     CABasicAnimation* borderAnimation = [CABasicAnimation animationWithKeyPath:@"borderWidth"];
-    [borderAnimation setFromValue:[NSNumber numberWithFloat:6.0f]];
-    [borderAnimation setToValue:[NSNumber numberWithFloat:1.0f]];
+    [borderAnimation setFromValue:[NSNumber numberWithFloat:14.0f]];
+    [borderAnimation setToValue:[NSNumber numberWithFloat:2.0f]];
     [borderAnimation setRepeatCount:INT16_MAX];
     [borderAnimation setAutoreverses:YES];
     [borderAnimation setDuration:0.4f];
     
     [borderLayer addAnimation:borderAnimation forKey:@"animateBorder"];
+    
     
 }
 
@@ -82,6 +83,7 @@
     _nome_idade.text = user.nome;
     _imagem.image = user.imagem;
     
+    
 
 
 
@@ -95,6 +97,13 @@
     // Dispose of any resources that can be recreated.
 }
 - (IBAction)mandarPsiu:(UIButton *)sender {
+    
+    [[[[_psiu_btn layer] sublayers] objectAtIndex:1] removeAnimationForKey:@"animateBorder"];
+    
+    [_psiu_btn setImage:[UIImage imageNamed:@"psiubotao_off.png"] forState:UIControlStateDisabled];
+    _psiu_btn.imageView.image = [UIImage imageNamed:@"psiubotao_off.png"];
+    [_psiu_btn setEnabled:NO];
+    
     Usuario *user = [_appDelegate mcManager].usuario_selecionado;
 
     if(![[_appDelegate mcManager].usuarios_dei_psiu containsObject:user]) {
