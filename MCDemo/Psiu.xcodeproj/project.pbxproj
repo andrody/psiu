@@ -49,24 +49,10 @@
 		D9EA8C1F187B1954008031B5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D9EA8C1E187B1954008031B5 /* AppDelegate.m */; };
 		D9EA8C22187B1954008031B5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9EA8C20187B1954008031B5 /* Main.storyboard */; };
 		D9EA8C2A187B1954008031B5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D9EA8C29187B1954008031B5 /* Images.xcassets */; };
-		D9EA8C31187B1955008031B5 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9EA8C30187B1955008031B5 /* XCTest.framework */; };
-		D9EA8C32187B1955008031B5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9EA8C0E187B1954008031B5 /* Foundation.framework */; };
-		D9EA8C33187B1955008031B5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9EA8C12187B1954008031B5 /* UIKit.framework */; };
-		D9EA8C3B187B1955008031B5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D9EA8C39187B1955008031B5 /* InfoPlist.strings */; };
-		D9EA8C3D187B1955008031B5 /* MCDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D9EA8C3C187B1955008031B5 /* MCDemoTests.m */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		D9EA8C34187B1955008031B5 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D9EA8C03187B1954008031B5 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = D9EA8C0A187B1954008031B5;
-			remoteInfo = MCDemo;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
+		65CBA4EF1A3B683800AF9E3E /* Psiu-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Psiu-Prefix.pch"; sourceTree = "<group>"; };
 		891E38081A32255000FFA931 /* PerfilViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PerfilViewController.h; sourceTree = "<group>"; };
 		891E38091A32255000FFA931 /* PerfilViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PerfilViewController.m; sourceTree = "<group>"; };
 		891E380B1A3241F100FFA931 /* MatchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MatchViewController.h; sourceTree = "<group>"; };
@@ -125,7 +111,6 @@
 		D9EA8C1E187B1954008031B5 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		D9EA8C21187B1954008031B5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D9EA8C29187B1954008031B5 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		D9EA8C2F187B1955008031B5 /* PsiuTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PsiuTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9EA8C30187B1955008031B5 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		D9EA8C38187B1955008031B5 /* PsiuTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PsiuTests-Info.plist"; sourceTree = "<group>"; };
 		D9EA8C3A187B1955008031B5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -143,16 +128,6 @@
 				D9EA8C11187B1954008031B5 /* CoreGraphics.framework in Frameworks */,
 				D9EA8C13187B1954008031B5 /* UIKit.framework in Frameworks */,
 				D9EA8C0F187B1954008031B5 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D9EA8C2C187B1955008031B5 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				D9EA8C31187B1955008031B5 /* XCTest.framework in Frameworks */,
-				D9EA8C33187B1955008031B5 /* UIKit.framework in Frameworks */,
-				D9EA8C32187B1955008031B5 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -185,7 +160,6 @@
 			isa = PBXGroup;
 			children = (
 				D9EA8C0B187B1954008031B5 /* Psiu.app */,
-				D9EA8C2F187B1955008031B5 /* PsiuTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -248,6 +222,7 @@
 				89F412C91A2E405100C16CC0 /* Cell.m */,
 				C5D3D9041A3A150E005C1DE1 /* PerfilTableCell.h */,
 				C5D3D9051A3A150E005C1DE1 /* PerfilTableCell.m */,
+				65CBA4EF1A3B683800AF9E3E /* Psiu-Prefix.pch */,
 				D9EA8C29187B1954008031B5 /* Images.xcassets */,
 				D9EA8C15187B1954008031B5 /* Supporting Files */,
 			);
@@ -304,24 +279,6 @@
 			productReference = D9EA8C0B187B1954008031B5 /* Psiu.app */;
 			productType = "com.apple.product-type.application";
 		};
-		D9EA8C2E187B1955008031B5 /* PsiuTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = D9EA8C43187B1955008031B5 /* Build configuration list for PBXNativeTarget "PsiuTests" */;
-			buildPhases = (
-				D9EA8C2B187B1955008031B5 /* Sources */,
-				D9EA8C2C187B1955008031B5 /* Frameworks */,
-				D9EA8C2D187B1955008031B5 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				D9EA8C35187B1955008031B5 /* PBXTargetDependency */,
-			);
-			name = PsiuTests;
-			productName = MCDemoTests;
-			productReference = D9EA8C2F187B1955008031B5 /* PsiuTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -333,9 +290,6 @@
 				TargetAttributes = {
 					D9EA8C0A187B1954008031B5 = {
 						DevelopmentTeam = CC953577YZ;
-					};
-					D9EA8C2E187B1955008031B5 = {
-						TestTargetID = D9EA8C0A187B1954008031B5;
 					};
 				};
 			};
@@ -353,7 +307,6 @@
 			projectRoot = "";
 			targets = (
 				D9EA8C0A187B1954008031B5 /* Psiu */,
-				D9EA8C2E187B1955008031B5 /* PsiuTests */,
 			);
 		};
 /* End PBXProject section */
@@ -388,14 +341,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D9EA8C2D187B1955008031B5 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				D9EA8C3B187B1955008031B5 /* InfoPlist.strings in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -420,23 +365,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D9EA8C2B187B1955008031B5 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				D9EA8C3D187B1955008031B5 /* MCDemoTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		D9EA8C35187B1955008031B5 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = D9EA8C0A187B1954008031B5 /* Psiu */;
-			targetProxy = D9EA8C34187B1955008031B5 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		D9EA8C17187B1954008031B5 /* InfoPlist.strings */ = {
@@ -570,46 +499,6 @@
 			};
 			name = Release;
 		};
-		D9EA8C44187B1955008031B5 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/MCDemo.app/MCDemo";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "MCDemo/MCDemo-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "MCDemoTests/PsiuTests-Info.plist";
-				PRODUCT_NAME = PsiuTests;
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Debug;
-		};
-		D9EA8C45187B1955008031B5 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/MCDemo.app/MCDemo";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "MCDemo/MCDemo-Prefix.pch";
-				INFOPLIST_FILE = "MCDemoTests/PsiuTests-Info.plist";
-				PRODUCT_NAME = PsiuTests;
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -627,15 +516,6 @@
 			buildConfigurations = (
 				D9EA8C41187B1955008031B5 /* Debug */,
 				D9EA8C42187B1955008031B5 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		D9EA8C43187B1955008031B5 /* Build configuration list for PBXNativeTarget "PsiuTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				D9EA8C44187B1955008031B5 /* Debug */,
-				D9EA8C45187B1955008031B5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
