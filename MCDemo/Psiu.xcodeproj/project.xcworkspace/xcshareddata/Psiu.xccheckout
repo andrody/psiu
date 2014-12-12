@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>295381F8-2109-476E-9948-8B19B3975E91</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Psiu</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>95409CEF9E163F80B91554DF0B8041168590F3DA</key>
+		<string>https://github.com/andrody/psiu.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>MCDemo/Psiu.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>95409CEF9E163F80B91554DF0B8041168590F3DA</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/andrody/psiu.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>95409CEF9E163F80B91554DF0B8041168590F3DA</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>95409CEF9E163F80B91554DF0B8041168590F3DA</string>
+			<key>IDESourceControlWCCName</key>
+			<string>psiu</string>
+		</dict>
+	</array>
+</dict>
+</plist>

@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "D9EA8C0A187B1954008031B5"
-               BuildableName = "MCDemo.app"
-               BlueprintName = "MCDemo"
-               ReferencedContainer = "container:MCDemo.xcodeproj">
+               BuildableName = "Psiu.app"
+               BlueprintName = "Psiu"
+               ReferencedContainer = "container:Psiu.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -29,9 +29,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "D9EA8C2E187B1955008031B5"
-               BuildableName = "MCDemoTests.xctest"
-               BlueprintName = "MCDemoTests"
-               ReferencedContainer = "container:MCDemo.xcodeproj">
+               BuildableName = "PsiuTests.xctest"
+               BlueprintName = "PsiuTests"
+               ReferencedContainer = "container:Psiu.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -47,9 +47,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "D9EA8C2E187B1955008031B5"
-               BuildableName = "MCDemoTests.xctest"
-               BlueprintName = "MCDemoTests"
-               ReferencedContainer = "container:MCDemo.xcodeproj">
+               BuildableName = "PsiuTests.xctest"
+               BlueprintName = "PsiuTests"
+               ReferencedContainer = "container:Psiu.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -57,9 +57,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "D9EA8C0A187B1954008031B5"
-            BuildableName = "MCDemo.app"
-            BlueprintName = "MCDemo"
-            ReferencedContainer = "container:MCDemo.xcodeproj">
+            BuildableName = "Psiu.app"
+            BlueprintName = "Psiu"
+            ReferencedContainer = "container:Psiu.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -76,9 +76,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "D9EA8C0A187B1954008031B5"
-            BuildableName = "MCDemo.app"
-            BlueprintName = "MCDemo"
-            ReferencedContainer = "container:MCDemo.xcodeproj">
+            BuildableName = "Psiu.app"
+            BlueprintName = "Psiu"
+            ReferencedContainer = "container:Psiu.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -94,9 +94,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "D9EA8C0A187B1954008031B5"
-            BuildableName = "MCDemo.app"
-            BlueprintName = "MCDemo"
-            ReferencedContainer = "container:MCDemo.xcodeproj">
+            BuildableName = "Psiu.app"
+            BlueprintName = "Psiu"
+            ReferencedContainer = "container:Psiu.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
