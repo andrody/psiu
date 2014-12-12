@@ -45,7 +45,7 @@
     
     [super viewDidAppear:YES];
     
-    if (_user.match == YES) {
+    if (_user.match == YES && self.user.sacanagem_ja_escolhida == NO) {
         [_tableScrollV setHidden:NO];
         [self animateOptions];
     }
@@ -95,6 +95,24 @@
     
     CGRect optionsFrame = self.tableViewOptions.frame;
     optionsFrame.origin.y = 0;
+    
+    [UIView beginAnimations:nil context:nil];
+    [UIView setAnimationDuration:0.6];
+    [UIView setAnimationDelay:0.2];
+    [UIView setAnimationCurve:UIViewAnimationCurveEaseOut];
+    
+    self.tableViewOptions.frame = optionsFrame;
+    
+    [UIView commitAnimations];
+    
+}
+
+-(void) hideOptions {
+    
+    //CGRect screenBound = [[UIScreen mainScreen] bounds];
+    
+    CGRect optionsFrame = self.tableViewOptions.frame;
+    optionsFrame.origin.y = 240;
     
     [UIView beginAnimations:nil context:nil];
     [UIView setAnimationDuration:0.6];
@@ -200,6 +218,7 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
     if(self.user.sacanagem_ja_escolhida != YES) {
+        [self hideOptions];
         self.user.sacanagem_ja_escolhida = YES;
         if(self.user.sacanagem == -1) {
             self.user.sacanagem = indexPath.row;
@@ -219,6 +238,7 @@
             NSDictionary *dict = @{@"tipo": [NSNumber numberWithInt:SacanagemFinal],@"sacanagemFinal":[NSNumber numberWithInt:self.user.sacanagem]};
             [[_appDelegate mcManager] sendMessage:self.user.peer withDict:dict];
             
+            self.user.sacanagem_final_escolhida = YES;
             
             [[NSNotificationCenter defaultCenter] postNotificationName:@"MostrarGif"
                                                                 object:nil

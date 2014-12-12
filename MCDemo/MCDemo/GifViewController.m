@@ -27,7 +27,7 @@
     _appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     self.user = [self.appDelegate mcManager].usuario_selecionado;
     
-    self.gifs = @[@"sacanagem_batepapo", @"sacanagem_abraco", @"sacanagem_selinho", @"sacanagem_lingua"];
+    self.gifs = @[@"sacanagem_selinho", @"sacanagem_selinho", @"sacanagem_selinho", @"sacanagem_selinho"];
     self.labels = @[@"label_batepapo.png", @"label_abraco.png", @"label_selinho.png", @"label_lingua.png"];
 
     NSString *label = [self.labels objectAtIndex:self.user.sacanagem];

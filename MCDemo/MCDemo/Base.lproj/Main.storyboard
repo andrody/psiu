@@ -20,6 +20,7 @@
                     </navigationBar>
                     <connections>
                         <segue destination="5GN-aV-agS" kind="relationship" relationship="rootViewController" id="Xwy-AQ-WfR"/>
+                        <segue destination="acc-4E-K4v" kind="push" id="toA-Vb-dcu"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s0H-fc-DfL" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -147,27 +148,15 @@
                         <viewControllerLayoutGuide type="bottom" id="dZU-C7-ilm"/>
                     </layoutGuides>
                     <view key="view" autoresizesSubviews="NO" contentMode="scaleToFill" id="esd-9O-6SG">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView autoresizesSubviews="NO" opaque="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="kate.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="30g-uQ-RLb">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                                 <color key="backgroundColor" red="0.97219243954211865" green="0.94548700243487882" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </imageView>
-                            <view alpha="0.80000000000000004" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Q1o-VF-zND">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="90"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Priscila, 23" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bZb-Yq-2sp">
-                                        <rect key="frame" x="8" y="27" width="304" height="43"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FQt-92-MPT">
-                                <rect key="frame" x="92" y="383" width="137" height="132"/>
+                                <rect key="frame" x="92" y="329" width="137" height="132"/>
                                 <state key="normal" title="Button" image="psiubotao.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -176,7 +165,7 @@
                                 </connections>
                             </button>
                             <scrollView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vLX-83-Z3u">
-                                <rect key="frame" x="0.0" y="329" width="320" height="240"/>
+                                <rect key="frame" x="0.0" y="265" width="320" height="240"/>
                                 <subviews>
                                     <tableView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="gJI-1M-T4i">
                                         <rect key="frame" x="0.0" y="240" width="320" height="240"/>
@@ -269,33 +258,13 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </scrollView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sm9-OR-PU6">
-                                <rect key="frame" x="-3" y="20" width="80" height="56"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <color key="tintColor" red="0.91747553660000003" green="0.26333286769999997" blue="0.33151669550000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <inset key="contentEdgeInsets" minX="16" minY="6" maxX="20" maxY="6"/>
-                                <state key="normal" title="Button" image="backarrow_white.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="voltar:" destination="acc-4E-K4v" eventType="touchUpInside" id="PqV-bZ-VHb"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Perfil" id="SEp-3B-w61">
-                        <barButtonItem key="rightBarButtonItem" title="Psiu" id="pda-2U-r2c">
-                            <connections>
-                                <action selector="mandarPsiu:" destination="acc-4E-K4v" id="xvE-CQ-N9m"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Perfil" id="SEp-3B-w61"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
-                        <outlet property="gradient" destination="Q1o-VF-zND" id="Sdg-if-QUy"/>
                         <outlet property="imagem" destination="30g-uQ-RLb" id="OnA-MB-2xI"/>
-                        <outlet property="nome_idade" destination="bZb-Yq-2sp" id="WHV-fw-Dr5"/>
                         <outlet property="psiu_btn" destination="FQt-92-MPT" id="4FX-lh-689"/>
                         <outlet property="tableScrollV" destination="vLX-83-Z3u" id="Wrd-1c-u4G"/>
                         <outlet property="tableViewOptions" destination="gJI-1M-T4i" id="dtq-1n-saN"/>
@@ -320,9 +289,6 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Z3b-4B-QUY" customClass="FLAnimatedImageView">
                                 <rect key="frame" x="-28" y="251" width="320" height="242"/>
                             </imageView>
-                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JLK-rO-Ahd">
-                                <rect key="frame" x="-6" y="135" width="343" height="134"/>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xWe-pS-8fh">
                                 <rect key="frame" x="-6" y="27" width="80" height="56"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -335,6 +301,9 @@
                                     <action selector="back:" destination="hw7-Ym-7mw" eventType="touchUpInside" id="U3t-6i-rUe"/>
                                 </connections>
                             </button>
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JLK-rO-Ahd">
+                                <rect key="frame" x="-25" y="79" width="371" height="176"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -352,7 +321,6 @@
     <resources>
         <image name="Avatar-blank.jpg" width="160" height="160"/>
         <image name="backarrow_red2.png" width="128" height="128"/>
-        <image name="backarrow_white.png" width="128" height="128"/>
         <image name="kate.jpg" width="1600" height="1200"/>
         <image name="psiubotao.png" width="286" height="286"/>
     </resources>

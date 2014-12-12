@@ -254,6 +254,7 @@
     else if (tipoMsg == SacanagemFinal) {
         NSInteger sacanagemFinal = [dictionary[@"sacanagemFinal"] integerValue];
         user.sacanagem = sacanagemFinal;
+        user.sacanagem_final_escolhida = YES;
         
         _usuario_selecionado = user;
         [[NSNotificationCenter defaultCenter] postNotificationName:@"MostrarGif"

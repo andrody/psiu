@@ -21,6 +21,8 @@
 @property NSInteger sacanagem;
 @property BOOL match;
 @property BOOL sacanagem_ja_escolhida;
+@property BOOL sacanagem_final_escolhida;
+
 
 
 @end

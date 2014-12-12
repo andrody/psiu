@@ -132,16 +132,18 @@
     
         [_appDelegate mcManager].usuario_selecionado = [_usuarios objectAtIndex:indexPath.row];
         
-        UIViewController *view;
-        if([_appDelegate mcManager].usuario_selecionado.sacanagem_ja_escolhida){
-            view= [self.storyboard instantiateViewControllerWithIdentifier:@"gifCtrl"];
+        if([_appDelegate mcManager].usuario_selecionado.sacanagem_final_escolhida){
+            GifViewController *gifView= [self.storyboard instantiateViewControllerWithIdentifier:@"gifCtrl"];
+            [self presentViewController:gifView animated:YES completion:nil];
+
         }
         
         else {
-            view = [self.storyboard instantiateViewControllerWithIdentifier:@"perfilCtrl"];
+            _perfilView = [self.storyboard instantiateViewControllerWithIdentifier:@"perfilCtrl"];
+            [self.navigationController pushViewController:_perfilView animated:YES];
+
         }
         
-        [self presentViewController:view animated:YES completion:nil];
         
     }
     
@@ -300,13 +302,14 @@
     //MatchViewController *matchView = [self.storyboard instantiateViewControllerWithIdentifier:@"matchCtrl"];
     
     //[self.navigationController pushViewController: matchView animated:YES];
-    
-    if(_perfilView == nil) {
+    [self.navigationController popToRootViewControllerAnimated:YES];
+
+    //if(_perfilView == nil) {
         _perfilView = [self.storyboard instantiateViewControllerWithIdentifier:@"perfilCtrl"];
 
-        //[self.navigationController pushViewController: perfilView animated:YES];
-        [self presentViewController:_perfilView animated:YES completion:nil];
-    }
+        [self.navigationController pushViewController: _perfilView animated:YES];
+        //[self presentViewController:_perfilView animated:YES completion:nil];
+    //}
 }
 
 -(void) telaGif {
@@ -314,14 +317,11 @@
 }
 
 -(void) mostrarGif {
-    if(_perfilView != nil) {
-        
-        [self.perfilView dismissViewControllerAnimated:YES completion:nil];
-        
-    }
+    
     
     GifViewController *gifView = [self.storyboard instantiateViewControllerWithIdentifier:@"gifCtrl"];
     [self presentViewController:gifView animated:YES completion:nil];
+    
     
     
     
