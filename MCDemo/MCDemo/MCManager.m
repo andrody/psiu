@@ -237,7 +237,7 @@
         
         [self playPsiu];
         AudioServicesPlayAlertSound(kSystemSoundID_Vibrate);
-        _usuario_selecionado = user;
+        //_usuario_selecionado = user;
         NSDictionary *user_dict = @{@"user_dict": user};
         [[NSNotificationCenter defaultCenter] postNotificationName:@"Match"
                                                             object:nil
@@ -256,7 +256,7 @@
         user.sacanagem = sacanagemFinal;
         user.sacanagem_final_escolhida = YES;
         
-        _usuario_selecionado = user;
+        //_usuario_selecionado = user;
         [[NSNotificationCenter defaultCenter] postNotificationName:@"MostrarGif"
                                                             object:nil
                                                           userInfo:dict];
