@@ -26,8 +26,6 @@
 		89F412D21A2E4E7700C16CC0 /* kate.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 89F412D11A2E4E7700C16CC0 /* kate.jpg */; };
 		C5D3D9061A3A150E005C1DE1 /* PerfilTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C5D3D9051A3A150E005C1DE1 /* PerfilTableCell.m */; };
 		C5D3D9091A3A19EE005C1DE1 /* Option.m in Sources */ = {isa = PBXBuildFile; fileRef = C5D3D9081A3A19EE005C1DE1 /* Option.m */; };
-		C5D3D90F1A3A6ACF005C1DE1 /* FLAnimatedImage.m in Sources */ = {isa = PBXBuildFile; fileRef = C5D3D90C1A3A6ACF005C1DE1 /* FLAnimatedImage.m */; };
-		C5D3D9101A3A6ACF005C1DE1 /* FLAnimatedImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5D3D90E1A3A6ACF005C1DE1 /* FLAnimatedImageView.m */; };
 		C5D3D9131A3A6B10005C1DE1 /* GifViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C5D3D9121A3A6B10005C1DE1 /* GifViewController.m */; };
 		C5D3D92C1A3B5FD0005C1DE1 /* label_abraco.png in Resources */ = {isa = PBXBuildFile; fileRef = C5D3D9281A3B5FD0005C1DE1 /* label_abraco.png */; };
 		C5D3D92D1A3B5FD0005C1DE1 /* label_batepapo.png in Resources */ = {isa = PBXBuildFile; fileRef = C5D3D9291A3B5FD0005C1DE1 /* label_batepapo.png */; };
@@ -40,6 +38,8 @@
 		C5D3D93A1A3B604E005C1DE1 /* backarrow_white.png in Resources */ = {isa = PBXBuildFile; fileRef = C5D3D9371A3B604E005C1DE1 /* backarrow_white.png */; };
 		C5D3D93B1A3B604E005C1DE1 /* backarrow.png in Resources */ = {isa = PBXBuildFile; fileRef = C5D3D9381A3B604E005C1DE1 /* backarrow.png */; };
 		C5D3D93D1A3B6069005C1DE1 /* sacanagem_selinho.gif in Resources */ = {isa = PBXBuildFile; fileRef = C5D3D93C1A3B6069005C1DE1 /* sacanagem_selinho.gif */; };
+		C5D3D9421A3B6100005C1DE1 /* FLAnimatedImage.m in Sources */ = {isa = PBXBuildFile; fileRef = C5D3D93F1A3B6100005C1DE1 /* FLAnimatedImage.m */; };
+		C5D3D9431A3B6100005C1DE1 /* FLAnimatedImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5D3D9411A3B6100005C1DE1 /* FLAnimatedImageView.m */; };
 		D9629273187BD6E600228E81 /* MCManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D9629272187BD6E600228E81 /* MCManager.m */; };
 		D9EA8C0F187B1954008031B5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9EA8C0E187B1954008031B5 /* Foundation.framework */; };
 		D9EA8C11187B1954008031B5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9EA8C10187B1954008031B5 /* CoreGraphics.framework */; };
@@ -94,10 +94,6 @@
 		C5D3D9051A3A150E005C1DE1 /* PerfilTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PerfilTableCell.m; sourceTree = "<group>"; };
 		C5D3D9071A3A19EE005C1DE1 /* Option.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Option.h; sourceTree = "<group>"; };
 		C5D3D9081A3A19EE005C1DE1 /* Option.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Option.m; sourceTree = "<group>"; };
-		C5D3D90B1A3A6ACF005C1DE1 /* FLAnimatedImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FLAnimatedImage.h; path = "../../../../Downloads/FLAnimatedImage-master/FLAnimatedImageDemo/FLAnimatedImage/FLAnimatedImage.h"; sourceTree = "<group>"; };
-		C5D3D90C1A3A6ACF005C1DE1 /* FLAnimatedImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FLAnimatedImage.m; path = "../../../../Downloads/FLAnimatedImage-master/FLAnimatedImageDemo/FLAnimatedImage/FLAnimatedImage.m"; sourceTree = "<group>"; };
-		C5D3D90D1A3A6ACF005C1DE1 /* FLAnimatedImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FLAnimatedImageView.h; path = "../../../../Downloads/FLAnimatedImage-master/FLAnimatedImageDemo/FLAnimatedImage/FLAnimatedImageView.h"; sourceTree = "<group>"; };
-		C5D3D90E1A3A6ACF005C1DE1 /* FLAnimatedImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FLAnimatedImageView.m; path = "../../../../Downloads/FLAnimatedImage-master/FLAnimatedImageDemo/FLAnimatedImage/FLAnimatedImageView.m"; sourceTree = "<group>"; };
 		C5D3D9111A3A6B10005C1DE1 /* GifViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GifViewController.h; sourceTree = "<group>"; };
 		C5D3D9121A3A6B10005C1DE1 /* GifViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GifViewController.m; sourceTree = "<group>"; };
 		C5D3D9281A3B5FD0005C1DE1 /* label_abraco.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = label_abraco.png; sourceTree = "<group>"; };
@@ -111,6 +107,10 @@
 		C5D3D9371A3B604E005C1DE1 /* backarrow_white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backarrow_white.png; sourceTree = "<group>"; };
 		C5D3D9381A3B604E005C1DE1 /* backarrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backarrow.png; sourceTree = "<group>"; };
 		C5D3D93C1A3B6069005C1DE1 /* sacanagem_selinho.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = sacanagem_selinho.gif; sourceTree = "<group>"; };
+		C5D3D93E1A3B6100005C1DE1 /* FLAnimatedImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLAnimatedImage.h; sourceTree = "<group>"; };
+		C5D3D93F1A3B6100005C1DE1 /* FLAnimatedImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLAnimatedImage.m; sourceTree = "<group>"; };
+		C5D3D9401A3B6100005C1DE1 /* FLAnimatedImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLAnimatedImageView.h; sourceTree = "<group>"; };
+		C5D3D9411A3B6100005C1DE1 /* FLAnimatedImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLAnimatedImageView.m; sourceTree = "<group>"; };
 		D9629271187BD6E600228E81 /* MCManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCManager.h; sourceTree = "<group>"; };
 		D9629272187BD6E600228E81 /* MCManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCManager.m; sourceTree = "<group>"; };
 		D9EA8C0B187B1954008031B5 /* Psiu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Psiu.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -162,10 +162,10 @@
 		C5D3D90A1A3A69EC005C1DE1 /* Library */ = {
 			isa = PBXGroup;
 			children = (
-				C5D3D90B1A3A6ACF005C1DE1 /* FLAnimatedImage.h */,
-				C5D3D90C1A3A6ACF005C1DE1 /* FLAnimatedImage.m */,
-				C5D3D90D1A3A6ACF005C1DE1 /* FLAnimatedImageView.h */,
-				C5D3D90E1A3A6ACF005C1DE1 /* FLAnimatedImageView.m */,
+				C5D3D93E1A3B6100005C1DE1 /* FLAnimatedImage.h */,
+				C5D3D93F1A3B6100005C1DE1 /* FLAnimatedImage.m */,
+				C5D3D9401A3B6100005C1DE1 /* FLAnimatedImageView.h */,
+				C5D3D9411A3B6100005C1DE1 /* FLAnimatedImageView.m */,
 			);
 			name = Library;
 			sourceTree = "<group>";
@@ -410,12 +410,12 @@
 				D9629273187BD6E600228E81 /* MCManager.m in Sources */,
 				891E380A1A32255000FFA931 /* PerfilViewController.m in Sources */,
 				891E380D1A3241F100FFA931 /* MatchViewController.m in Sources */,
+				C5D3D9431A3B6100005C1DE1 /* FLAnimatedImageView.m in Sources */,
 				D9EA8C1F187B1954008031B5 /* AppDelegate.m in Sources */,
-				C5D3D90F1A3A6ACF005C1DE1 /* FLAnimatedImage.m in Sources */,
 				C5D3D9131A3A6B10005C1DE1 /* GifViewController.m in Sources */,
+				C5D3D9421A3B6100005C1DE1 /* FLAnimatedImage.m in Sources */,
 				C5D3D9091A3A19EE005C1DE1 /* Option.m in Sources */,
 				D9EA8C1B187B1954008031B5 /* main.m in Sources */,
-				C5D3D9101A3A6ACF005C1DE1 /* FLAnimatedImageView.m in Sources */,
 				89F412CA1A2E405100C16CC0 /* Cell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
