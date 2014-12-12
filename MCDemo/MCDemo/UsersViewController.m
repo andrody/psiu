@@ -13,6 +13,8 @@
 #import "PerfilViewController.h"
 #import "GifViewController.h"
 #import "MatchViewController.h"
+#import "FLAnimatedImage.h"
+#import "FLAnimatedImageView.h"
 #import <QuartzCore/QuartzCore.h>
 
 
@@ -24,6 +26,8 @@
 @property (nonatomic, strong) NSString *documentsDirectory;
 @property PerfilViewController *perfilView;
 @property BOOL onlyMatch;
+@property (nonatomic, strong) NSMutableArray *apenas_conectados;
+
 
 
 @end
@@ -62,7 +66,8 @@
     myuser.imagem = [[UIImage alloc] initWithData:[NSData dataWithContentsOfURL:myuser.image_url]];
     //-----Persistência de dados-----
     
-    
+    //if([_appDelegate mcManager].apenas_conectados == nil)
+    self.apenas_conectados = [NSMutableArray new];
     if([_appDelegate mcManager].usuarios == nil)
         [_appDelegate mcManager].usuarios = [NSMutableArray new];
     _usuarios = [_appDelegate mcManager].usuarios;
@@ -103,6 +108,12 @@
                                              selector:@selector(telaGif)
                                                  name:@"MostrarGif"
                                                object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(changeState:)
+                                                 name:@"MCDidChangeStateNotification"
+                                               object:nil];
+
 }
 
 - (IBAction)SegmentChange:(UISegmentedControl *)sender {
@@ -222,8 +233,22 @@
     if(indexPath.row >= valor) {
         cell.foto.image = nil;
         cell.foto.alpha = 0.2;
+        
+        if(indexPath.row >= self.usuarios.count && indexPath.row < self.usuarios.count + self.apenas_conectados.count ){
+            FLAnimatedImage *gifImage = [[FLAnimatedImage alloc] initWithAnimatedGIFData:[NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"loading7" ofType:@"gif"]]];
+            
+            cell.loadingImage.animatedImage = gifImage;
+            [cell.loadingImage setHidden:NO];
+    
+            //[cell.loadingImage addSubview:];
+        }
+        else [cell.loadingImage setHidden:YES];
+
+        
         return cell;
     }
+    [cell.loadingImage setHidden:YES];
+
     cell.foto.alpha = 1.0;
     Usuario *user;
     if (self.onlyMatch) user = [self.match_users objectAtIndex:indexPath.row];
@@ -268,6 +293,8 @@
     NSData *data = [NSData dataWithContentsOfURL:localURL];
     UIImage *img = [[UIImage alloc] initWithData:data];
     NSString *nome = [dict objectForKey:@"resourceName"];
+    
+    [self.apenas_conectados removeObject:user.peer];
     
     //NSString *resourceName = [dict objectForKey:@"resourceName"];
     bool existe_user = false;
@@ -376,10 +403,20 @@
     GifViewController *gifView = [self.storyboard instantiateViewControllerWithIdentifier:@"gifCtrl"];
     [self presentViewController:gifView animated:YES completion:nil];
     
-    
-    
-    
 }
+
+-(void)changeState:(NSNotification *)notification{
+    NSInteger state = [[[notification userInfo] objectForKey:@"state"] integerValue];
+    MCPeerID *peerID = [[notification userInfo] objectForKey:@"peerID"];
+
+
+    if(state == MCSessionStateConnected) {
+        [self.apenas_conectados addObject:peerID];
+    } 
+    
+    [_collection_dispositivos performSelectorOnMainThread:@selector(reloadData) withObject:nil waitUntilDone:NO];
+}
+
 
 
 

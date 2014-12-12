@@ -71,6 +71,9 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="145" height="145"/>
                                                     <color key="backgroundColor" red="0.91747553660000003" green="0.26333286769999997" blue="0.33151669550000001" alpha="1" colorSpace="calibratedRGB"/>
                                                 </imageView>
+                                                <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="v8w-Pf-8zH" customClass="FLAnimatedImageView">
+                                                    <rect key="frame" x="36" y="36" width="73" height="73"/>
+                                                </imageView>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
@@ -78,6 +81,7 @@
                                         <size key="customSize" width="145" height="145"/>
                                         <connections>
                                             <outlet property="foto" destination="d7I-Ke-95Y" id="NrM-TT-CrO"/>
+                                            <outlet property="loadingImage" destination="v8w-Pf-8zH" id="yua-la-0AQ"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -115,20 +119,21 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nome" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Pwy-XP-i0d">
-                                <rect key="frame" x="63" y="20" width="207" height="30"/>
+                                <rect key="frame" x="57" y="38" width="207" height="30"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words" keyboardType="namePhonePad" returnKeyType="done"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Idade (ex: 22)" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZWX-4H-msx">
-                                <rect key="frame" x="63" y="62" width="207" height="30"/>
+                                <rect key="frame" x="57" y="80" width="207" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
-                            <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Avatar-blank.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="sgq-kT-PZB">
-                                <rect key="frame" x="63" y="146" width="207" height="197"/>
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Avatar-blank.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="sgq-kT-PZB">
+                                <rect key="frame" x="57" y="146" width="207" height="197"/>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.91747553660000003" green="0.26333286769999997" blue="0.33151669550000001" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" title="Seu Perfil" id="dIm-Iu-4dx"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
@@ -154,7 +159,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView autoresizesSubviews="NO" opaque="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="kate.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="30g-uQ-RLb">
+                            <imageView autoresizesSubviews="NO" opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="kate.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="30g-uQ-RLb">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                                 <color key="backgroundColor" red="0.97219243954211865" green="0.94548700243487882" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </imageView>
@@ -289,9 +294,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Z3b-4B-QUY" customClass="FLAnimatedImageView">
-                                <rect key="frame" x="-28" y="251" width="320" height="242"/>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xWe-pS-8fh">
                                 <rect key="frame" x="-6" y="27" width="80" height="56"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -306,6 +308,9 @@
                             </button>
                             <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JLK-rO-Ahd">
                                 <rect key="frame" x="-25" y="79" width="371" height="176"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Z3b-4B-QUY" customClass="FLAnimatedImageView">
+                                <rect key="frame" x="-28" y="280" width="334" height="201"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

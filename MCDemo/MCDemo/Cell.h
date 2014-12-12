@@ -7,11 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "FLAnimatedImage.h"
+#import "FLAnimatedImageView.h"
 
 @interface Cell : UICollectionViewCell
 
 @property (weak, nonatomic) IBOutlet UIImageView *foto;
 
+@property (weak, nonatomic) IBOutlet FLAnimatedImageView *loadingImage;
 
 
 

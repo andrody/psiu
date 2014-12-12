@@ -40,6 +40,10 @@
 		C5D3D93D1A3B6069005C1DE1 /* sacanagem_selinho.gif in Resources */ = {isa = PBXBuildFile; fileRef = C5D3D93C1A3B6069005C1DE1 /* sacanagem_selinho.gif */; };
 		C5D3D9421A3B6100005C1DE1 /* FLAnimatedImage.m in Sources */ = {isa = PBXBuildFile; fileRef = C5D3D93F1A3B6100005C1DE1 /* FLAnimatedImage.m */; };
 		C5D3D9431A3B6100005C1DE1 /* FLAnimatedImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5D3D9411A3B6100005C1DE1 /* FLAnimatedImageView.m */; };
+		C5D3D9481A3B81B5005C1DE1 /* loading.gif in Resources */ = {isa = PBXBuildFile; fileRef = C5D3D9471A3B81B5005C1DE1 /* loading.gif */; };
+		C5D3D94A1A3B8CDA005C1DE1 /* sacanagem_abraco.gif in Resources */ = {isa = PBXBuildFile; fileRef = C5D3D9491A3B8CDA005C1DE1 /* sacanagem_abraco.gif */; };
+		C5D3D94C1A3B8CFB005C1DE1 /* sacanagem_batepapo.gif in Resources */ = {isa = PBXBuildFile; fileRef = C5D3D94B1A3B8CFB005C1DE1 /* sacanagem_batepapo.gif */; };
+		C5D3D9501A3BA036005C1DE1 /* loading7.gif in Resources */ = {isa = PBXBuildFile; fileRef = C5D3D94F1A3BA036005C1DE1 /* loading7.gif */; };
 		D9629273187BD6E600228E81 /* MCManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D9629272187BD6E600228E81 /* MCManager.m */; };
 		D9EA8C0F187B1954008031B5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9EA8C0E187B1954008031B5 /* Foundation.framework */; };
 		D9EA8C11187B1954008031B5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9EA8C10187B1954008031B5 /* CoreGraphics.framework */; };
@@ -97,6 +101,10 @@
 		C5D3D93F1A3B6100005C1DE1 /* FLAnimatedImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLAnimatedImage.m; sourceTree = "<group>"; };
 		C5D3D9401A3B6100005C1DE1 /* FLAnimatedImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLAnimatedImageView.h; sourceTree = "<group>"; };
 		C5D3D9411A3B6100005C1DE1 /* FLAnimatedImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLAnimatedImageView.m; sourceTree = "<group>"; };
+		C5D3D9471A3B81B5005C1DE1 /* loading.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = loading.gif; sourceTree = "<group>"; };
+		C5D3D9491A3B8CDA005C1DE1 /* sacanagem_abraco.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = sacanagem_abraco.gif; sourceTree = "<group>"; };
+		C5D3D94B1A3B8CFB005C1DE1 /* sacanagem_batepapo.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = sacanagem_batepapo.gif; sourceTree = "<group>"; };
+		C5D3D94F1A3BA036005C1DE1 /* loading7.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = loading7.gif; sourceTree = "<group>"; };
 		D9629271187BD6E600228E81 /* MCManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCManager.h; sourceTree = "<group>"; };
 		D9629272187BD6E600228E81 /* MCManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCManager.m; sourceTree = "<group>"; };
 		D9EA8C0B187B1954008031B5 /* Psiu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Psiu.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -185,6 +193,8 @@
 				C5D3D9291A3B5FD0005C1DE1 /* label_batepapo.png */,
 				C5D3D92A1A3B5FD0005C1DE1 /* label_lingua.png */,
 				C5D3D92B1A3B5FD0005C1DE1 /* label_selinho.png */,
+				C5D3D9471A3B81B5005C1DE1 /* loading.gif */,
+				C5D3D94F1A3BA036005C1DE1 /* loading7.gif */,
 				C5D3D9301A3B5FFA005C1DE1 /* psiubotao_off.png */,
 				C5D3D9311A3B5FFA005C1DE1 /* psiubotao.png */,
 				892EFF4C1A376E0C0096161D /* psiu-img.png */,
@@ -192,6 +202,8 @@
 				C5D3D9371A3B604E005C1DE1 /* backarrow_white.png */,
 				C5D3D9381A3B604E005C1DE1 /* backarrow.png */,
 				C5D3D93C1A3B6069005C1DE1 /* sacanagem_selinho.gif */,
+				C5D3D9491A3B8CDA005C1DE1 /* sacanagem_abraco.gif */,
+				C5D3D94B1A3B8CFB005C1DE1 /* sacanagem_batepapo.gif */,
 				892EFF541A377F380096161D /* back_btn2.png */,
 				89DBCC421A3250FC00803BD7 /* psiu.wav */,
 				C5D3D9341A3B600F005C1DE1 /* psiuSE.wav */,
@@ -317,6 +329,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				89B458001A2FA6340070157F /* Avatar-blank.jpg in Resources */,
+				C5D3D9501A3BA036005C1DE1 /* loading7.gif in Resources */,
 				892EFF551A377F380096161D /* back_btn2.png in Resources */,
 				C5D3D93B1A3B604E005C1DE1 /* backarrow.png in Resources */,
 				C5D3D93A1A3B604E005C1DE1 /* backarrow_white.png in Resources */,
@@ -325,17 +338,20 @@
 				C5D3D92D1A3B5FD0005C1DE1 /* label_batepapo.png in Resources */,
 				C5D3D9391A3B604E005C1DE1 /* backarrow_red2.png in Resources */,
 				89B458011A2FA6340070157F /* editing-edit-icon.png in Resources */,
+				C5D3D9481A3B81B5005C1DE1 /* loading.gif in Resources */,
 				D9EA8C2A187B1954008031B5 /* Images.xcassets in Resources */,
 				892EFF4D1A376E0C0096161D /* psiu-img.png in Resources */,
 				89F412D21A2E4E7700C16CC0 /* kate.jpg in Resources */,
 				89DBCC431A3250FC00803BD7 /* psiu.wav in Resources */,
 				C5D3D92F1A3B5FD0005C1DE1 /* label_selinho.png in Resources */,
+				C5D3D94A1A3B8CDA005C1DE1 /* sacanagem_abraco.gif in Resources */,
 				C5D3D9351A3B600F005C1DE1 /* psiuSE.wav in Resources */,
 				D9EA8C19187B1954008031B5 /* InfoPlist.strings in Resources */,
 				C5D3D92E1A3B5FD0005C1DE1 /* label_lingua.png in Resources */,
 				C5D3D9321A3B5FFA005C1DE1 /* psiubotao_off.png in Resources */,
 				C5D3D92C1A3B5FD0005C1DE1 /* label_abraco.png in Resources */,
 				D9EA8C22187B1954008031B5 /* Main.storyboard in Resources */,
+				C5D3D94C1A3B8CFB005C1DE1 /* sacanagem_batepapo.gif in Resources */,
 				C5D3D93D1A3B6069005C1DE1 /* sacanagem_selinho.gif in Resources */,
 				89B457FD1A2F99740070157F /* kate2.jpg in Resources */,
 			);

@@ -105,6 +105,7 @@
     
     if(state == MCSessionStateConnected) {
         
+        
         //[self sendUserInfo:peerID];
         [self sendFoto:peerID];
         

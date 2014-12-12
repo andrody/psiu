@@ -34,6 +34,8 @@ typedef enum : NSUInteger {
 @property (nonatomic, strong) NSMutableArray *usuarios_psiu;
 @property (nonatomic, strong) NSMutableArray *usuarios_dei_psiu;
 @property (nonatomic, strong) NSMutableArray *usuarios_match;
+@property (nonatomic, strong) NSMutableArray *apenas_conectados;
+
 @property (nonatomic, strong) AVAudioPlayer *theAudio;
 
 
