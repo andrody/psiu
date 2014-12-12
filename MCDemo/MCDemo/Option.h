@@ -12,6 +12,8 @@
 
 @property NSString *nome;
 @property UIColor *cor;
+@property NSInteger *sacanagem;
 
--(Option*) setName:(NSString*)name cor:(UIColor*)cor;
+
+-(Option*) setName:(NSString*)name cor:(UIColor*)cor sacanagem:(NSInteger)sacanagem;
 @end

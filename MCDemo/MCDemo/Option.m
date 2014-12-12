@@ -10,10 +10,11 @@
 
 @implementation Option
 
--(Option*) setName:(NSString*)name cor:(UIColor*)cor {
+-(Option*) setName:(NSString*)name cor:(UIColor*)cor sacanagem:(NSInteger)sacanagem {
     
     self.nome = name;
     self.cor = cor;
+    self.sacanagem = &(sacanagem);
     return self;
 }
 

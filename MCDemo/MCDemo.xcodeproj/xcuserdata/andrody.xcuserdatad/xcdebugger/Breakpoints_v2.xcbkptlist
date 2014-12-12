@@ -9,13 +9,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "MCDemo/UsersViewController.m"
-            timestampString = "440020341.712317"
+            filePath = "MCDemo/PerfilViewController.m"
+            timestampString = "440054484.455721"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "277"
-            endingLineNumber = "277"
-            landmarkName = "-didMatch:"
+            startingLineNumber = "204"
+            endingLineNumber = "204"
+            landmarkName = "-tableView:didSelectRowAtIndexPath:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -25,13 +25,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "MCDemo/PerfilViewController.m"
-            timestampString = "440020341.712317"
+            filePath = "MCDemo/UsersViewController.m"
+            timestampString = "440054640.291798"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "147"
-            endingLineNumber = "147"
-            landmarkName = "-tableView:cellForRowAtIndexPath:"
+            startingLineNumber = "317"
+            endingLineNumber = "317"
+            landmarkName = "-mostrarGif"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

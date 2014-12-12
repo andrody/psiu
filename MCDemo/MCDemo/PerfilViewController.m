@@ -11,6 +11,7 @@
 #import "MCManager.h"
 #import "PerfilTableCell.h"
 #import "Option.h"
+#import "GifViewController.h"
 
 @interface PerfilViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *imagem;
@@ -45,15 +46,14 @@
     [super viewDidAppear:YES];
     
     if (_user.match == YES) {
-        [_psiu_btn setHidden:YES];
         [_tableScrollV setHidden:NO];
         [self animateOptions];
     }
     
     else {
-        [_psiu_btn setHidden:NO];
         [_tableScrollV setHidden:YES];
         [self animatePsiuButton];
+        [self showPsiuBtn];
     }
 }
 
@@ -91,7 +91,7 @@
 
 -(void) animateOptions {
     
-    CGRect screenBound = [[UIScreen mainScreen] bounds];
+    //CGRect screenBound = [[UIScreen mainScreen] bounds];
     
     CGRect optionsFrame = self.tableViewOptions.frame;
     optionsFrame.origin.y = 0;
@@ -107,11 +107,43 @@
     
 }
 
+
+
+-(void)showPsiuBtn{
+    
+    [UIView beginAnimations: @"Fade In" context:nil];
+    [UIView setAnimationDelay:0];
+    [UIView setAnimationDuration:.5];
+    //show your view with Fade animation lets say myView
+    [_psiu_btn setHidden:FALSE];
+    
+    
+    [UIView commitAnimations];
+}
+
+
+-(void)hidePsiuBtn{
+    [UIView beginAnimations: @"Fade Out" context:nil];
+    [UIView setAnimationDelay:0];
+    [UIView setAnimationDuration:.5];
+    //hide your view with Fad animation
+    [_psiu_btn setHidden:TRUE];
+    [UIView commitAnimations];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     _tableViewOptions.delegate = self;
     _tableViewOptions.dataSource = self;
+    
+    /*if (_user.match == YES) {
+        [_psiu_btn setHidden:YES];
+    }
+    
+    else {
+        [_psiu_btn setHidden:NO];        
+    }*/
     
     _appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     
@@ -125,11 +157,22 @@
     _nome_idade.text = _user.nome;
     _imagem.image = _user.imagem;
     
-    _options = @[[[Option new] setName:@"Bater Papo" cor:[UIColor redColor]],
-                 [[Option new] setName:@"Abraço e Beijo no Rosto" cor:[UIColor blueColor]],
-                 [[Option new] setName:@"Selinho" cor:[UIColor greenColor]],
-                 [[Option new] setName:@"Beijo de Lingua" cor:[UIColor blackColor]]
+    UIColor *azul = [UIColor colorWithRed:75.0/255.0 green:148.0/255.0 blue:229.0/255.0 alpha:1];
+    UIColor *roxo = [UIColor colorWithRed:79.0/255.0 green:74.0/255.0 blue:181.0/255.0 alpha:1];
+    UIColor *lilas = [UIColor colorWithRed:194.0/255.0 green:91.0/255.0 blue:220.0/255.0 alpha:1];
+    UIColor *vermelho = [UIColor colorWithRed:255.0/255.0 green:77.0/255.0 blue:130.0/255.0 alpha:1];
+
+    
+    _options = @[[[Option new] setName:@"Bater Papo" cor:azul sacanagem:SPapo],
+                 [[Option new] setName:@"Abraço e Beijo no Rosto" cor:roxo sacanagem:SAbraco],
+                 [[Option new] setName:@"Selinho" cor:lilas sacanagem:SSelinho],
+                 [[Option new] setName:@"Beijo de Lingua" cor:vermelho sacanagem:SLingua]
                  ];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(didMatch:)
+                                                 name:@"Match"
+                                               object:nil];
     
 }
 
@@ -151,6 +194,46 @@
     cell.option.text = [[_options objectAtIndex:indexPath.row] nome];
     cell.conteudoView.backgroundColor = [[_options objectAtIndex:indexPath.row] cor];
     return cell;
+    
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    if(self.user.sacanagem_ja_escolhida != YES) {
+        self.user.sacanagem_ja_escolhida = YES;
+        if(self.user.sacanagem == -1) {
+            self.user.sacanagem = indexPath.row;
+
+            //[self.navigationController pushViewController: perfilView animated:YES];
+            //[self presentViewController:gifView animated:YES completion:nil];
+            //[self dismissViewControllerAnimated:YES completion:nil];
+
+
+            NSDictionary *dict = @{@"tipo": [NSNumber numberWithInt:indexPath.row]};
+            [[_appDelegate mcManager] sendMessage:self.user.peer withDict:dict];
+        }
+        else {
+            
+            if (self.user.sacanagem > indexPath.row) self.user.sacanagem = indexPath.row;
+            
+            NSDictionary *dict = @{@"tipo": [NSNumber numberWithInt:SacanagemFinal],@"sacanagemFinal":[NSNumber numberWithInt:self.user.sacanagem]};
+            [[_appDelegate mcManager] sendMessage:self.user.peer withDict:dict];
+            
+            
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"MostrarGif"
+                                                                object:nil
+                                                              userInfo:dict];
+            
+        }
+    }
+}
+
+-(NSInteger) getFinalSacanagem:(NSInteger)sacanagem {
+    
+    if (self.user.sacanagem > sacanagem) {
+        self.user.sacanagem = sacanagem;
+    }
+    return self.user.sacanagem;
     
 }
 
@@ -192,6 +275,18 @@
     
     [self dismissViewControllerAnimated:YES completion:nil];
     
+}
+
+
+-(void)didMatch:(NSNotification *)notification{
+    
+    Usuario *user_match = [[notification userInfo] objectForKey:@"user_dict"];
+    if([_user isEqual:user_match]) {
+        _user.match = YES;
+        [self performSelectorOnMainThread:@selector(viewDidAppear:) withObject:nil waitUntilDone:NO];
+
+    }
+
 }
 
 

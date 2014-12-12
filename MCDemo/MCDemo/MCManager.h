@@ -10,15 +10,17 @@
 #import <MultipeerConnectivity/MultipeerConnectivity.h>
 #import "Usuario.h"
 #import <AVFoundation/AVFoundation.h>
+#import <AudioToolbox/AudioToolbox.h>
 
 typedef enum : NSUInteger {
+    SPapo,
+    SAbraco,
+    SSelinho,
+    SLingua,
+    SFicar,
     Psiu,
     Match,
-    Papo,
-    Abraco,
-    Selinhi,
-    Lingua,
-    Ficar
+    SacanagemFinal
 } MessageType;
 
 @interface MCManager : NSObject <MCSessionDelegate, MCNearbyServiceAdvertiserDelegate, AVAudioPlayerDelegate>

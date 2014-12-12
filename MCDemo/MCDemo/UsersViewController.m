@@ -11,6 +11,7 @@
 #import "Usuario.h"
 #import "Cell.h"
 #import "PerfilViewController.h"
+#import "GifViewController.h"
 #import "MatchViewController.h"
 #import <QuartzCore/QuartzCore.h>
 
@@ -20,6 +21,7 @@
 @property (nonatomic, strong) AppDelegate *appDelegate;
 @property (nonatomic, strong) NSMutableArray *usuarios;
 @property (nonatomic, strong) NSString *documentsDirectory;
+@property PerfilViewController *perfilView;
 
 
 @end
@@ -91,6 +93,12 @@
                                              selector:@selector(didMatch:)
                                                  name:@"Match"
                                                object:nil];
+    
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(telaGif)
+                                                 name:@"MostrarGif"
+                                               object:nil];
 }
 
 
@@ -124,11 +132,16 @@
     
         [_appDelegate mcManager].usuario_selecionado = [_usuarios objectAtIndex:indexPath.row];
         
-        PerfilViewController *perfilView = [self.storyboard instantiateViewControllerWithIdentifier:@"perfilCtrl"];
-    
-        //[self.navigationController pushViewController: perfilView animated:YES];
-        [self presentViewController:perfilView animated:YES completion:nil];
-
+        UIViewController *view;
+        if([_appDelegate mcManager].usuario_selecionado.sacanagem_ja_escolhida){
+            view= [self.storyboard instantiateViewControllerWithIdentifier:@"gifCtrl"];
+        }
+        
+        else {
+            view = [self.storyboard instantiateViewControllerWithIdentifier:@"perfilCtrl"];
+        }
+        
+        [self presentViewController:view animated:YES completion:nil];
         
     }
     
@@ -192,6 +205,7 @@
     NSDictionary *dict = [notification userInfo];
     
     user.peer =[dict objectForKey:@"peerID"];
+    user.sacanagem = -1;
     
     NSURL *localURL = [dict objectForKey:@"localURL"];
     
@@ -287,10 +301,29 @@
     
     //[self.navigationController pushViewController: matchView animated:YES];
     
-    PerfilViewController *perfilView = [self.storyboard instantiateViewControllerWithIdentifier:@"perfilCtrl"];
+    if(_perfilView == nil) {
+        _perfilView = [self.storyboard instantiateViewControllerWithIdentifier:@"perfilCtrl"];
+
+        //[self.navigationController pushViewController: perfilView animated:YES];
+        [self presentViewController:_perfilView animated:YES completion:nil];
+    }
+}
+
+-(void) telaGif {
+    [self performSelectorOnMainThread:@selector(mostrarGif) withObject:nil waitUntilDone:NO];
+}
+
+-(void) mostrarGif {
+    if(_perfilView != nil) {
+        
+        [self.perfilView dismissViewControllerAnimated:YES completion:nil];
+        
+    }
     
-    //[self.navigationController pushViewController: perfilView animated:YES];
-    [self presentViewController:perfilView animated:YES completion:nil];
+    GifViewController *gifView = [self.storyboard instantiateViewControllerWithIdentifier:@"gifCtrl"];
+    [self presentViewController:gifView animated:YES completion:nil];
+    
+    
     
 }
 

@@ -228,15 +228,37 @@
     
         user.psiu = Psiu;
         [self playPsiu];
+        AudioServicesPlayAlertSound(kSystemSoundID_Vibrate);
+
         
     }
     
     else if (tipoMsg == Match) {
         
+        [self playPsiu];
+        AudioServicesPlayAlertSound(kSystemSoundID_Vibrate);
+        _usuario_selecionado = user;
         NSDictionary *user_dict = @{@"user_dict": user};
         [[NSNotificationCenter defaultCenter] postNotificationName:@"Match"
                                                             object:nil
                                                           userInfo:user_dict];
+        
+    }
+    
+    else if (tipoMsg == SPapo || tipoMsg == SAbraco || tipoMsg == SSelinho || tipoMsg == SLingua) {
+        
+        user.sacanagem = tipoMsg;
+        
+    }
+    
+    else if (tipoMsg == SacanagemFinal) {
+        NSInteger sacanagemFinal = [dictionary[@"sacanagemFinal"] integerValue];
+        user.sacanagem = sacanagemFinal;
+        
+        _usuario_selecionado = user;
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"MostrarGif"
+                                                            object:nil
+                                                          userInfo:dict];
         
     }
     

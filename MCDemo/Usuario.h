@@ -20,5 +20,7 @@
 @property NSInteger psiu;
 @property NSInteger sacanagem;
 @property BOOL match;
+@property BOOL sacanagem_ja_escolhida;
+
 
 @end

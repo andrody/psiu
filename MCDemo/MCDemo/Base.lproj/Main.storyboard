@@ -9,7 +9,7 @@
         <scene sceneID="2eO-Lu-jgb">
             <objects>
                 <navigationController id="QVq-nA-GRk" sceneMemberID="viewController">
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" translucent="NO" id="yiy-9p-gfb">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -24,7 +24,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s0H-fc-DfL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-318" y="180"/>
+            <point key="canvasLocation" x="-292" y="224"/>
         </scene>
         <!--Pessoas Locais-->
         <scene sceneID="QQ3-FQ-WRp">
@@ -96,7 +96,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hTa-8Z-QVu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="146" y="180"/>
+            <point key="canvasLocation" x="88" y="224"/>
         </scene>
         <!--Seu Perfil-->
         <scene sceneID="B7U-X7-LgN">
@@ -107,7 +107,7 @@
                         <viewControllerLayoutGuide type="bottom" id="mmw-xR-JAY"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="ALo-qe-4DN">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nome" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Pwy-XP-i0d">
@@ -127,7 +127,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Seu Perfil" id="dIm-Iu-4dx"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="fotoUser" destination="sgq-kT-PZB" id="8FX-Ll-jfU"/>
                         <outlet property="textoNome" destination="Pwy-XP-i0d" id="ALx-EP-bNl"/>
@@ -136,116 +136,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IrT-eC-E7e" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="589" y="180"/>
-        </scene>
-        <!--Match-->
-        <scene sceneID="bma-YB-993">
-            <objects>
-                <viewController storyboardIdentifier="matchCtrl" useStoryboardIdentifierAsRestorationIdentifier="YES" id="jqK-X7-GBr" customClass="MatchViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="LdQ-uJ-hTo"/>
-                        <viewControllerLayoutGuide type="bottom" id="Uom-ki-VZU"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="q2c-tp-2S8">
-                        <rect key="frame" x="0.0" y="64" width="320" height="480"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FED-4n-c4D">
-                                <rect key="frame" x="20" y="241" width="280" height="175"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="fill" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jl0-2u-2Ut">
-                                        <rect key="frame" x="101" y="0.0" width="78" height="30"/>
-                                        <state key="normal" title="Bater Papo">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="optionSelected:" destination="jqK-X7-GBr" eventType="touchUpInside" id="qHb-3i-0HE"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="COT-bG-Pkl">
-                                        <rect key="frame" x="62" y="32" width="167" height="30"/>
-                                        <state key="normal" title="Abraco e Beijo no Rosto">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="optionSelected:" destination="jqK-X7-GBr" eventType="touchUpInside" id="amF-Fn-mO3"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g2p-Sr-PxI">
-                                        <rect key="frame" x="87" y="100" width="107" height="30"/>
-                                        <state key="normal" title="Beijo de Lingua">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="optionSelected:" destination="jqK-X7-GBr" eventType="touchUpInside" id="Zj1-pR-Xxr"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iby-Q8-nAy">
-                                        <rect key="frame" x="123" y="137" width="34" height="30"/>
-                                        <state key="normal" title="Ficar">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="optionSelected:" destination="jqK-X7-GBr" eventType="touchUpInside" id="60D-Rx-cdL"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OkB-uV-PGJ">
-                                        <rect key="frame" x="115" y="67" width="51" height="30"/>
-                                        <state key="normal" title="Selinho">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="optionSelected:" destination="jqK-X7-GBr" eventType="touchUpInside" id="dGO-DL-IH9"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Com ela(e) você está disposto a" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xnD-Fb-mde">
-                                <rect key="frame" x="33" y="206" width="254" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" progress="1" translatesAutoresizingMaskIntoConstraints="NO" id="qwg-pS-oRq">
-                                <rect key="frame" x="20" y="197" width="280" height="2"/>
-                                <color key="progressTintColor" red="0.53947639800000002" green="0.55065383639999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="trackTintColor" red="0.53947639800000002" green="0.55065383639999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            </progressView>
-                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" progress="1" translatesAutoresizingMaskIntoConstraints="NO" id="Sw2-V1-uas">
-                                <rect key="frame" x="20" y="231" width="280" height="2"/>
-                                <color key="progressTintColor" red="0.53947639800000002" green="0.55065383639999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="trackTintColor" red="0.53947639800000002" green="0.55065383639999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            </progressView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ivt-fa-S6e">
-                                <rect key="frame" x="16" y="164" width="288" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qMV-yG-uMN">
-                                <rect key="frame" x="16" y="13" width="288" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="u6k-e3-kKX">
-                                <rect key="frame" x="103" y="42" width="115" height="108"/>
-                            </imageView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Match" id="jbA-b2-SO8"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
-                    <connections>
-                        <outlet property="imageView" destination="u6k-e3-kKX" id="zcX-fc-o9y"/>
-                        <outlet property="textMatch" destination="qMV-yG-uMN" id="13L-PF-aQr"/>
-                        <outlet property="textUser" destination="ivt-fa-S6e" id="YfU-cf-Me1"/>
-                        <outlet property="viewOptions" destination="FED-4n-c4D" id="JUc-sN-aYx"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="SNF-xs-E0k" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="106" y="807"/>
+            <point key="canvasLocation" x="457" y="224"/>
         </scene>
         <!--Perfil-->
         <scene sceneID="ZfI-P9-Y5B">
@@ -264,19 +155,10 @@
                                 <color key="backgroundColor" red="0.97219243954211865" green="0.94548700243487882" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </imageView>
                             <view alpha="0.80000000000000004" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Q1o-VF-zND">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="66"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="90"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gwj-Jo-Qel">
-                                        <rect key="frame" x="8" y="20" width="31" height="37"/>
-                                        <state key="normal" title="Button" image="back_btn2.png">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="voltar:" destination="acc-4E-K4v" eventType="touchUpInside" id="5VC-5C-IHg"/>
-                                        </connections>
-                                    </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Priscila, 23" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bZb-Yq-2sp">
-                                        <rect key="frame" x="8" y="15" width="304" height="43"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Priscila, 23" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bZb-Yq-2sp">
+                                        <rect key="frame" x="8" y="27" width="304" height="43"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
@@ -284,7 +166,7 @@
                                 </subviews>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FQt-92-MPT">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FQt-92-MPT">
                                 <rect key="frame" x="92" y="383" width="137" height="132"/>
                                 <state key="normal" title="Button" image="psiubotao.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -293,12 +175,13 @@
                                     <action selector="mandarPsiu:" destination="acc-4E-K4v" eventType="touchUpInside" id="aZS-4j-5sA"/>
                                 </connections>
                             </button>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vLX-83-Z3u">
+                            <scrollView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vLX-83-Z3u">
                                 <rect key="frame" x="0.0" y="329" width="320" height="240"/>
                                 <subviews>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="gJI-1M-T4i">
+                                    <tableView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="gJI-1M-T4i">
                                         <rect key="frame" x="0.0" y="240" width="320" height="240"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <prototypes>
                                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="optionCelula" id="s9W-Xd-AnN" customClass="PerfilTableCell">
                                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -384,7 +267,20 @@
                                         <sections/>
                                     </tableView>
                                 </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </scrollView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sm9-OR-PU6">
+                                <rect key="frame" x="-3" y="20" width="80" height="56"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="tintColor" red="0.91747553660000003" green="0.26333286769999997" blue="0.33151669550000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <inset key="contentEdgeInsets" minX="16" minY="6" maxX="20" maxY="6"/>
+                                <state key="normal" title="Button" image="backarrow_white.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="voltar:" destination="acc-4E-K4v" eventType="touchUpInside" id="PqV-bZ-VHb"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -407,36 +303,56 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oJ6-fX-9dx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="600" y="807"/>
+            <point key="canvasLocation" x="88" y="882"/>
         </scene>
-        <!--View Controller-->
+        <!--Gif View Controller-->
         <scene sceneID="mdW-Ht-w9d">
             <objects>
-                <viewController id="hw7-Ym-7mw" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="gifCtrl" useStoryboardIdentifierAsRestorationIdentifier="YES" id="hw7-Ym-7mw" customClass="GifViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Jo9-WN-MYl"/>
                         <viewControllerLayoutGuide type="bottom" id="ba2-eT-qFe"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="YMN-uj-l6m">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Z3b-4B-QUY">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Z3b-4B-QUY" customClass="FLAnimatedImageView">
+                                <rect key="frame" x="-28" y="251" width="320" height="242"/>
                             </imageView>
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JLK-rO-Ahd">
+                                <rect key="frame" x="-6" y="135" width="343" height="134"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xWe-pS-8fh">
+                                <rect key="frame" x="-6" y="27" width="80" height="56"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="tintColor" red="0.91747553660000003" green="0.26333286769999997" blue="0.33151669550000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <inset key="contentEdgeInsets" minX="16" minY="6" maxX="20" maxY="6"/>
+                                <state key="normal" title="Button" image="backarrow_red2.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="back:" destination="hw7-Ym-7mw" eventType="touchUpInside" id="U3t-6i-rUe"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="gif" destination="Z3b-4B-QUY" id="MFr-Pe-h5T"/>
+                        <outlet property="sacanagemImage" destination="JLK-rO-Ahd" id="rKU-FB-fZa"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aHN-vV-Ozz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="106" y="1370"/>
+            <point key="canvasLocation" x="457" y="882"/>
         </scene>
     </scenes>
     <resources>
         <image name="Avatar-blank.jpg" width="160" height="160"/>
-        <image name="back_btn2.png" width="128" height="128"/>
+        <image name="backarrow_red2.png" width="128" height="128"/>
+        <image name="backarrow_white.png" width="128" height="128"/>
         <image name="kate.jpg" width="1600" height="1200"/>
         <image name="psiubotao.png" width="286" height="286"/>
     </resources>
