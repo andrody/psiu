@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MCDemo/UsersViewController.m"
-            timestampString = "440058095.576722"
+            timestampString = "440105235.42641"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "320"
-            endingLineNumber = "320"
+            startingLineNumber = "374"
+            endingLineNumber = "374"
             landmarkName = "-mostrarGif"
             landmarkType = "5">
          </BreakpointContent>

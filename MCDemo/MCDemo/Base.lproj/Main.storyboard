@@ -46,6 +46,9 @@
                                     <segment title="Match"/>
                                 </segments>
                                 <color key="tintColor" red="0.91747553660000003" green="0.26333286769999997" blue="0.33151669550000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="SegmentChange:" destination="5GN-aV-agS" eventType="valueChanged" id="7Mw-ZM-8l8"/>
+                                </connections>
                             </segmentedControl>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="tJR-eN-h8o">
                                 <rect key="frame" x="10" y="61" width="300" height="446"/>

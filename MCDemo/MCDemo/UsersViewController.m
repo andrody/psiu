@@ -20,8 +20,10 @@
 
 @property (nonatomic, strong) AppDelegate *appDelegate;
 @property (nonatomic, strong) NSMutableArray *usuarios;
+@property NSMutableArray *match_users;
 @property (nonatomic, strong) NSString *documentsDirectory;
 @property PerfilViewController *perfilView;
+@property BOOL onlyMatch;
 
 
 @end
@@ -32,6 +34,8 @@
     [super viewDidLoad];
     [_collection_dispositivos setDelegate:self];
     [_collection_dispositivos setDataSource:self];
+    
+    self.onlyMatch = NO;
     
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault animated:YES];
     
@@ -101,6 +105,30 @@
                                                object:nil];
 }
 
+- (IBAction)SegmentChange:(UISegmentedControl *)sender {
+    
+    if (sender.selectedSegmentIndex == 0) {
+        self.onlyMatch = NO;
+        [self updateMatchUsersArray];
+    }
+    else {
+        self.onlyMatch = YES;
+    }
+    
+    [_collection_dispositivos reloadData];
+    
+}
+
+-(void) updateMatchUsersArray {
+    
+    self.match_users = [NSMutableArray new];
+    for(Usuario *u in _usuarios){
+        if (u.match == YES) {
+            [self.match_users addObject:u];
+        }
+    }
+    
+}
 
 -(void)browser:(MCNearbyServiceBrowser *)browser lostPeer:(MCPeerID *)peerID {
     for(Usuario *u in _usuarios){
@@ -128,22 +156,39 @@
 
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
 
-    if(indexPath.row < [_usuarios count]) {
+    if(!self.onlyMatch) {
+        if(indexPath.row < [_usuarios count]) {
+
+            [_appDelegate mcManager].usuario_selecionado = [_usuarios objectAtIndex:indexPath.row];
+            [self chamarProximaTela:indexPath];
+            
+        }
+    }
     
-        [_appDelegate mcManager].usuario_selecionado = [_usuarios objectAtIndex:indexPath.row];
+    else {
         
-        if([_appDelegate mcManager].usuario_selecionado.sacanagem_final_escolhida){
-            GifViewController *gifView= [self.storyboard instantiateViewControllerWithIdentifier:@"gifCtrl"];
-            [self presentViewController:gifView animated:YES completion:nil];
-
+        if(indexPath.row < [self.match_users count]) {
+            
+            [_appDelegate mcManager].usuario_selecionado = [self.match_users objectAtIndex:indexPath.row];
+            [self chamarProximaTela:indexPath];
+            
         }
         
-        else {
-            _perfilView = [self.storyboard instantiateViewControllerWithIdentifier:@"perfilCtrl"];
-            [self.navigationController pushViewController:_perfilView animated:YES];
+    }
+    
+}
 
-        }
+-(void) chamarProximaTela:(NSIndexPath*) indexPath {
+    
+    if([_appDelegate mcManager].usuario_selecionado.sacanagem_final_escolhida){
+        GifViewController *gifView= [self.storyboard instantiateViewControllerWithIdentifier:@"gifCtrl"];
+        [self presentViewController:gifView animated:YES completion:nil];
         
+    }
+    
+    else {
+        _perfilView = [self.storyboard instantiateViewControllerWithIdentifier:@"perfilCtrl"];
+        [self.navigationController pushViewController:_perfilView animated:YES];
         
     }
     
@@ -157,15 +202,22 @@
 
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
     
-    NSInteger valor = [_usuarios count];
+    NSInteger valor;
+    if (self.onlyMatch)
+        valor = [self.match_users count];
+    else
+        valor = [_usuarios count];
     if(valor < 6) return 6;
     return valor;
+    
 }
 
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
 
     Cell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"celula" forIndexPath:indexPath];
     NSInteger valor = [_usuarios count];
+    if (self.onlyMatch) valor = [self.match_users count];
+
     
     if(indexPath.row >= valor) {
         cell.foto.image = nil;
@@ -173,7 +225,9 @@
         return cell;
     }
     cell.foto.alpha = 1.0;
-    Usuario *user = [_usuarios objectAtIndex:indexPath.row];
+    Usuario *user;
+    if (self.onlyMatch) user = [self.match_users objectAtIndex:indexPath.row];
+    else user = [_usuarios objectAtIndex:indexPath.row];
     cell.foto.image = user.imagem;
     /*cell.foto.layer.cornerRadius = 5.0;
     cell.foto.layer.borderColor = (__bridge CGColorRef)([UIColor blueColor]);
@@ -278,7 +332,7 @@
 
     for(Usuario *u in _usuarios){
         if ([u.peer isEqual:peerID]){
-            u.nome = [NSString stringWithFormat:@"%@,%@", dict[@"nome"], dict[@"idade"]];
+            u.nome = [NSString stringWithFormat:@"%@, %@", dict[@"nome"], dict[@"idade"]];
         }
     }
     
@@ -290,8 +344,8 @@
     
     Usuario *user_match = [[notification userInfo] objectForKey:@"user_dict"];
     user_match.match = YES;
-    [_appDelegate mcManager].usuario_match = user_match;
-    [[_appDelegate mcManager].usuarios_match addObject:[_appDelegate mcManager].usuario_match];
+    [self updateMatchUsersArray];
+    [_collection_dispositivos reloadData];
     [self performSelectorOnMainThread:@selector(telaMatch) withObject:nil waitUntilDone:NO];
     
 }
