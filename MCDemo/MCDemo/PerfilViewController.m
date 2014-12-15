@@ -175,6 +175,8 @@
     _nome_idade.text = _user.nome;
     _imagem.image = _user.imagem;
     
+    [self setTitle:_user.nome];
+    
     UIColor *azul = [UIColor colorWithRed:75.0/255.0 green:148.0/255.0 blue:229.0/255.0 alpha:1];
     UIColor *roxo = [UIColor colorWithRed:79.0/255.0 green:74.0/255.0 blue:181.0/255.0 alpha:1];
     UIColor *lilas = [UIColor colorWithRed:194.0/255.0 green:91.0/255.0 blue:220.0/255.0 alpha:1];

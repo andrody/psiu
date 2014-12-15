@@ -117,7 +117,7 @@
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *documentsDirectory = [[NSString alloc] initWithString:[paths objectAtIndex:0]];
     NSString *filePath = [documentsDirectory stringByAppendingPathComponent:@"Avatar-blank.jpg"];
-    NSString *modifiedName = [NSString stringWithFormat:@"%@,%@", _myUser.nome, _myUser.idade];
+    NSString *modifiedName = [NSString stringWithFormat:@"%@, %@", _myUser.nome, _myUser.idade];
     
     
     
@@ -153,7 +153,8 @@
 }
 
 -(void)sendUserInfo:(MCPeerID *)peerID{
-    NSDictionary *dict = @{@"nome": _myUser.nome,
+    NSDictionary *dict = @{@"tipo": [NSNumber numberWithInt:ChangeUserName],
+                           @"nome": _myUser.nome,
                            @"idade": _myUser.idade};
     
     NSArray *allPeers = @[peerID];
@@ -224,8 +225,18 @@
             break;
         }
     }
+    if(tipoMsg == ChangeUserName) {
+        
+        NSString *nome = [dictionary objectForKey:@"nome"];
+        NSString *idade = [dictionary objectForKey:@"idade"];
+
+        user.nome = [NSString stringWithFormat:@"%@, %@", nome, idade];
+        
+        
+    }
+
     
-    if(tipoMsg == Psiu) {
+    else if(tipoMsg == Psiu) {
     
         user.psiu = Psiu;
         [self playPsiu];
@@ -313,14 +324,18 @@
 
 -(void)session:(MCSession *)session didFinishReceivingResourceWithName:(NSString *)resourceName fromPeer:(MCPeerID *)peerID atURL:(NSURL *)localURL withError:(NSError *)error{
     
-    NSDictionary *dict = @{@"resourceName"  :   resourceName,
-                           @"peerID"        :   peerID,
-                           @"localURL"      :   localURL
-                           };
-    
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"didFinishReceivingResourceNotification"
+    if(error == nil) {
+        NSDictionary *dict = @{@"resourceName"  :   resourceName,
+                               @"peerID"        :   peerID,
+                               @"localURL"      :   localURL
+                               };
+        
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"didFinishReceivingResourceNotification"
                                                         object:nil
                                                       userInfo:dict];
+    }
+    else {
+        NSLog(@"Error receive data: %@", [error localizedDescription]);    }
     
 }
 

@@ -20,7 +20,8 @@ typedef enum : NSUInteger {
     SFicar,
     Psiu,
     Match,
-    SacanagemFinal
+    SacanagemFinal,
+    ChangeUserName
 } MessageType;
 
 @interface MCManager : NSObject <MCSessionDelegate, MCNearbyServiceAdvertiserDelegate, AVAudioPlayerDelegate>

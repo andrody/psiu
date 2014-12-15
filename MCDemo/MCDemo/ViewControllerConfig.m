@@ -88,7 +88,7 @@
         [[_appDelegate mcManager] sendFoto:u.peer];
     }
     
-    [self salvar];
+    //[self salvar];
     
     [picker dismissViewControllerAnimated:YES completion:nil];
     
@@ -108,11 +108,11 @@
     
     _user.nome = _textoNome.text;
     _user.idade = _textoidade.text;
-    [self salvar];
+    //[self salvar];
     
-    for(Usuario *u in [_appDelegate mcManager].usuarios) {
-        [[_appDelegate mcManager] sendUserInfo:u.peer];
-    }
+    //for(Usuario *u in [_appDelegate mcManager].usuarios) {
+    //    [[_appDelegate mcManager] sendUserInfo:u.peer];
+   // }
 
     
     return YES;
@@ -128,6 +128,25 @@
     
     [defaults synchronize];
     
+}
+
+-(void) viewWillDisappear:(BOOL)animated {
+    _user.nome = _textoNome.text;
+    _user.idade = _textoidade.text;
+    [self salvar];
+    
+    for(Usuario *u in [_appDelegate mcManager].usuarios) {
+        [[_appDelegate mcManager] sendUserInfo:u.peer];
+    }
+
+
+    if ([self.navigationController.viewControllers indexOfObject:self]==NSNotFound) {
+        // Navigation button was pressed. Do some stuff
+        [self.navigationController popViewControllerAnimated:NO];
+    }
+    
+    
+    [super viewWillDisappear:animated];
 }
 
 @end
