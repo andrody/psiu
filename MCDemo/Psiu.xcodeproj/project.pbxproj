@@ -7,6 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		655C8B211A83FE550065099C /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 655C8B201A83FE550065099C /* CoreBluetooth.framework */; };
+		655C8B231A83FE920065099C /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 655C8B221A83FE920065099C /* CoreLocation.framework */; };
+		659D53D11A82458400605B87 /* psiu2.png in Resources */ = {isa = PBXBuildFile; fileRef = 659D53D01A82458400605B87 /* psiu2.png */; };
+		659D53D31A82461200605B87 /* psiu_Avatar.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 659D53D21A82461200605B87 /* psiu_Avatar.jpg */; };
+		659D53D51A82471000605B87 /* psiu2_avatar2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 659D53D41A82471000605B87 /* psiu2_avatar2.jpg */; };
+		659D53D71A8254E700605B87 /* Launch Screen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 659D53D61A8254E700605B87 /* Launch Screen.xib */; };
+		659D53D91A82578500605B87 /* psiu_Screen.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 659D53D81A82578500605B87 /* psiu_Screen.jpg */; };
+		65C97B591A8526CA00AB1900 /* Cold.png in Resources */ = {isa = PBXBuildFile; fileRef = 65C97B571A8526CA00AB1900 /* Cold.png */; };
+		65C97B5A1A8526CA00AB1900 /* Hot.png in Resources */ = {isa = PBXBuildFile; fileRef = 65C97B581A8526CA00AB1900 /* Hot.png */; };
+		65C97B5D1A85274200AB1900 /* NATHiBeaconsDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 65C97B5C1A85274200AB1900 /* NATHiBeaconsDelegate.m */; };
+		65C97B601A85274E00AB1900 /* NATViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65C97B5F1A85274E00AB1900 /* NATViewController.m */; };
 		891E380A1A32255000FFA931 /* PerfilViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 891E38091A32255000FFA931 /* PerfilViewController.m */; };
 		891E380D1A3241F100FFA931 /* MatchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 891E380C1A3241F100FFA931 /* MatchViewController.m */; };
 		892EFF4D1A376E0C0096161D /* psiu-img.png in Resources */ = {isa = PBXBuildFile; fileRef = 892EFF4C1A376E0C0096161D /* psiu-img.png */; };
@@ -57,6 +68,19 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		655C8B201A83FE550065099C /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
+		655C8B221A83FE920065099C /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		659D53D01A82458400605B87 /* psiu2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = psiu2.png; sourceTree = "<group>"; };
+		659D53D21A82461200605B87 /* psiu_Avatar.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = psiu_Avatar.jpg; sourceTree = "<group>"; };
+		659D53D41A82471000605B87 /* psiu2_avatar2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = psiu2_avatar2.jpg; sourceTree = "<group>"; };
+		659D53D61A8254E700605B87 /* Launch Screen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "Launch Screen.xib"; sourceTree = "<group>"; };
+		659D53D81A82578500605B87 /* psiu_Screen.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = psiu_Screen.jpg; sourceTree = "<group>"; };
+		65C97B571A8526CA00AB1900 /* Cold.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Cold.png; sourceTree = "<group>"; };
+		65C97B581A8526CA00AB1900 /* Hot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Hot.png; sourceTree = "<group>"; };
+		65C97B5B1A85274200AB1900 /* NATHiBeaconsDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NATHiBeaconsDelegate.h; sourceTree = "<group>"; };
+		65C97B5C1A85274200AB1900 /* NATHiBeaconsDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NATHiBeaconsDelegate.m; sourceTree = "<group>"; };
+		65C97B5E1A85274E00AB1900 /* NATViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NATViewController.h; sourceTree = "<group>"; };
+		65C97B5F1A85274E00AB1900 /* NATViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NATViewController.m; sourceTree = "<group>"; };
 		65CBA4EF1A3B683800AF9E3E /* Psiu-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Psiu-Prefix.pch"; sourceTree = "<group>"; };
 		891E38081A32255000FFA931 /* PerfilViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PerfilViewController.h; sourceTree = "<group>"; };
 		891E38091A32255000FFA931 /* PerfilViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PerfilViewController.m; sourceTree = "<group>"; };
@@ -132,6 +156,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				655C8B211A83FE550065099C /* CoreBluetooth.framework in Frameworks */,
+				655C8B231A83FE920065099C /* CoreLocation.framework in Frameworks */,
 				89F23CFC1A2DE05600DC0350 /* GLKit.framework in Frameworks */,
 				89F23CFA1A2DE04600DC0350 /* AudioToolbox.framework in Frameworks */,
 				89F23CF81A2DE03C00DC0350 /* AVFoundation.framework in Frameworks */,
@@ -177,6 +203,8 @@
 		D9EA8C0D187B1954008031B5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				655C8B221A83FE920065099C /* CoreLocation.framework */,
+				655C8B201A83FE550065099C /* CoreBluetooth.framework */,
 				89F23CFB1A2DE05600DC0350 /* GLKit.framework */,
 				89F23CF91A2DE04600DC0350 /* AudioToolbox.framework */,
 				89F23CF71A2DE03C00DC0350 /* AVFoundation.framework */,
@@ -196,9 +224,14 @@
 				C5D3D92A1A3B5FD0005C1DE1 /* label_lingua.png */,
 				C5D3D92B1A3B5FD0005C1DE1 /* label_selinho.png */,
 				C5D3D9511A3F1437005C1DE1 /* sacanagem_beijao.gif */,
+				659D53D41A82471000605B87 /* psiu2_avatar2.jpg */,
 				C5D3D9471A3B81B5005C1DE1 /* loading.gif */,
+				659D53D21A82461200605B87 /* psiu_Avatar.jpg */,
 				C5D3D94F1A3BA036005C1DE1 /* loading7.gif */,
 				C5D3D9301A3B5FFA005C1DE1 /* psiubotao_off.png */,
+				659D53D81A82578500605B87 /* psiu_Screen.jpg */,
+				65C97B571A8526CA00AB1900 /* Cold.png */,
+				65C97B581A8526CA00AB1900 /* Hot.png */,
 				C5D3D9311A3B5FFA005C1DE1 /* psiubotao.png */,
 				892EFF4C1A376E0C0096161D /* psiu-img.png */,
 				C5D3D9361A3B604E005C1DE1 /* backarrow_red2.png */,
@@ -208,6 +241,7 @@
 				C5D3D9491A3B8CDA005C1DE1 /* sacanagem_abraco.gif */,
 				C5D3D94B1A3B8CFB005C1DE1 /* sacanagem_batepapo.gif */,
 				892EFF541A377F380096161D /* back_btn2.png */,
+				659D53D01A82458400605B87 /* psiu2.png */,
 				89DBCC421A3250FC00803BD7 /* psiu.wav */,
 				C5D3D9341A3B600F005C1DE1 /* psiuSE.wav */,
 				89B457FC1A2F99740070157F /* kate2.jpg */,
@@ -216,11 +250,16 @@
 				89B457FE1A2FA6340070157F /* Avatar-blank.jpg */,
 				89B457FF1A2FA6340070157F /* editing-edit-icon.png */,
 				89F412D11A2E4E7700C16CC0 /* kate.jpg */,
+				65C97B5E1A85274E00AB1900 /* NATViewController.h */,
+				65C97B5F1A85274E00AB1900 /* NATViewController.m */,
+				65C97B5B1A85274200AB1900 /* NATHiBeaconsDelegate.h */,
+				65C97B5C1A85274200AB1900 /* NATHiBeaconsDelegate.m */,
 				D9629271187BD6E600228E81 /* MCManager.h */,
 				D9629272187BD6E600228E81 /* MCManager.m */,
 				D9EA8C1D187B1954008031B5 /* AppDelegate.h */,
 				D9EA8C1E187B1954008031B5 /* AppDelegate.m */,
 				D9EA8C20187B1954008031B5 /* Main.storyboard */,
+				659D53D61A8254E700605B87 /* Launch Screen.xib */,
 				891E380B1A3241F100FFA931 /* MatchViewController.h */,
 				891E380C1A3241F100FFA931 /* MatchViewController.m */,
 				891E38081A32255000FFA931 /* PerfilViewController.h */,
@@ -304,7 +343,7 @@
 				ORGANIZATIONNAME = Appcoda;
 				TargetAttributes = {
 					D9EA8C0A187B1954008031B5 = {
-						DevelopmentTeam = CC953577YZ;
+						DevelopmentTeam = 4KLBALJT2L;
 					};
 				};
 			};
@@ -337,12 +376,16 @@
 				C5D3D93B1A3B604E005C1DE1 /* backarrow.png in Resources */,
 				C5D3D93A1A3B604E005C1DE1 /* backarrow_white.png in Resources */,
 				89F23CFE1A2DE0BC00DC0350 /* EZAudio in Resources */,
+				65C97B591A8526CA00AB1900 /* Cold.png in Resources */,
 				C5D3D9331A3B5FFA005C1DE1 /* psiubotao.png in Resources */,
+				659D53D51A82471000605B87 /* psiu2_avatar2.jpg in Resources */,
 				C5D3D92D1A3B5FD0005C1DE1 /* label_batepapo.png in Resources */,
 				C5D3D9391A3B604E005C1DE1 /* backarrow_red2.png in Resources */,
 				C5D3D9521A3F1437005C1DE1 /* sacanagem_beijao.gif in Resources */,
 				89B458011A2FA6340070157F /* editing-edit-icon.png in Resources */,
 				C5D3D9481A3B81B5005C1DE1 /* loading.gif in Resources */,
+				659D53D31A82461200605B87 /* psiu_Avatar.jpg in Resources */,
+				65C97B5A1A8526CA00AB1900 /* Hot.png in Resources */,
 				D9EA8C2A187B1954008031B5 /* Images.xcassets in Resources */,
 				892EFF4D1A376E0C0096161D /* psiu-img.png in Resources */,
 				89F412D21A2E4E7700C16CC0 /* kate.jpg in Resources */,
@@ -354,9 +397,12 @@
 				C5D3D92E1A3B5FD0005C1DE1 /* label_lingua.png in Resources */,
 				C5D3D9321A3B5FFA005C1DE1 /* psiubotao_off.png in Resources */,
 				C5D3D92C1A3B5FD0005C1DE1 /* label_abraco.png in Resources */,
+				659D53D11A82458400605B87 /* psiu2.png in Resources */,
 				D9EA8C22187B1954008031B5 /* Main.storyboard in Resources */,
 				C5D3D94C1A3B8CFB005C1DE1 /* sacanagem_batepapo.gif in Resources */,
+				659D53D71A8254E700605B87 /* Launch Screen.xib in Resources */,
 				C5D3D93D1A3B6069005C1DE1 /* sacanagem_selinho.gif in Resources */,
+				659D53D91A82578500605B87 /* psiu_Screen.jpg in Resources */,
 				89B457FD1A2F99740070157F /* kate2.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -368,6 +414,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				65C97B601A85274E00AB1900 /* NATViewController.m in Sources */,
 				89F412D01A2E4A0D00C16CC0 /* Usuario.m in Sources */,
 				89B458041A2FA6830070157F /* ViewControllerConfig.m in Sources */,
 				89F412C71A2E3D0000C16CC0 /* UsersViewController.m in Sources */,
@@ -375,6 +422,7 @@
 				D9629273187BD6E600228E81 /* MCManager.m in Sources */,
 				891E380A1A32255000FFA931 /* PerfilViewController.m in Sources */,
 				891E380D1A3241F100FFA931 /* MatchViewController.m in Sources */,
+				65C97B5D1A85274200AB1900 /* NATHiBeaconsDelegate.m in Sources */,
 				C5D3D9431A3B6100005C1DE1 /* FLAnimatedImageView.m in Sources */,
 				D9EA8C1F187B1954008031B5 /* AppDelegate.m in Sources */,
 				C5D3D9131A3A6B10005C1DE1 /* GifViewController.m in Sources */,
@@ -489,12 +537,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MCDemo/Psiu-Prefix.pch";
 				INFOPLIST_FILE = "MCDemo/Psiu-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = Psiu;
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -506,12 +554,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MCDemo/Psiu-Prefix.pch";
 				INFOPLIST_FILE = "MCDemo/Psiu-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = Psiu;
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;

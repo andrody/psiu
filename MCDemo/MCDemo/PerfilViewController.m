@@ -155,6 +155,8 @@
     _tableViewOptions.delegate = self;
     _tableViewOptions.dataSource = self;
     
+    [[_imagem layer] setCornerRadius:40];
+    
     /*if (_user.match == YES) {
         [_psiu_btn setHidden:YES];
     }
@@ -175,7 +177,8 @@
     _nome_idade.text = _user.nome;
     _imagem.image = _user.imagem;
     
-    [self setTitle:_user.nome];
+    NSString *anos = @"Anos";
+    [self  setTitle:_user.nome];
     
     UIColor *azul = [UIColor colorWithRed:75.0/255.0 green:148.0/255.0 blue:229.0/255.0 alpha:1];
     UIColor *roxo = [UIColor colorWithRed:79.0/255.0 green:74.0/255.0 blue:181.0/255.0 alpha:1];

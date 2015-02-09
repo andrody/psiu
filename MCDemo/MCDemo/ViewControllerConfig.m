@@ -24,6 +24,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
     _textoNome.delegate =self;
     _textoidade.delegate =self;
 
@@ -33,9 +34,20 @@
     _textoidade.text = _user.idade;
     _textoNome.text = _user.nome;
     
+    [[_fotoUser layer] setCornerRadius:15];
+    
+    UIColor *color = [UIColor whiteColor];
+    _textoNome.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Nome (ex: Juquinha)" attributes:@{NSForegroundColorAttributeName: color}];
+    
+    _textoidade.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Idade (ex:22)" attributes:@{NSForegroundColorAttributeName: color}];
+   // _textoNome.alpha = 0.5;
+   // _textoidade.alpha = 0.5;
+    
+
+    
     _fotoUser.image = _user.imagem;
     
-    if(_user.imagem == nil) _fotoUser.image = [UIImage imageNamed:@"Avatar-blank.jpg"];
+    if(_user.imagem == nil) _fotoUser.image = [UIImage imageNamed:@"psiu2_Avatar2.jpg"];
 
 }
 
@@ -74,7 +86,7 @@
     _fotoUser.image = pickedImage;
     
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    NSString *path = [[paths objectAtIndex:0] stringByAppendingPathComponent:@"avatar.jpg"];
+    NSString *path = [[paths objectAtIndex:0] stringByAppendingPathComponent:@"psiu2_avatar2.jpg"];
     
     NSData *imageData = UIImageJPEGRepresentation(pickedImage, 0.5);
     [imageData writeToFile:path atomically:YES];

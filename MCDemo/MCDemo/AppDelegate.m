@@ -15,7 +15,7 @@
     // Override point for customization after application launch.
 
     _mcManager = [[MCManager alloc] init];
-    
+    sleep(3);
     return YES;
 }
 							

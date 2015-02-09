@@ -34,8 +34,18 @@
 
 @implementation UsersViewController
 
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    Cell *cell;
+    
+    cell.layer.shouldRasterize = YES;
+    cell.layer.cornerRadius = 16;
+    cell.layer.borderWidth = 1;
+    cell.layer.borderColor = [UIColor lightGrayColor].CGColor;
+    
     [_collection_dispositivos setDelegate:self];
     [_collection_dispositivos setDataSource:self];
     
@@ -44,6 +54,10 @@
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault animated:YES];
     
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+    
+    
+    
+    
     
     //UIColor *color =[UIColor colorWithRed:136.0/255.0 green:221.0/255.0 blue:187.0/255.0 alpha:1];
     
@@ -231,6 +245,17 @@
 
     
     if(indexPath.row >= valor) {
+        
+        [cell.layer setCornerRadius:15];
+        
+        cell.foto.layer.cornerRadius = 5.0;
+        cell.foto.layer.borderColor = (__bridge CGColorRef)([UIColor blueColor]);
+        [cell.foto.layer setBorderWidth: 10.0f];
+        cell.foto.layer.borderWidth = 10.0f;
+        
+        cell.clipsToBounds = YES;
+        
+
         cell.foto.image = nil;
         cell.foto.alpha = 0.2;
         
@@ -254,16 +279,11 @@
     if (self.onlyMatch) user = [self.match_users objectAtIndex:indexPath.row];
     else user = [_usuarios objectAtIndex:indexPath.row];
     cell.foto.image = user.imagem;
-    /*cell.foto.layer.cornerRadius = 5.0;
-    cell.foto.layer.borderColor = (__bridge CGColorRef)([UIColor blueColor]);
-    [cell.foto.layer setBorderWidth: 10.0f];
-    cell.foto.layer.borderWidth = 10.0f;*/
     
-    /*cell.foto.clipsToBounds = YES;
-    CALayer * l = [cell.foto layer];
-    [l setMasksToBounds:YES];
-    float f = cell.foto.frame.size.width / 2;
-    [l setCornerRadius:f];
+    //CALayer * l = [cell layer];
+    //[l setMasksToBounds:YES];
+    //float f = cell.frame.size.width / 2;
+    //[l setCornerRadius:f];
     
     UIColor *color = [UIColor whiteColor];
     float borderW = 4.0f;
@@ -274,9 +294,9 @@
     }
     
     // You can even add a border
-    [l setBorderWidth:borderW];
-    [l setBorderColor:[color CGColor]];*/
-    
+    //[l setBorderWidth:borderW];
+    //[l setBorderColor:[color CGColor]];
+    //--------------------------=====================================
     return cell;
 }
 

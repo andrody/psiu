@@ -30,6 +30,16 @@
     return self;
 }
 
+-(BOOL) application: (UIApplication *) application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions{
+
+    if([UIApplication instancesRespondToSelector:@selector(registerUserNotificationSettings:)]){
+    
+        [application registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert | UIUserNotificationTypeSound  categories:nil]];
+        
+    }
+    return YES;
+}
+
 -(void)advertiser:(MCNearbyServiceAdvertiser *)advertiser didReceiveInvitationFromPeer:(MCPeerID *)peerID withContext:(NSData *)context invitationHandler:(void (^)(BOOL, MCSession *))invitationHandler {
     
     //MCSession *session = [[MCSession alloc] initWithPeer:peerID];
