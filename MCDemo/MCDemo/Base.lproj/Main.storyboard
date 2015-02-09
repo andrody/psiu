@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="BxS-7j-UMS">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="QVq-nA-GRk">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
@@ -314,6 +314,15 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Z3b-4B-QUY" customClass="FLAnimatedImageView">
                                 <rect key="frame" x="-28" y="280" width="334" height="201"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TgT-um-V4k">
+                                <rect key="frame" x="244" y="35" width="62" height="30"/>
+                                <state key="normal" title="Localizar">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="BxS-7j-UMS" kind="modal" id="Ss3-wX-pzv"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -338,18 +347,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0jR-Ir-qzc">
-                                <rect key="frame" x="0.0" y="20" width="320" height="44"/>
-                                <items>
-                                    <navigationItem title="Localização" id="UbA-XD-ZuK"/>
-                                </items>
-                            </navigationBar>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nBW-2j-5cz">
-                                <rect key="frame" x="16" y="143" width="288" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Cold.png" translatesAutoresizingMaskIntoConstraints="NO" id="Dhc-3b-7oe">
                                 <rect key="frame" x="40" y="172" width="240" height="197"/>
                             </imageView>
@@ -384,15 +381,31 @@
                                     <outlet property="delegate" destination="BxS-7j-UMS" id="6Xu-4O-Ara"/>
                                 </connections>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nBW-2j-5cz">
+                                <rect key="frame" x="11" y="143" width="288" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0mj-da-wYK">
+                                <rect key="frame" x="0.0" y="20" width="80" height="56"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="tintColor" red="0.91747553660000003" green="0.26333286769999997" blue="0.33151669550000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <inset key="contentEdgeInsets" minX="16" minY="6" maxX="20" maxY="6"/>
+                                <state key="normal" title="Button" image="backarrow_red2.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="back:" destination="BxS-7j-UMS" eventType="touchUpInside" id="Pd3-cp-9wM"/>
+                                    <action selector="back:" destination="hw7-Ym-7mw" eventType="touchUpInside" id="mhD-qc-obL"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="zZy-JA-Fvq" secondAttribute="trailing" id="2dW-tC-0Ww"/>
-                            <constraint firstItem="0jR-Ir-qzc" firstAttribute="bottom" secondItem="zZy-JA-Fvq" secondAttribute="top" id="9bP-kA-x7x"/>
-                            <constraint firstItem="0jR-Ir-qzc" firstAttribute="leading" secondItem="zZy-JA-Fvq" secondAttribute="leading" id="ANh-g2-bEW"/>
                             <constraint firstItem="vUQ-1M-iel" firstAttribute="top" secondItem="zZy-JA-Fvq" secondAttribute="bottom" id="Am4-S3-4Mf"/>
                             <constraint firstItem="zZy-JA-Fvq" firstAttribute="top" secondItem="zyZ-LK-BpQ" secondAttribute="bottom" constant="44" id="WoX-mw-HGT"/>
-                            <constraint firstItem="0jR-Ir-qzc" firstAttribute="trailing" secondItem="zZy-JA-Fvq" secondAttribute="trailing" id="mDH-fp-JRa"/>
                             <constraint firstItem="zZy-JA-Fvq" firstAttribute="leading" secondItem="y3W-sy-h77" secondAttribute="leading" id="zzs-4M-9CG"/>
                         </constraints>
                     </view>

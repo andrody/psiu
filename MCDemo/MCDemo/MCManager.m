@@ -7,7 +7,7 @@
 //
 
 #import "MCManager.h"
-
+#import "NATViewController.h"
 
 @implementation MCManager
 
@@ -62,6 +62,9 @@
     
     _session = [[MCSession alloc] initWithPeer:_peerID];
     _session.delegate = self;
+    
+    [NATViewController setRandomkUUID];
+    
 }
 
 
@@ -165,7 +168,8 @@
 -(void)sendUserInfo:(MCPeerID *)peerID{
     NSDictionary *dict = @{@"tipo": [NSNumber numberWithInt:ChangeUserName],
                            @"nome": _myUser.nome,
-                           @"idade": _myUser.idade};
+                           @"idade": _myUser.idade,
+                           @"minor": _myUser.minor};
     
     NSArray *allPeers = @[peerID];
     NSData *dataToSend = [NSKeyedArchiver archivedDataWithRootObject:dict];
@@ -241,6 +245,7 @@
         NSString *idade = [dictionary objectForKey:@"idade"];
 
         user.nome = [NSString stringWithFormat:@"%@, %@", nome, idade];
+        user.minor = [dictionary objectForKey:@"minor"];
         
         
     }

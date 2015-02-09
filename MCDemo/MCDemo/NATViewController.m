@@ -25,9 +25,13 @@
 //
 
 #import "NATViewController.h"
+#import "AppDelegate.h"
 
-static NSString * const kUUID = @"00000000-0000-0000-0000-000000000000";
-static NSString * const kIdentifier = @"SomeIdentifier";
+
+static NSString * kUUID = @"00000000-0000-0000-0000-000000000000";
+static NSString * kIdentifier = @"SomeIdentifier";
+static NSNumber *minor2;
+
 
 static NSString * const kOperationCellIdentifier = @"OperationCell";
 static NSString * const kBeaconCellIdentifier = @"BeaconCell";
@@ -45,6 +49,8 @@ static NSString * const kBeaconsHeaderViewIdentifier = @"BeaconsHeader";
 
 static void * const kMonitoringOperationContext = (void *)&kMonitoringOperationContext;
 static void * const kRangingOperationContext = (void *)&kRangingOperationContext;
+
+
 
 typedef NS_ENUM(NSUInteger, NTSectionType) {
     NTOperationsSection,
@@ -70,6 +76,9 @@ typedef NS_ENUM(NSUInteger, NTOperationsRow) {
 @property (nonatomic, unsafe_unretained) void *operationContext;
 @property (weak, nonatomic) IBOutlet UIButton *quenteFrioButton;
 @property (weak, nonatomic) IBOutlet UIImageView *imagemQuenteFrio;
+@property (nonatomic, strong) AppDelegate *appDelegate;
+@property CLBeacon *parceiro;
+
 
 @end
 
@@ -80,13 +89,25 @@ typedef NS_ENUM(NSUInteger, NTOperationsRow) {
 -(void) viewDidLoad{
 
     [super viewDidLoad];
+    _appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    //[_appDelegate mcManager]
     
-    //[self startMonitoringForBeacons];
+    [self startMonitoringForBeacons];
     [self startAdvertisingBeacon];
     [self startRangingForBeacons];
     
     
 }
+
++(void)setRandomkUUID {
+    //kUUID = [[NSUUID UUID] UUIDString];
+    minor2 = [NSNumber numberWithInt:arc4random_uniform(999)];
+
+    //kIdentifier =
+
+    
+}
+
 - (NSArray *)indexPathsOfRemovedBeacons:(NSArray *)beacons
 {
     NSMutableArray *indexPaths = nil;
@@ -174,7 +195,7 @@ typedef NS_ENUM(NSUInteger, NTOperationsRow) {
     for (int index = 0; index < [beacons count]; index++) {
         CLBeacon *curr = [beacons objectAtIndex:index];
         NSString *identifier = [NSString stringWithFormat:@"%@/%@", curr.major, curr.minor];
-        
+        NSLog(@"Identificadoooor: %@", identifier);
         // this is very fast constant time lookup in a hash table
         if ([lookup containsObject:identifier]) {
             [mutableBeacons removeObjectAtIndex:index];
@@ -190,11 +211,12 @@ typedef NS_ENUM(NSUInteger, NTOperationsRow) {
 - (NSString *)detailsStringForBeacon:(CLBeacon *)beacon
 {
     NSString *proximity;
-    
+    self.statusLabel.text = [NSString stringWithFormat:@"%.2f metros", beacon.accuracy];
+
     switch (beacon.proximity) {
         case CLProximityNear:
             proximity = @"Near";
-            _statusLabel.text = beacon.proximityUUID.UUIDString;
+            //_statusLabel.text = beacon.proximityUUID.UUIDString;
             
             //UIImage *buttonImage = [UIImage imageNamed:@"Hot.png"];
             //_quenteFrioButton.imageView = [UIImage imageNamed:@"Hot.png"];
@@ -203,11 +225,11 @@ typedef NS_ENUM(NSUInteger, NTOperationsRow) {
             break;
         case CLProximityImmediate:
             proximity = @"Immediate";
-            _statusLabel.text = @"intermediario";
+            //_statusLabel.text = @"intermediario";
             break;
         case CLProximityFar:
             proximity = @"Far";
-            _statusLabel.text = @"longe";
+           // _statusLabel.text = @"longe";
             _imagemQuenteFrio.image = [UIImage imageNamed:@"Cold.png"];
             break;
         case CLProximityUnknown:
@@ -219,6 +241,12 @@ typedef NS_ENUM(NSUInteger, NTOperationsRow) {
     
     NSString *format = @"%@, %@ • %@ • %f • %li";
     return [NSString stringWithFormat:format, beacon.major, beacon.minor, proximity, beacon.accuracy, beacon.rssi];
+}
+
+- (IBAction)back:(id)sender {
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
+    
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -530,6 +558,19 @@ typedef NS_ENUM(NSUInteger, NTOperationsRow) {
     
     self.detectedBeacons = filteredBeacons;
     
+    for (int index = 0; index < [self.detectedBeacons count]; index++) {
+        CLBeacon *curr = [beacons objectAtIndex:index];
+
+        if ([curr.minor integerValue] == [[_appDelegate mcManager].usuario_match.minor integerValue]) {
+            _parceiro = curr;
+            self.statusLabel.text = [NSString stringWithFormat:@"%.2f metros", _parceiro.accuracy];
+            
+        }
+    
+    }
+
+    
+    
     [self.beaconTableView beginUpdates];
     if (insertedSections)
         [self.beaconTableView insertSections:insertedSections withRowAnimation:UITableViewRowAnimationFade];
@@ -621,8 +662,8 @@ typedef NS_ENUM(NSUInteger, NTOperationsRow) {
     time_t t;
     srand((unsigned) time(&t));
     CLBeaconRegion *region = [[CLBeaconRegion alloc] initWithProximityUUID:self.beaconRegion.proximityUUID
-                                                                     major:rand()
-                                                                     minor:rand()
+                                                                     major:1
+                                                                     minor:[minor2 integerValue]
                                                                 identifier:self.beaconRegion.identifier];
     NSDictionary *beaconPeripheralData = [region peripheralDataWithMeasuredPower:nil];
     [self.peripheralManager startAdvertising:beaconPeripheralData];

@@ -7,11 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "FLAnimatedImage.h" 
+#import "FLAnimatedImage.h"
 #import "FLAnimatedImageView.h"
 
 @interface GifViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UIImageView *sacanagemImage;
 @property (weak, nonatomic) IBOutlet FLAnimatedImageView *gif;
+
 
 @end

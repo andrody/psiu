@@ -47,7 +47,7 @@
     
     _fotoUser.image = _user.imagem;
     
-    if(_user.imagem == nil) _fotoUser.image = [UIImage imageNamed:@"psiu2_Avatar2.jpg"];
+    if(_user.imagem == nil) _fotoUser.image = [UIImage imageNamed:@"psiu2_avatar2.jpg"];
 
 }
 

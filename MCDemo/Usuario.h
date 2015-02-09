@@ -22,6 +22,7 @@
 @property BOOL match;
 @property BOOL sacanagem_ja_escolhida;
 @property BOOL sacanagem_final_escolhida;
+@property NSNumber * minor;
 
 
 
