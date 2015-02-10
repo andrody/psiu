@@ -99,6 +99,11 @@ typedef NS_ENUM(NSUInteger, NTOperationsRow) {
     
 }
 
++ (NSNumber*)getMinor {
+    return minor2;
+}
+
+
 +(void)setRandomkUUID {
     //kUUID = [[NSUUID UUID] UUIDString];
     minor2 = [NSNumber numberWithInt:arc4random_uniform(999)];

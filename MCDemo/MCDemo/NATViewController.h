@@ -32,6 +32,9 @@
 
 @property (nonatomic, weak) IBOutlet UITableView *beaconTableView;
 
+
 + (void)setRandomkUUID;
++ (NSNumber*)getMinor;
+
 
 @end

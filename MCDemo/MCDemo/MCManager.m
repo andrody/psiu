@@ -9,6 +9,8 @@
 #import "MCManager.h"
 #import "NATViewController.h"
 
+
+
 @implementation MCManager
 
 -(id)init{
@@ -166,6 +168,8 @@
 }
 
 -(void)sendUserInfo:(MCPeerID *)peerID{
+    _myUser.minor = [NATViewController getMinor];
+    
     NSDictionary *dict = @{@"tipo": [NSNumber numberWithInt:ChangeUserName],
                            @"nome": _myUser.nome,
                            @"idade": _myUser.idade,
