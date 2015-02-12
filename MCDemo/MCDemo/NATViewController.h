@@ -26,6 +26,8 @@
 
 @import CoreLocation;
 @import CoreBluetooth;
+#import "FLAnimatedImage.h"
+#import "FLAnimatedImageView.h"
 
 @interface NATViewController : UIViewController <CLLocationManagerDelegate, CBPeripheralManagerDelegate,
     UITableViewDataSource, UITableViewDelegate, UIAlertViewDelegate>

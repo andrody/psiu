@@ -28,6 +28,7 @@
 #import "AppDelegate.h"
 
 
+
 static NSString * kUUID = @"00000000-0000-0000-0000-000000000000";
 static NSString * kIdentifier = @"SomeIdentifier";
 static NSNumber *minor2;
@@ -75,7 +76,8 @@ typedef NS_ENUM(NSUInteger, NTOperationsRow) {
 @property (nonatomic, weak) UISwitch *rangingSwitch;
 @property (nonatomic, unsafe_unretained) void *operationContext;
 @property (weak, nonatomic) IBOutlet UIButton *quenteFrioButton;
-@property (weak, nonatomic) IBOutlet UIImageView *imagemQuenteFrio;
+@property (weak, nonatomic) IBOutlet FLAnimatedImageView *imagemQuenteFrio;
+
 @property (nonatomic, strong) AppDelegate *appDelegate;
 @property CLBeacon *parceiro;
 
@@ -90,6 +92,12 @@ typedef NS_ENUM(NSUInteger, NTOperationsRow) {
 
     [super viewDidLoad];
     _appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    
+    FLAnimatedImage *gifImage = [[FLAnimatedImage alloc] initWithAnimatedGIFData:[NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"cold_cube_360" ofType:@"gif"]]];
+    
+    _imagemQuenteFrio.animatedImage = gifImage;
+    [self.view addSubview:_imagemQuenteFrio];
+    
     //[_appDelegate mcManager]
     
     [self startMonitoringForBeacons];
@@ -97,6 +105,29 @@ typedef NS_ENUM(NSUInteger, NTOperationsRow) {
     [self startRangingForBeacons];
     
     
+}
+
+-(void) viewDidAppear:(BOOL)animated {
+    
+    [self showView];
+    
+}
+
+-(void)showView{
+    [UIView beginAnimations:@"Fade-in" context:NULL];
+    [UIView setAnimationDelay:.5];
+    [UIView setAnimationDuration:1.5];
+    [UIView setAnimationCurve:UIViewAnimationCurveEaseOut];
+    
+    [UIView commitAnimations];
+}
+
+-(void)hideView{
+    [UIView beginAnimations: @"Fade Out" context:nil];
+    [UIView setAnimationDelay:0];
+    [UIView setAnimationDuration:.5];
+    //hide your view with Fad animation
+    [UIView commitAnimations];
 }
 
 + (NSNumber*)getMinor {
@@ -217,32 +248,33 @@ typedef NS_ENUM(NSUInteger, NTOperationsRow) {
 {
     NSString *proximity;
     self.statusLabel.text = [NSString stringWithFormat:@"%.2f metros", beacon.accuracy];
-
-    switch (beacon.proximity) {
-        case CLProximityNear:
-            proximity = @"Near";
-            //_statusLabel.text = beacon.proximityUUID.UUIDString;
-            
-            //UIImage *buttonImage = [UIImage imageNamed:@"Hot.png"];
-            //_quenteFrioButton.imageView = [UIImage imageNamed:@"Hot.png"];
-            //[_quenteFrioButton setBackgroundImage:buttonImage forState:UIControlStateNormal];
-            _imagemQuenteFrio.image = [UIImage imageNamed:@"Hot.png"];
-            break;
-        case CLProximityImmediate:
-            proximity = @"Immediate";
-            //_statusLabel.text = @"intermediario";
-            break;
-        case CLProximityFar:
-            proximity = @"Far";
-           // _statusLabel.text = @"longe";
-            _imagemQuenteFrio.image = [UIImage imageNamed:@"Cold.png"];
-            break;
-        case CLProximityUnknown:
-        default:
-            proximity = @"Unknown";
-            _imagemQuenteFrio.image = [UIImage imageNamed:@"Cold.png"];
-            break;
+    
+    if(beacon.accuracy <= 3.0){
+        self.statusLabel.text = [NSString stringWithFormat:@"LADO A LADO"];
+        FLAnimatedImage *gifImage = [[FLAnimatedImage alloc] initWithAnimatedGIFData:[NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"hot3" ofType:@"gif"]]];
+        
+        _imagemQuenteFrio.animatedImage = gifImage;
+        [self.view addSubview:_imagemQuenteFrio];
+    } else if (beacon.accuracy >3 && beacon.accuracy<=6 ){
+        self.statusLabel.text = [NSString stringWithFormat:@"PROXIMO"];
+        FLAnimatedImage *gifImage = [[FLAnimatedImage alloc] initWithAnimatedGIFData:[NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"warm_360" ofType:@"gif"]]];
+        
+        _imagemQuenteFrio.animatedImage = gifImage;
+        [self.view addSubview:_imagemQuenteFrio];
+    }else if(beacon.proximity > 6.0){
+        self.statusLabel.text = [NSString stringWithFormat:@"DISTANTE"];
+        FLAnimatedImage *gifImage = [[FLAnimatedImage alloc] initWithAnimatedGIFData:[NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"cold_cube_360" ofType:@"gif"]]];
+        
+        _imagemQuenteFrio.animatedImage = gifImage;
+        [self.view addSubview:_imagemQuenteFrio];
+    }else{
+        self.statusLabel.text = [NSString stringWithFormat:@"FORA DE ALCANCE"];
+        FLAnimatedImage *gifImage = [[FLAnimatedImage alloc] initWithAnimatedGIFData:[NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"cold_cube_360" ofType:@"gif"]]];
+        
+        _imagemQuenteFrio.animatedImage = gifImage;
+        [self.view addSubview:_imagemQuenteFrio];
     }
+
     
     NSString *format = @"%@, %@ • %@ • %f • %li";
     return [NSString stringWithFormat:format, beacon.major, beacon.minor, proximity, beacon.accuracy, beacon.rssi];

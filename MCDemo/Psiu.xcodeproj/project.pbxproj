@@ -35,6 +35,9 @@
 		89F412CA1A2E405100C16CC0 /* Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = 89F412C91A2E405100C16CC0 /* Cell.m */; };
 		89F412D01A2E4A0D00C16CC0 /* Usuario.m in Sources */ = {isa = PBXBuildFile; fileRef = 89F412CF1A2E4A0D00C16CC0 /* Usuario.m */; };
 		89F412D21A2E4E7700C16CC0 /* kate.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 89F412D11A2E4E7700C16CC0 /* kate.jpg */; };
+		A4EC9A8C1A8D17E10049FAFF /* cold_cube_360.gif in Resources */ = {isa = PBXBuildFile; fileRef = A4EC9A891A8D17E10049FAFF /* cold_cube_360.gif */; };
+		A4EC9A8D1A8D17E10049FAFF /* hot3.gif in Resources */ = {isa = PBXBuildFile; fileRef = A4EC9A8A1A8D17E10049FAFF /* hot3.gif */; };
+		A4EC9A8E1A8D17E10049FAFF /* warm_360.gif in Resources */ = {isa = PBXBuildFile; fileRef = A4EC9A8B1A8D17E10049FAFF /* warm_360.gif */; };
 		C5D3D9061A3A150E005C1DE1 /* PerfilTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C5D3D9051A3A150E005C1DE1 /* PerfilTableCell.m */; };
 		C5D3D9091A3A19EE005C1DE1 /* Option.m in Sources */ = {isa = PBXBuildFile; fileRef = C5D3D9081A3A19EE005C1DE1 /* Option.m */; };
 		C5D3D9131A3A6B10005C1DE1 /* GifViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C5D3D9121A3A6B10005C1DE1 /* GifViewController.m */; };
@@ -105,6 +108,9 @@
 		89F412CE1A2E4A0D00C16CC0 /* Usuario.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Usuario.h; path = ../Usuario.h; sourceTree = "<group>"; };
 		89F412CF1A2E4A0D00C16CC0 /* Usuario.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Usuario.m; path = ../Usuario.m; sourceTree = "<group>"; };
 		89F412D11A2E4E7700C16CC0 /* kate.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = kate.jpg; sourceTree = "<group>"; };
+		A4EC9A891A8D17E10049FAFF /* cold_cube_360.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = cold_cube_360.gif; path = ../../../../Downloads/cold_cube_360.gif; sourceTree = "<group>"; };
+		A4EC9A8A1A8D17E10049FAFF /* hot3.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = hot3.gif; path = ../../../../Downloads/hot3.gif; sourceTree = "<group>"; };
+		A4EC9A8B1A8D17E10049FAFF /* warm_360.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = warm_360.gif; path = ../../../../Downloads/warm_360.gif; sourceTree = "<group>"; };
 		C5D3D9041A3A150E005C1DE1 /* PerfilTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PerfilTableCell.h; sourceTree = "<group>"; };
 		C5D3D9051A3A150E005C1DE1 /* PerfilTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PerfilTableCell.m; sourceTree = "<group>"; };
 		C5D3D9071A3A19EE005C1DE1 /* Option.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Option.h; sourceTree = "<group>"; };
@@ -219,6 +225,9 @@
 		D9EA8C14187B1954008031B5 /* MCDemo */ = {
 			isa = PBXGroup;
 			children = (
+				A4EC9A891A8D17E10049FAFF /* cold_cube_360.gif */,
+				A4EC9A8A1A8D17E10049FAFF /* hot3.gif */,
+				A4EC9A8B1A8D17E10049FAFF /* warm_360.gif */,
 				C5D3D9281A3B5FD0005C1DE1 /* label_abraco.png */,
 				C5D3D9291A3B5FD0005C1DE1 /* label_batepapo.png */,
 				C5D3D92A1A3B5FD0005C1DE1 /* label_lingua.png */,
@@ -382,12 +391,14 @@
 				C5D3D92D1A3B5FD0005C1DE1 /* label_batepapo.png in Resources */,
 				C5D3D9391A3B604E005C1DE1 /* backarrow_red2.png in Resources */,
 				C5D3D9521A3F1437005C1DE1 /* sacanagem_beijao.gif in Resources */,
+				A4EC9A8C1A8D17E10049FAFF /* cold_cube_360.gif in Resources */,
 				89B458011A2FA6340070157F /* editing-edit-icon.png in Resources */,
 				C5D3D9481A3B81B5005C1DE1 /* loading.gif in Resources */,
 				659D53D31A82461200605B87 /* psiu_Avatar.jpg in Resources */,
 				65C97B5A1A8526CA00AB1900 /* Hot.png in Resources */,
 				D9EA8C2A187B1954008031B5 /* Images.xcassets in Resources */,
 				892EFF4D1A376E0C0096161D /* psiu-img.png in Resources */,
+				A4EC9A8E1A8D17E10049FAFF /* warm_360.gif in Resources */,
 				89F412D21A2E4E7700C16CC0 /* kate.jpg in Resources */,
 				89DBCC431A3250FC00803BD7 /* psiu.wav in Resources */,
 				C5D3D92F1A3B5FD0005C1DE1 /* label_selinho.png in Resources */,
@@ -403,6 +414,7 @@
 				659D53D71A8254E700605B87 /* Launch Screen.xib in Resources */,
 				C5D3D93D1A3B6069005C1DE1 /* sacanagem_selinho.gif in Resources */,
 				659D53D91A82578500605B87 /* psiu_Screen.jpg in Resources */,
+				A4EC9A8D1A8D17E10049FAFF /* hot3.gif in Resources */,
 				89B457FD1A2F99740070157F /* kate2.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
