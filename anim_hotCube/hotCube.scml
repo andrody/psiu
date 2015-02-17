@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<spriter_data scml_version="1.0" generator="BrashMonkey Spriter" generator_version="r2">
+    <folder id="0">
+        <file id="0" name="warm8.png" width="1024" height="1024" pivot_x="0" pivot_y="1"/>
+        <file id="1" name="warm9.png" width="1024" height="1024" pivot_x="0" pivot_y="1"/>
+        <file id="2" name="warm10.png" width="1024" height="1024" pivot_x="0" pivot_y="1"/>
+        <file id="3" name="warm11.png" width="1024" height="1024" pivot_x="0" pivot_y="1"/>
+    </folder>
+    <entity id="0" name="entity_000">
+        <animation id="0" name="NewAnimation" length="1000" interval="100">
+            <mainline>
+                <key id="0">
+                    <object_ref id="0" timeline="0" key="0" z_index="0"/>
+                </key>
+                <key id="1" time="99">
+                    <object_ref id="0" timeline="0" key="1" z_index="0"/>
+                </key>
+                <key id="2" time="200">
+                    <object_ref id="0" timeline="0" key="2" z_index="0"/>
+                </key>
+                <key id="3" time="300">
+                    <object_ref id="0" timeline="0" key="3" z_index="0"/>
+                </key>
+                <key id="4" time="400">
+                    <object_ref id="0" timeline="0" key="4" z_index="0"/>
+                </key>
+                <key id="5" time="500">
+                    <object_ref id="0" timeline="0" key="5" z_index="0"/>
+                </key>
+                <key id="6" time="600">
+                    <object_ref id="0" timeline="0" key="6" z_index="0"/>
+                </key>
+            </mainline>
+            <timeline id="0" name="warm8">
+                <key id="0" spin="0">
+                    <object folder="0" file="0" x="-493.306122" y="480.081633"/>
+                </key>
+                <key id="1" time="99" spin="0">
+                    <object folder="0" file="1" x="-493.306122" y="480.081633"/>
+                </key>
+                <key id="2" time="200" spin="0">
+                    <object folder="0" file="2" x="-493.306122" y="480.081633"/>
+                </key>
+                <key id="3" time="300" spin="0">
+                    <object folder="0" file="3" x="-493.306122" y="480.081633"/>
+                </key>
+                <key id="4" time="400" spin="0">
+                    <object folder="0" file="3" x="-550.462917" y="523.932305" scale_x="1.114983" scale_y="1.114983"/>
+                </key>
+                <key id="5" time="500" spin="0">
+                    <object folder="0" file="3" x="-550.462917" y="523.932305" scale_x="1.114983" scale_y="1.114983"/>
+                </key>
+                <key id="6" time="600" spin="0">
+                    <object folder="0" file="3" x="-550.462917" y="523.932305" scale_x="1.114983" scale_y="1.114983"/>
+                </key>
+            </timeline>
+        </animation>
+    </entity>
+</spriter_data>

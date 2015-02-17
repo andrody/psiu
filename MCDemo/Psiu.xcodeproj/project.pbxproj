@@ -14,6 +14,12 @@
 		659D53D51A82471000605B87 /* psiu2_avatar2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 659D53D41A82471000605B87 /* psiu2_avatar2.jpg */; };
 		659D53D71A8254E700605B87 /* Launch Screen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 659D53D61A8254E700605B87 /* Launch Screen.xib */; };
 		659D53D91A82578500605B87 /* psiu_Screen.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 659D53D81A82578500605B87 /* psiu_Screen.jpg */; };
+		65BCD60D1A8D24F6004CA9BD /* HoboStd.otf in Resources */ = {isa = PBXBuildFile; fileRef = 65BCD60C1A8D24F6004CA9BD /* HoboStd.otf */; };
+		65BCD60F1A8D2596004CA9BD /* cold_cube_360.gif in Resources */ = {isa = PBXBuildFile; fileRef = 65BCD60E1A8D2596004CA9BD /* cold_cube_360.gif */; };
+		65BCD6111A8D25AA004CA9BD /* hot3.gif in Resources */ = {isa = PBXBuildFile; fileRef = 65BCD6101A8D25AA004CA9BD /* hot3.gif */; };
+		65BCD6131A8D25BB004CA9BD /* warm_360.gif in Resources */ = {isa = PBXBuildFile; fileRef = 65BCD6121A8D25BB004CA9BD /* warm_360.gif */; };
+		65BCD6151A8E4DA6004CA9BD /* loc.png in Resources */ = {isa = PBXBuildFile; fileRef = 65BCD6141A8E4DA6004CA9BD /* loc.png */; };
+		65BCD6171A8E50B3004CA9BD /* locHeart_vet_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 65BCD6161A8E50B3004CA9BD /* locHeart_vet_icon.png */; };
 		65C97B591A8526CA00AB1900 /* Cold.png in Resources */ = {isa = PBXBuildFile; fileRef = 65C97B571A8526CA00AB1900 /* Cold.png */; };
 		65C97B5A1A8526CA00AB1900 /* Hot.png in Resources */ = {isa = PBXBuildFile; fileRef = 65C97B581A8526CA00AB1900 /* Hot.png */; };
 		65C97B5D1A85274200AB1900 /* NATHiBeaconsDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 65C97B5C1A85274200AB1900 /* NATHiBeaconsDelegate.m */; };
@@ -78,6 +84,12 @@
 		659D53D41A82471000605B87 /* psiu2_avatar2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = psiu2_avatar2.jpg; sourceTree = "<group>"; };
 		659D53D61A8254E700605B87 /* Launch Screen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "Launch Screen.xib"; sourceTree = "<group>"; };
 		659D53D81A82578500605B87 /* psiu_Screen.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = psiu_Screen.jpg; sourceTree = "<group>"; };
+		65BCD60C1A8D24F6004CA9BD /* HoboStd.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = HoboStd.otf; sourceTree = "<group>"; };
+		65BCD60E1A8D2596004CA9BD /* cold_cube_360.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = cold_cube_360.gif; sourceTree = "<group>"; };
+		65BCD6101A8D25AA004CA9BD /* hot3.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = hot3.gif; sourceTree = "<group>"; };
+		65BCD6121A8D25BB004CA9BD /* warm_360.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = warm_360.gif; sourceTree = "<group>"; };
+		65BCD6141A8E4DA6004CA9BD /* loc.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loc.png; sourceTree = "<group>"; };
+		65BCD6161A8E50B3004CA9BD /* locHeart_vet_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = locHeart_vet_icon.png; sourceTree = "<group>"; };
 		65C97B571A8526CA00AB1900 /* Cold.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Cold.png; sourceTree = "<group>"; };
 		65C97B581A8526CA00AB1900 /* Hot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Hot.png; sourceTree = "<group>"; };
 		65C97B5B1A85274200AB1900 /* NATHiBeaconsDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NATHiBeaconsDelegate.h; sourceTree = "<group>"; };
@@ -226,8 +238,11 @@
 			isa = PBXGroup;
 			children = (
 				A4EC9A891A8D17E10049FAFF /* cold_cube_360.gif */,
+				65BCD60E1A8D2596004CA9BD /* cold_cube_360.gif */,
 				A4EC9A8A1A8D17E10049FAFF /* hot3.gif */,
+				65BCD6101A8D25AA004CA9BD /* hot3.gif */,
 				A4EC9A8B1A8D17E10049FAFF /* warm_360.gif */,
+				65BCD6121A8D25BB004CA9BD /* warm_360.gif */,
 				C5D3D9281A3B5FD0005C1DE1 /* label_abraco.png */,
 				C5D3D9291A3B5FD0005C1DE1 /* label_batepapo.png */,
 				C5D3D92A1A3B5FD0005C1DE1 /* label_lingua.png */,
@@ -259,11 +274,14 @@
 				89B457FE1A2FA6340070157F /* Avatar-blank.jpg */,
 				89B457FF1A2FA6340070157F /* editing-edit-icon.png */,
 				89F412D11A2E4E7700C16CC0 /* kate.jpg */,
+				65BCD60C1A8D24F6004CA9BD /* HoboStd.otf */,
 				65C97B5E1A85274E00AB1900 /* NATViewController.h */,
 				65C97B5F1A85274E00AB1900 /* NATViewController.m */,
 				65C97B5B1A85274200AB1900 /* NATHiBeaconsDelegate.h */,
 				65C97B5C1A85274200AB1900 /* NATHiBeaconsDelegate.m */,
 				D9629271187BD6E600228E81 /* MCManager.h */,
+				65BCD6161A8E50B3004CA9BD /* locHeart_vet_icon.png */,
+				65BCD6141A8E4DA6004CA9BD /* loc.png */,
 				D9629272187BD6E600228E81 /* MCManager.m */,
 				D9EA8C1D187B1954008031B5 /* AppDelegate.h */,
 				D9EA8C1E187B1954008031B5 /* AppDelegate.m */,
@@ -352,7 +370,12 @@
 				ORGANIZATIONNAME = Appcoda;
 				TargetAttributes = {
 					D9EA8C0A187B1954008031B5 = {
-						DevelopmentTeam = CC953577YZ;
+						DevelopmentTeam = 4KLBALJT2L;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 0;
+							};
+						};
 					};
 				};
 			};
@@ -379,8 +402,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				65BCD6151A8E4DA6004CA9BD /* loc.png in Resources */,
 				89B458001A2FA6340070157F /* Avatar-blank.jpg in Resources */,
 				C5D3D9501A3BA036005C1DE1 /* loading7.gif in Resources */,
+				65BCD6111A8D25AA004CA9BD /* hot3.gif in Resources */,
 				892EFF551A377F380096161D /* back_btn2.png in Resources */,
 				C5D3D93B1A3B604E005C1DE1 /* backarrow.png in Resources */,
 				C5D3D93A1A3B604E005C1DE1 /* backarrow_white.png in Resources */,
@@ -397,8 +422,10 @@
 				659D53D31A82461200605B87 /* psiu_Avatar.jpg in Resources */,
 				65C97B5A1A8526CA00AB1900 /* Hot.png in Resources */,
 				D9EA8C2A187B1954008031B5 /* Images.xcassets in Resources */,
+				65BCD60F1A8D2596004CA9BD /* cold_cube_360.gif in Resources */,
 				892EFF4D1A376E0C0096161D /* psiu-img.png in Resources */,
 				A4EC9A8E1A8D17E10049FAFF /* warm_360.gif in Resources */,
+				65BCD6131A8D25BB004CA9BD /* warm_360.gif in Resources */,
 				89F412D21A2E4E7700C16CC0 /* kate.jpg in Resources */,
 				89DBCC431A3250FC00803BD7 /* psiu.wav in Resources */,
 				C5D3D92F1A3B5FD0005C1DE1 /* label_selinho.png in Resources */,
@@ -409,11 +436,13 @@
 				C5D3D9321A3B5FFA005C1DE1 /* psiubotao_off.png in Resources */,
 				C5D3D92C1A3B5FD0005C1DE1 /* label_abraco.png in Resources */,
 				659D53D11A82458400605B87 /* psiu2.png in Resources */,
+				65BCD6171A8E50B3004CA9BD /* locHeart_vet_icon.png in Resources */,
 				D9EA8C22187B1954008031B5 /* Main.storyboard in Resources */,
 				C5D3D94C1A3B8CFB005C1DE1 /* sacanagem_batepapo.gif in Resources */,
 				659D53D71A8254E700605B87 /* Launch Screen.xib in Resources */,
 				C5D3D93D1A3B6069005C1DE1 /* sacanagem_selinho.gif in Resources */,
 				659D53D91A82578500605B87 /* psiu_Screen.jpg in Resources */,
+				65BCD60D1A8D24F6004CA9BD /* HoboStd.otf in Resources */,
 				A4EC9A8D1A8D17E10049FAFF /* hot3.gif in Resources */,
 				89B457FD1A2F99740070157F /* kate2.jpg in Resources */,
 			);

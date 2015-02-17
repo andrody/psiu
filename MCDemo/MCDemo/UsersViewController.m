@@ -232,7 +232,7 @@
         valor = [self.match_users count];
     else
         valor = [_usuarios count];
-    if(valor < 6) return 6;
+    if(valor < 8) return 8;
     return valor;
     
 }

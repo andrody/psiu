@@ -132,7 +132,7 @@
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *documentsDirectory = [[NSString alloc] initWithString:[paths objectAtIndex:0]];
     NSString *filePath = [documentsDirectory stringByAppendingPathComponent:@"Avatar-blank.jpg"];
-    NSString *modifiedName = [NSString stringWithFormat:@"%@, %@", _myUser.nome, _myUser.idade];
+    NSString *modifiedName = [NSString stringWithFormat:@"%@, %@ Anos", _myUser.nome, _myUser.idade];
     
     
     

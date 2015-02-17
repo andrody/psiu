@@ -246,29 +246,33 @@ typedef NS_ENUM(NSUInteger, NTOperationsRow) {
 #pragma mark - Table view functionality
 - (NSString *)detailsStringForBeacon:(CLBeacon *)beacon
 {
-    NSString *proximity;
-    self.statusLabel.text = [NSString stringWithFormat:@"%.2f metros", beacon.accuracy];
+    _statusLabel.hidden = NO;
+    _statusLabel.font = [UIFont fontWithName:@"HoboStd" size:25];
+    //_statusLabel.textColor = [UIColor colorWithRed:234 green:67 blue:85 alpha:1.0];
     
-    if(beacon.accuracy <= 3.0){
-        self.statusLabel.text = [NSString stringWithFormat:@"LADO A LADO"];
+    NSString *proximity;
+    //self.statusLabel.text = [NSString stringWithFormat:@"Calculated Distance..."];
+    
+    if(beacon.proximity == CLProximityImmediate){
+        self.statusLabel.text = [NSString stringWithFormat:@"MUITO PROXIMO %.2f", beacon.accuracy*20];
         FLAnimatedImage *gifImage = [[FLAnimatedImage alloc] initWithAnimatedGIFData:[NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"hot3" ofType:@"gif"]]];
         
         _imagemQuenteFrio.animatedImage = gifImage;
         [self.view addSubview:_imagemQuenteFrio];
-    } else if (beacon.accuracy >3 && beacon.accuracy<=6 ){
-        self.statusLabel.text = [NSString stringWithFormat:@"PROXIMO"];
+    } else if (beacon.proximity == CLProximityNear){
+        self.statusLabel.text = [NSString stringWithFormat:@"PROXIMO %.2f", beacon.accuracy*20];
         FLAnimatedImage *gifImage = [[FLAnimatedImage alloc] initWithAnimatedGIFData:[NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"warm_360" ofType:@"gif"]]];
         
         _imagemQuenteFrio.animatedImage = gifImage;
         [self.view addSubview:_imagemQuenteFrio];
-    }else if(beacon.proximity > 6.0){
-        self.statusLabel.text = [NSString stringWithFormat:@"DISTANTE"];
+    }else if(beacon.proximity == CLProximityFar){
+        self.statusLabel.text = [NSString stringWithFormat:@"DISTANTE %.2f", beacon.accuracy*20];
         FLAnimatedImage *gifImage = [[FLAnimatedImage alloc] initWithAnimatedGIFData:[NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"cold_cube_360" ofType:@"gif"]]];
         
         _imagemQuenteFrio.animatedImage = gifImage;
         [self.view addSubview:_imagemQuenteFrio];
-    }else{
-        self.statusLabel.text = [NSString stringWithFormat:@"FORA DE ALCANCE"];
+    }else if(beacon.proximity == CLProximityUnknown){
+        self.statusLabel.text = [NSString stringWithFormat:@"DISTANTE"];
         FLAnimatedImage *gifImage = [[FLAnimatedImage alloc] initWithAnimatedGIFData:[NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"cold_cube_360" ofType:@"gif"]]];
         
         _imagemQuenteFrio.animatedImage = gifImage;
@@ -405,6 +409,8 @@ typedef NS_ENUM(NSUInteger, NTOperationsRow) {
     
     NSUUID *proximityUUID = [[NSUUID alloc] initWithUUIDString:kUUID];
     self.beaconRegion = [[CLBeaconRegion alloc] initWithProximityUUID:proximityUUID identifier:kIdentifier];
+    
+    
     self.beaconRegion.notifyEntryStateOnDisplay = YES;
 }
 
@@ -702,7 +708,7 @@ typedef NS_ENUM(NSUInteger, NTOperationsRow) {
                                                                      major:1
                                                                      minor:[minor2 integerValue]
                                                                 identifier:self.beaconRegion.identifier];
-    NSDictionary *beaconPeripheralData = [region peripheralDataWithMeasuredPower:nil];
+    NSDictionary *beaconPeripheralData = [region peripheralDataWithMeasuredPower:[NSNumber numberWithInt: -80 ]];//ta aqui poha
     [self.peripheralManager startAdvertising:beaconPeripheralData];
     
     NSLog(@"Turning on advertising for region: %@.", region);

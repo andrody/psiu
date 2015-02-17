@@ -1,0 +1,445 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<spriter_data scml_version="1.0" generator="BrashMonkey Spriter" generator_version="r2">
+    <folder id="0">
+        <file id="0" name="cold2.png" width="2190" height="961" pivot_x="0" pivot_y="1"/>
+        <file id="1" name="snow1.png" width="50" height="50" pivot_x="0" pivot_y="1"/>
+        <file id="2" name="snowflake.png" width="100" height="100" pivot_x="0" pivot_y="1"/>
+        <file id="3" name="Snowflake2.png" width="100" height="100" pivot_x="0" pivot_y="1"/>
+    </folder>
+    <entity id="0" name="entity_000">
+        <animation id="0" name="NewAnimation" length="1000" interval="100" looping="false">
+            <mainline>
+                <key id="0">
+                    <object_ref id="0" timeline="0" key="0" z_index="0"/>
+                    <object_ref id="1" timeline="1" key="0" z_index="1"/>
+                    <object_ref id="2" timeline="2" key="0" z_index="2"/>
+                    <object_ref id="3" timeline="3" key="0" z_index="3"/>
+                    <object_ref id="4" timeline="4" key="0" z_index="4"/>
+                    <object_ref id="5" timeline="5" key="0" z_index="5"/>
+                    <object_ref id="6" timeline="6" key="0" z_index="6"/>
+                    <object_ref id="7" timeline="7" key="0" z_index="7"/>
+                    <object_ref id="8" timeline="8" key="0" z_index="8"/>
+                    <object_ref id="9" timeline="9" key="0" z_index="9"/>
+                    <object_ref id="10" timeline="10" key="0" z_index="10"/>
+                    <object_ref id="11" timeline="11" key="0" z_index="11"/>
+                    <object_ref id="12" timeline="12" key="0" z_index="12"/>
+                </key>
+                <key id="1" time="185">
+                    <object_ref id="0" timeline="0" key="0" z_index="0"/>
+                    <object_ref id="1" timeline="1" key="1" z_index="1"/>
+                    <object_ref id="2" timeline="2" key="1" z_index="2"/>
+                    <object_ref id="3" timeline="3" key="1" z_index="3"/>
+                    <object_ref id="4" timeline="4" key="1" z_index="4"/>
+                    <object_ref id="5" timeline="5" key="1" z_index="5"/>
+                    <object_ref id="6" timeline="6" key="1" z_index="6"/>
+                    <object_ref id="7" timeline="7" key="1" z_index="7"/>
+                    <object_ref id="8" timeline="8" key="1" z_index="8"/>
+                    <object_ref id="9" timeline="9" key="1" z_index="9"/>
+                    <object_ref id="10" timeline="10" key="1" z_index="10"/>
+                    <object_ref id="11" timeline="11" key="1" z_index="11"/>
+                    <object_ref id="12" timeline="12" key="1" z_index="12"/>
+                </key>
+                <key id="2" time="357">
+                    <object_ref id="0" timeline="0" key="0" z_index="0"/>
+                    <object_ref id="1" timeline="1" key="2" z_index="1"/>
+                    <object_ref id="2" timeline="2" key="2" z_index="2"/>
+                    <object_ref id="3" timeline="3" key="2" z_index="3"/>
+                    <object_ref id="4" timeline="4" key="2" z_index="4"/>
+                    <object_ref id="5" timeline="5" key="2" z_index="5"/>
+                    <object_ref id="6" timeline="6" key="2" z_index="6"/>
+                    <object_ref id="7" timeline="7" key="2" z_index="7"/>
+                    <object_ref id="8" timeline="8" key="2" z_index="8"/>
+                    <object_ref id="9" timeline="9" key="2" z_index="9"/>
+                    <object_ref id="10" timeline="10" key="2" z_index="10"/>
+                    <object_ref id="11" timeline="11" key="2" z_index="11"/>
+                    <object_ref id="12" timeline="12" key="2" z_index="12"/>
+                    <object_ref id="13" timeline="13" key="0" z_index="13"/>
+                    <object_ref id="14" timeline="14" key="0" z_index="14"/>
+                    <object_ref id="15" timeline="15" key="0" z_index="15"/>
+                    <object_ref id="16" timeline="16" key="0" z_index="16"/>
+                    <object_ref id="17" timeline="17" key="0" z_index="17"/>
+                    <object_ref id="18" timeline="18" key="0" z_index="18"/>
+                    <object_ref id="19" timeline="19" key="0" z_index="19"/>
+                </key>
+                <key id="3" time="500">
+                    <object_ref id="0" timeline="0" key="1" z_index="0"/>
+                    <object_ref id="1" timeline="1" key="3" z_index="1"/>
+                    <object_ref id="2" timeline="2" key="3" z_index="2"/>
+                    <object_ref id="3" timeline="3" key="3" z_index="3"/>
+                    <object_ref id="4" timeline="4" key="3" z_index="4"/>
+                    <object_ref id="5" timeline="5" key="3" z_index="5"/>
+                    <object_ref id="6" timeline="6" key="3" z_index="6"/>
+                    <object_ref id="7" timeline="7" key="3" z_index="7"/>
+                    <object_ref id="8" timeline="8" key="3" z_index="8"/>
+                    <object_ref id="9" timeline="9" key="3" z_index="9"/>
+                    <object_ref id="10" timeline="10" key="3" z_index="10"/>
+                    <object_ref id="11" timeline="11" key="3" z_index="11"/>
+                    <object_ref id="12" timeline="12" key="3" z_index="12"/>
+                    <object_ref id="13" timeline="13" key="1" z_index="13"/>
+                    <object_ref id="14" timeline="14" key="1" z_index="14"/>
+                    <object_ref id="15" timeline="15" key="1" z_index="15"/>
+                    <object_ref id="16" timeline="16" key="1" z_index="16"/>
+                    <object_ref id="17" timeline="17" key="1" z_index="17"/>
+                    <object_ref id="18" timeline="18" key="1" z_index="18"/>
+                    <object_ref id="19" timeline="19" key="1" z_index="19"/>
+                </key>
+                <key id="4" time="667">
+                    <object_ref id="0" timeline="0" key="1" z_index="0"/>
+                    <object_ref id="1" timeline="1" key="4" z_index="1"/>
+                    <object_ref id="2" timeline="2" key="4" z_index="2"/>
+                    <object_ref id="3" timeline="3" key="4" z_index="3"/>
+                    <object_ref id="4" timeline="4" key="3" z_index="4"/>
+                    <object_ref id="5" timeline="5" key="4" z_index="5"/>
+                    <object_ref id="6" timeline="6" key="4" z_index="6"/>
+                    <object_ref id="7" timeline="7" key="4" z_index="7"/>
+                    <object_ref id="8" timeline="8" key="4" z_index="8"/>
+                    <object_ref id="9" timeline="9" key="4" z_index="9"/>
+                    <object_ref id="10" timeline="10" key="3" z_index="10"/>
+                    <object_ref id="11" timeline="11" key="4" z_index="11"/>
+                    <object_ref id="12" timeline="12" key="3" z_index="12"/>
+                    <object_ref id="13" timeline="13" key="2" z_index="13"/>
+                    <object_ref id="14" timeline="14" key="2" z_index="14"/>
+                    <object_ref id="15" timeline="15" key="2" z_index="15"/>
+                    <object_ref id="16" timeline="16" key="2" z_index="16"/>
+                    <object_ref id="17" timeline="17" key="2" z_index="17"/>
+                    <object_ref id="18" timeline="18" key="2" z_index="18"/>
+                    <object_ref id="19" timeline="19" key="2" z_index="19"/>
+                    <object_ref id="20" timeline="20" key="0" z_index="20"/>
+                    <object_ref id="21" timeline="21" key="0" z_index="21"/>
+                    <object_ref id="22" timeline="22" key="0" z_index="22"/>
+                    <object_ref id="23" timeline="23" key="0" z_index="23"/>
+                    <object_ref id="24" timeline="24" key="0" z_index="24"/>
+                    <object_ref id="25" timeline="25" key="0" z_index="25"/>
+                    <object_ref id="26" timeline="26" key="0" z_index="26"/>
+                    <object_ref id="27" timeline="27" key="0" z_index="27"/>
+                    <object_ref id="28" timeline="28" key="0" z_index="28"/>
+                </key>
+            </mainline>
+            <timeline id="0" name="cold2">
+                <key id="0" spin="0">
+                    <object folder="0" file="0" x="-1135" y="443"/>
+                </key>
+                <key id="1" time="500" spin="0">
+                    <object folder="0" file="0" x="-1135" y="443"/>
+                </key>
+            </timeline>
+            <timeline id="1" name="snowflake">
+                <key id="0" spin="0">
+                    <object folder="0" file="2" x="-1100" y="720"/>
+                </key>
+                <key id="1" time="185" spin="0">
+                    <object folder="0" file="2" x="-1155" y="450"/>
+                </key>
+                <key id="2" time="357" spin="0">
+                    <object folder="0" file="2" x="-1268.719512" y="345.831486"/>
+                </key>
+                <key id="3" time="500" spin="0">
+                    <object folder="0" file="2" x="-1297.814341" y="117.192791"/>
+                </key>
+                <key id="4" time="667" spin="0">
+                    <object folder="0" file="2" x="-1167.814341" y="-102.807209"/>
+                </key>
+            </timeline>
+            <timeline id="2" name="Snowflake2">
+                <key id="0" spin="0">
+                    <object folder="0" file="3" x="-825" y="620"/>
+                </key>
+                <key id="1" time="185" spin="0">
+                    <object folder="0" file="3" x="-850" y="375"/>
+                </key>
+                <key id="2" time="357" spin="0">
+                    <object folder="0" file="3" x="-807.145233" y="192.976718"/>
+                </key>
+                <key id="3" time="500" spin="0">
+                    <object folder="0" file="3" x="-874.357526" y="50.886987"/>
+                </key>
+                <key id="4" time="667" spin="0">
+                    <object folder="0" file="3" x="-1004.357526" y="-284.113013"/>
+                </key>
+            </timeline>
+            <timeline id="3" name="snowflake_000">
+                <key id="0" spin="0">
+                    <object folder="0" file="2" x="-505" y="815"/>
+                </key>
+                <key id="1" time="185" spin="0">
+                    <object folder="0" file="2" x="-285" y="540"/>
+                </key>
+                <key id="2" time="357" spin="0">
+                    <object folder="0" file="2" x="-220.121951" y="361.402439"/>
+                </key>
+                <key id="3" time="500" spin="0">
+                    <object folder="0" file="2" x="-250.419732" y="212.605391"/>
+                </key>
+                <key id="4" time="667" spin="0">
+                    <object folder="0" file="2" x="-545.419732" y="-2.394609"/>
+                </key>
+            </timeline>
+            <timeline id="4" name="Snowflake2_000">
+                <key id="0" spin="0">
+                    <object folder="0" file="3" x="-505" y="815"/>
+                </key>
+                <key id="1" time="185" spin="0">
+                    <object folder="0" file="3" x="-560" y="620"/>
+                </key>
+                <key id="2" time="357" spin="0">
+                    <object folder="0" file="3" x="-598.719512" y="427.267184"/>
+                </key>
+                <key id="3" time="500" spin="0">
+                    <object folder="0" file="3" x="-622.107207" y="325.309172"/>
+                </key>
+            </timeline>
+            <timeline id="5" name="Snowflake2_001">
+                <key id="0" spin="0">
+                    <object folder="0" file="3" x="-260" y="590"/>
+                </key>
+                <key id="1" time="185" spin="0">
+                    <object folder="0" file="3" x="-395" y="345"/>
+                </key>
+                <key id="2" time="357" spin="0">
+                    <object folder="0" file="3" x="-484.584257" y="162.976718"/>
+                </key>
+                <key id="3" time="500" spin="0">
+                    <object folder="0" file="3" x="-461.757172" y="15.886987"/>
+                </key>
+                <key id="4" time="667" spin="0">
+                    <object folder="0" file="3" x="-281.757172" y="-264.113013"/>
+                </key>
+            </timeline>
+            <timeline id="6" name="snowflake_001">
+                <key id="0" spin="0">
+                    <object folder="0" file="2" x="110" y="875"/>
+                </key>
+                <key id="1" time="185" spin="0">
+                    <object folder="0" file="2" x="20" y="650"/>
+                </key>
+                <key id="2" time="357" spin="0">
+                    <object folder="0" file="2" x="255.277162" y="410.692905"/>
+                </key>
+                <key id="3" time="500" spin="0">
+                    <object folder="0" file="2" x="72.276612" y="243.22282"/>
+                </key>
+                <key id="4" time="667" spin="0">
+                    <object folder="0" file="2" x="-97.723388" y="-206.77718"/>
+                </key>
+            </timeline>
+            <timeline id="7" name="Snowflake2_002">
+                <key id="0" spin="0">
+                    <object folder="0" file="3" x="355" y="600"/>
+                </key>
+                <key id="1" time="185" spin="0">
+                    <object folder="0" file="3" x="260" y="365"/>
+                </key>
+                <key id="2" time="357" spin="0">
+                    <object folder="0" file="3" x="130.848115" y="221.834812"/>
+                </key>
+                <key id="3" time="500" spin="0">
+                    <object folder="0" file="3" x="258.621628" y="68.691324"/>
+                </key>
+                <key id="4" time="667" spin="0">
+                    <object folder="0" file="3" x="253.621628" y="-161.308676"/>
+                </key>
+            </timeline>
+            <timeline id="8" name="snowflake_002">
+                <key id="0" spin="0">
+                    <object folder="0" file="2" x="655" y="875"/>
+                </key>
+                <key id="1" time="185" spin="0">
+                    <object folder="0" file="2" x="620" y="620"/>
+                </key>
+                <key id="2" time="357" spin="0">
+                    <object folder="0" file="2" x="878.996674" y="514.118625"/>
+                </key>
+                <key id="3" time="500" spin="0">
+                    <object folder="0" file="2" x="851.242393" y="238.833589"/>
+                </key>
+                <key id="4" time="667" spin="0">
+                    <object folder="0" file="2" x="856.242393" y="78.833589"/>
+                </key>
+            </timeline>
+            <timeline id="9" name="snowflake_003">
+                <key id="0" spin="0">
+                    <object folder="0" file="2" x="660" y="875"/>
+                </key>
+                <key id="1" time="185" spin="0">
+                    <object folder="0" file="2" x="455" y="620"/>
+                </key>
+                <key id="2" time="357" spin="0">
+                    <object folder="0" file="2" x="508.409091" y="334.118625"/>
+                </key>
+                <key id="3" time="500" spin="0">
+                    <object folder="0" file="2" x="382.191944" y="306.136468"/>
+                </key>
+                <key id="4" time="667" spin="0">
+                    <object folder="0" file="2" x="227.191944" y="106.136468"/>
+                </key>
+            </timeline>
+            <timeline id="10" name="Snowflake2_003">
+                <key id="0" spin="0">
+                    <object folder="0" file="3" x="840" y="585"/>
+                </key>
+                <key id="1" time="185" spin="0">
+                    <object folder="0" file="3" x="815" y="400"/>
+                </key>
+                <key id="2" time="357" spin="0">
+                    <object folder="0" file="3" x="832.854767" y="201.125277"/>
+                </key>
+                <key id="3" time="500" spin="0">
+                    <object folder="0" file="3" x="668.740096" y="33.689229"/>
+                </key>
+            </timeline>
+            <timeline id="11" name="snowflake_004">
+                <key id="0" spin="0">
+                    <object folder="0" file="2" x="1100" y="455"/>
+                </key>
+                <key id="1" time="185" spin="0">
+                    <object folder="0" file="2" x="1065" y="220"/>
+                </key>
+                <key id="2" time="357" spin="0">
+                    <object folder="0" file="2" x="1093.996674" y="51.834812"/>
+                </key>
+                <key id="3" time="500" spin="0">
+                    <object folder="0" file="2" x="1054.740515" y="-133.211054"/>
+                </key>
+                <key id="4" time="667" spin="0">
+                    <object folder="0" file="2" x="874.740515" y="-218.211054"/>
+                </key>
+            </timeline>
+            <timeline id="12" name="Snowflake2_004">
+                <key id="0" spin="0">
+                    <object folder="0" file="3" x="-1225" y="415"/>
+                </key>
+                <key id="1" time="185" spin="0">
+                    <object folder="0" file="3" x="-1400" y="110"/>
+                </key>
+                <key id="2" time="357" spin="0">
+                    <object folder="0" file="3" x="-1295.01663" y="-105.17184"/>
+                </key>
+                <key id="3" time="500" spin="0">
+                    <object folder="0" file="3" x="-1381.341228" y="-290.72001"/>
+                </key>
+            </timeline>
+            <timeline id="13" name="snowflake_005">
+                <key id="0" time="357" spin="0">
+                    <object folder="0" file="2" x="-1005" y="690"/>
+                </key>
+                <key id="1" time="500" spin="0">
+                    <object folder="0" file="2" x="-1070" y="475"/>
+                </key>
+                <key id="2" time="667" spin="0">
+                    <object folder="0" file="2" x="-1300" y="190"/>
+                </key>
+            </timeline>
+            <timeline id="14" name="Snowflake2_005">
+                <key id="0" time="357" spin="0">
+                    <object folder="0" file="3" x="-665" y="610"/>
+                </key>
+                <key id="1" time="500" spin="0">
+                    <object folder="0" file="3" x="-770" y="485"/>
+                </key>
+                <key id="2" time="667" spin="0">
+                    <object folder="0" file="3" x="-865" y="175"/>
+                </key>
+            </timeline>
+            <timeline id="15" name="snowflake_006">
+                <key id="0" time="357" spin="0">
+                    <object folder="0" file="2" x="-295" y="780"/>
+                </key>
+                <key id="1" time="500" spin="0">
+                    <object folder="0" file="2" x="-360" y="505"/>
+                </key>
+                <key id="2" time="667" spin="0">
+                    <object folder="0" file="2" x="-315" y="130"/>
+                </key>
+            </timeline>
+            <timeline id="16" name="Snowflake2_006">
+                <key id="0" time="357" spin="0">
+                    <object folder="0" file="3" x="200" y="795"/>
+                </key>
+                <key id="1" time="500" spin="0">
+                    <object folder="0" file="3" x="-20" y="640"/>
+                </key>
+                <key id="2" time="667" spin="0">
+                    <object folder="0" file="3" x="-210" y="495"/>
+                </key>
+            </timeline>
+            <timeline id="17" name="snowflake_007">
+                <key id="0" time="357" spin="0">
+                    <object folder="0" file="2" x="570" y="680"/>
+                </key>
+                <key id="1" time="500" spin="0">
+                    <object folder="0" file="2" x="395" y="530"/>
+                </key>
+                <key id="2" time="667" spin="0">
+                    <object folder="0" file="2" x="425" y="-35"/>
+                </key>
+            </timeline>
+            <timeline id="18" name="snowflake_008">
+                <key id="0" time="357" spin="0">
+                    <object folder="0" file="2" x="1115" y="710"/>
+                </key>
+                <key id="1" time="500" spin="0">
+                    <object folder="0" file="2" x="1030" y="355"/>
+                </key>
+                <key id="2" time="667" spin="0">
+                    <object folder="0" file="2" x="1075" y="185"/>
+                </key>
+            </timeline>
+            <timeline id="19" name="snowflake_009">
+                <key id="0" time="357" spin="0">
+                    <object folder="0" file="2" x="-1325" y="860"/>
+                </key>
+                <key id="1" time="500" spin="0">
+                    <object folder="0" file="2" x="-1460" y="295"/>
+                </key>
+                <key id="2" time="667" spin="0">
+                    <object folder="0" file="2" x="-1500" y="-40"/>
+                </key>
+            </timeline>
+            <timeline id="20" name="snowflake_010">
+                <key id="0" time="667" spin="0">
+                    <object folder="0" file="2" x="-1180" y="545"/>
+                </key>
+            </timeline>
+            <timeline id="21" name="Snowflake2_007">
+                <key id="0" time="667" spin="0">
+                    <object folder="0" file="3" x="-610" y="540"/>
+                </key>
+            </timeline>
+            <timeline id="22" name="snowflake_011">
+                <key id="0" time="667" spin="0">
+                    <object folder="0" file="2" x="255" y="645"/>
+                </key>
+            </timeline>
+            <timeline id="23" name="Snowflake2_008">
+                <key id="0" time="667" spin="0">
+                    <object folder="0" file="3" x="725" y="660"/>
+                </key>
+            </timeline>
+            <timeline id="24" name="snowflake_012">
+                <key id="0" time="667" spin="0">
+                    <object folder="0" file="2" x="450" y="465"/>
+                </key>
+            </timeline>
+            <timeline id="25" name="snowflake_013">
+                <key id="0" time="667" spin="0">
+                    <object folder="0" file="2" x="450" y="465"/>
+                </key>
+            </timeline>
+            <timeline id="26" name="Snowflake2_009">
+                <key id="0" time="667" spin="0">
+                    <object folder="0" file="3" x="-405" y="740"/>
+                </key>
+            </timeline>
+            <timeline id="27" name="snowflake_014">
+                <key id="0" time="667" spin="0">
+                    <object folder="0" file="2" x="-830" y="700"/>
+                </key>
+            </timeline>
+            <timeline id="28" name="Snowflake2_010">
+                <key id="0" time="667" spin="0">
+                    <object folder="0" file="3" x="80" y="730"/>
+                </key>
+            </timeline>
+        </animation>
+    </entity>
+</spriter_data>
