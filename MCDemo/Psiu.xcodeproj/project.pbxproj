@@ -24,6 +24,7 @@
 		89F412CA1A2E405100C16CC0 /* Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = 89F412C91A2E405100C16CC0 /* Cell.m */; };
 		89F412D01A2E4A0D00C16CC0 /* Usuario.m in Sources */ = {isa = PBXBuildFile; fileRef = 89F412CF1A2E4A0D00C16CC0 /* Usuario.m */; };
 		89F412D21A2E4E7700C16CC0 /* kate.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 89F412D11A2E4E7700C16CC0 /* kate.jpg */; };
+		A4FBF8051C0FEEBA003CF37A /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4FBF8041C0FEEBA003CF37A /* Launch Screen.storyboard */; };
 		C5D3D9061A3A150E005C1DE1 /* PerfilTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C5D3D9051A3A150E005C1DE1 /* PerfilTableCell.m */; };
 		C5D3D9091A3A19EE005C1DE1 /* Option.m in Sources */ = {isa = PBXBuildFile; fileRef = C5D3D9081A3A19EE005C1DE1 /* Option.m */; };
 		C5D3D9131A3A6B10005C1DE1 /* GifViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C5D3D9121A3A6B10005C1DE1 /* GifViewController.m */; };
@@ -81,6 +82,7 @@
 		89F412CE1A2E4A0D00C16CC0 /* Usuario.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Usuario.h; path = ../Usuario.h; sourceTree = "<group>"; };
 		89F412CF1A2E4A0D00C16CC0 /* Usuario.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Usuario.m; path = ../Usuario.m; sourceTree = "<group>"; };
 		89F412D11A2E4E7700C16CC0 /* kate.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = kate.jpg; sourceTree = "<group>"; };
+		A4FBF8041C0FEEBA003CF37A /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		C5D3D9041A3A150E005C1DE1 /* PerfilTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PerfilTableCell.h; sourceTree = "<group>"; };
 		C5D3D9051A3A150E005C1DE1 /* PerfilTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PerfilTableCell.m; sourceTree = "<group>"; };
 		C5D3D9071A3A19EE005C1DE1 /* Option.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Option.h; sourceTree = "<group>"; };
@@ -221,6 +223,7 @@
 				D9EA8C1D187B1954008031B5 /* AppDelegate.h */,
 				D9EA8C1E187B1954008031B5 /* AppDelegate.m */,
 				D9EA8C20187B1954008031B5 /* Main.storyboard */,
+				A4FBF8041C0FEEBA003CF37A /* Launch Screen.storyboard */,
 				891E380B1A3241F100FFA931 /* MatchViewController.h */,
 				891E380C1A3241F100FFA931 /* MatchViewController.m */,
 				891E38081A32255000FFA931 /* PerfilViewController.h */,
@@ -300,11 +303,11 @@
 		D9EA8C03187B1954008031B5 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0610;
+				LastUpgradeCheck = 0710;
 				ORGANIZATIONNAME = Appcoda;
 				TargetAttributes = {
 					D9EA8C0A187B1954008031B5 = {
-						DevelopmentTeam = CC953577YZ;
+						DevelopmentTeam = 4KLBALJT2L;
 					};
 				};
 			};
@@ -337,6 +340,7 @@
 				C5D3D93B1A3B604E005C1DE1 /* backarrow.png in Resources */,
 				C5D3D93A1A3B604E005C1DE1 /* backarrow_white.png in Resources */,
 				89F23CFE1A2DE0BC00DC0350 /* EZAudio in Resources */,
+				A4FBF8051C0FEEBA003CF37A /* Launch Screen.storyboard in Resources */,
 				C5D3D9331A3B5FFA005C1DE1 /* psiubotao.png in Resources */,
 				C5D3D92D1A3B5FD0005C1DE1 /* label_batepapo.png in Resources */,
 				C5D3D9391A3B604E005C1DE1 /* backarrow_red2.png in Resources */,
@@ -433,6 +437,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -447,7 +452,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 			};
@@ -479,7 +484,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -495,6 +500,8 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MCDemo/Psiu-Prefix.pch";
 				INFOPLIST_FILE = "MCDemo/Psiu-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.koruja.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = Psiu;
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -512,6 +519,8 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MCDemo/Psiu-Prefix.pch";
 				INFOPLIST_FILE = "MCDemo/Psiu-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.koruja.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = Psiu;
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
