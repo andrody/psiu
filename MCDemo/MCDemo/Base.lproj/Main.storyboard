@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="QVq-nA-GRk">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="QVq-nA-GRk">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
@@ -40,8 +42,8 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="xlv-KI-zUK">
-                                <rect key="frame" x="16" y="16" width="288" height="29"/>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="xlv-KI-zUK">
+                                <rect key="frame" x="16" y="11" width="288" height="29"/>
                                 <animations/>
                                 <segments>
                                     <segment title="Todos"/>
@@ -52,22 +54,22 @@
                                     <action selector="SegmentChange:" destination="5GN-aV-agS" eventType="valueChanged" id="7Mw-ZM-8l8"/>
                                 </connections>
                             </segmentedControl>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="tJR-eN-h8o">
-                                <rect key="frame" x="10" y="61" width="300" height="446"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="tJR-eN-h8o">
+                                <rect key="frame" x="16" y="58.5" width="288" height="445.5"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="0.0" id="NrW-tl-glB">
-                                    <size key="itemSize" width="145" height="145"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ava-h2-ngb">
+                                    <size key="itemSize" width="120" height="120"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" reuseIdentifier="celula" id="Ls8-OK-Aks" customClass="Cell">
-                                        <rect key="frame" x="0.0" y="0.0" width="145" height="145"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="138" height="145"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="145" height="145"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="138" height="145"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView autoresizesSubviews="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="d7I-Ke-95Y">
@@ -85,7 +87,7 @@
                                         </view>
                                         <animations/>
                                         <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="0.0"/>
-                                        <size key="customSize" width="145" height="145"/>
+                                        <size key="customSize" width="138" height="145"/>
                                         <connections>
                                             <outlet property="foto" destination="d7I-Ke-95Y" id="NrM-TT-CrO"/>
                                             <outlet property="loadingImage" destination="v8w-Pf-8zH" id="yua-la-0AQ"/>
@@ -96,6 +98,16 @@
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="tJR-eN-h8o" firstAttribute="leading" secondItem="UX9-Pj-gLk" secondAttribute="leadingMargin" id="5BK-Td-N8e"/>
+                            <constraint firstItem="Qsl-lS-1Uq" firstAttribute="top" secondItem="tJR-eN-h8o" secondAttribute="bottom" id="EJp-Mg-wb4"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="xlv-KI-zUK" secondAttribute="trailing" id="G4n-0E-dcA"/>
+                            <constraint firstItem="xlv-KI-zUK" firstAttribute="centerY" secondItem="UX9-Pj-gLk" secondAttribute="centerY" multiplier="0.1" id="NTv-es-rwm"/>
+                            <constraint firstItem="tJR-eN-h8o" firstAttribute="top" secondItem="xlv-KI-zUK" secondAttribute="bottom" multiplier="1.5" id="PFT-rB-V8C"/>
+                            <constraint firstItem="xlv-KI-zUK" firstAttribute="leading" secondItem="UX9-Pj-gLk" secondAttribute="leadingMargin" id="RfL-HL-1QB"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="tJR-eN-h8o" secondAttribute="trailing" id="VuA-yl-8Lu"/>
+                            <constraint firstItem="tJR-eN-h8o" firstAttribute="centerX" secondItem="UX9-Pj-gLk" secondAttribute="centerX" id="joF-Wz-jWR"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Pessoas Locais" id="Ftb-fy-l5m">
                         <barButtonItem key="rightBarButtonItem" style="done" systemItem="compose" id="6Vs-it-fdT">
